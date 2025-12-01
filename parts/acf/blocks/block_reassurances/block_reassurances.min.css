@@ -1,0 +1,2 @@
+.banner{position:relative;text-align:center;padding-top:150px}.banner::before{content:"";width:100vw;height:100vw;max-height:100vh;position:absolute;top:0;left:0;border-bottom-right-radius:50rem;border-bottom-left-radius:50rem;background-color:#1f5869;z-index:-1}@media only screen and (min-width:1200px){.banner::before{top:-10vw}}.banner .container{max-width:1200px}.banner_suptitle,.banner_title{font-weight:400;text-align:center;margin-bottom:20px}
+/*# sourceMappingURL=block_reassurances.min.css.map */

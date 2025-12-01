@@ -1,0 +1,85 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.gform {
+    &_heading {
+        display: none!important;
+    }
+}
+
+form {
+    .gform {
+        &_footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &_fields {
+            row-gap : 25px!important;
+
+            @include desktop {
+                column-gap : 25px!important;
+            }
+        }
+    }
+
+    .gfield {
+        position: relative;
+
+        &_consent_label {
+            font-size: variables.$text_small!important;
+        }
+        
+        &_required_text {
+            display: none!important;
+        }
+    }
+
+    input:not([type=radio]),
+    textarea,
+    select {
+        padding: 20px!important;
+        border-radius: variables.$border_rounded!important;
+        color: variables.$dark!important;
+        border: 1px solid variables.$grey;
+        transition: border .3s ease;;
+
+        &:focus {
+            border: 1px solid variables.$grey;
+            transition: border .3s ease;;
+        }
+    }
+
+    input {
+        &[type=submit],
+        &[type=button] {
+            background-color: variables.$red!important;
+            border-radius: 5px!important;
+            text-transform: uppercase!important;
+            border: 0!important;
+            font-family: 'Anton', sans-serif!important;
+            letter-spacing: 1.5px!important;
+            padding: 15px 40px!important;
+            color: variables.$white!important;
+
+            &:hover {
+                background-color: variables.$dark!important;
+                transition: background-color .3s ease!important;
+                cursor: pointer!important
+            }   
+        }
+
+        &[type=submit] {
+            border-radius: 50rem!important;
+            display: inline-block!important;
+            width: 100%!important;
+        }
+
+        &[type=checkbox] {
+            width: 20px!important;
+            height: 20px!important;
+            padding: 0!important;
+            border-radius: 5px!important;
+        }
+    }
+}

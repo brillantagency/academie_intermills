@@ -1,0 +1,76 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+@use "../base/keyframes" as *;
+
+.cta {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 50rem;
+    font-size: 16px;;
+    color: variables.$white;
+    transition: background-color .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        transition: background-color .3s ease;
+    }
+
+    &_primary {
+        background-color: variables.$red;
+
+        &:hover {
+            background-color: variables.$darkred;
+
+            .cta_arrow path {
+                stroke: variables.$white;
+            }
+        }
+
+        .cta_arrow path {
+            stroke: variables.$dark;
+        }
+    }
+
+    &_secondary {
+        background-color: variables.$darkred;
+        
+        &:hover {
+            background-color:variables.$dark;
+
+            .cta_arrow path {
+                stroke: variables.$dark;
+            }
+        }
+
+        .cta_arrow path {
+            stroke: variables.$white;
+        }
+    }
+
+
+    &_tertiary {
+        background-color: variables.$darkgreen;
+        
+        &:hover {
+            background-color:variables.$dark;
+
+            .cta_arrow path {
+                stroke: variables.$dark;
+            }
+        }
+
+        .cta_arrow path {
+            stroke: variables.$white;
+        }
+    }
+
+    &_arrow  {
+        margin-left: 5px;
+        transform: rotate(180deg);
+
+        path {
+            transition: stroke .3s ease;
+        }
+    }
+}

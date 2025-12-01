@@ -1,0 +1,123 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.circle_slider {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    position: relative;
+
+    &__swiper {
+        padding-bottom: 200px;
+    }
+
+    &__actions {
+        position: absolute;
+        bottom: -150px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__control {
+        display: inline-flex;
+        border-radius: 5em;
+        font-size: 16px;
+        font-weight: 500;
+        color: variables.$dark;
+        padding: 1em 2em;
+        border: 1px solid variables.$dark;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            background-color: variables.$dark;
+            color: variables.$white;
+            border: 1px solid variables.$dark;
+            transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+        margin-left: 41%;
+
+        &-pagination-bullet {
+            background-color: variables.$dark;
+            opacity: 0.5;
+            transform: scale(1);
+            transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &-active {
+                background-color: variables.$dark;
+                opacity: 1;
+                transform: scale(1.7);
+                transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+            }
+        }
+
+        &-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            
+            img {
+                object-fit: cover;
+                object-position: center;
+                height: 100%;
+                width: 100%;
+                border-radius: 20px;
+                border-bottom-right-radius: 0;
+                max-width: 250px;
+                max-height: 350px;
+            }
+        }
+
+        &-slide {
+            opacity: 0!important;
+            overflow: visible!important;
+
+            .circle_slide_img_wrapper {
+                transform: scale(1);
+                transition: transform 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 350px;
+            }
+
+            &-active {
+                opacity: 1!important;
+
+                .circle_slide_img_wrapper {
+                    transform: scale(1.7);
+                    transition: transform 0.3s ease;
+                }
+            }
+
+            &-next,
+            &-prev {
+                opacity: 0.3!important;
+                filter: blur(5px);
+
+                .team_item_wrapper > div:not(.circle_slide_img_wrapper) {
+                    opacity: 0;
+                } 
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+//----------------- Components ------------------//
+@use "components/cta" as *; 
+@use "components/menu" as *; 
+@use "components/form" as *; 
+@use "components/video" as *; 
+@use "components/circle-text" as *; 
+@use "components/circle-slider" as *; 
+@use "components/lang" as *; 
+
+//------------------- Layout --------------------//
+@use "layout/footer" as *;
+
+//------------------- Blocks --------------------//
+//@use "blocks/block-contact" as *;
+//@use "blocks/block-services" as *;
+//@use "blocks/block-values" as *;
+//@use "blocks/block-team" as *;
+//@use "blocks/block-brands" as *;
+//@use "blocks/block-hihtlight-services" as *;
+//@use "blocks/block-testimonials" as *;
+//@use "blocks/block-text-media" as *;

@@ -1,0 +1,46 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.block_contact {
+	.container {
+		margin: auto;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		background-color: variables.$grey;
+		flex-direction: column;
+		padding: 10px;
+		border-radius: 20px;
+
+		@include tablet {
+			max-width: 950px;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+		}
+	}
+
+	.contact {
+		&_title {
+			margin-top: 0;
+		}
+
+		&_text_wrapper {
+			padding: 40px;
+		}
+
+		&_form {
+			&_wrapper {
+				position: relative;
+				max-width: 900px;
+			    margin: auto;
+				background-color: variables.$white;
+				padding: 20px;
+				border-radius: 20px;
+
+				form {
+					margin-top: 50px;
+				}
+			}
+		}
+	}
+}

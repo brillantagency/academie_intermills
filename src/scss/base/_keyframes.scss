@@ -1,0 +1,25 @@
+@keyframes clignotement {
+    0%, 20% { opacity: 1; }
+    25%, 45% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 10% { transform: rotate(0); }
+    20% { transform: rotate(-5deg); }
+    30% { transform: rotate(5deg); }
+    40% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    60%, 100% { transform: rotate(0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shakeAnim {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}

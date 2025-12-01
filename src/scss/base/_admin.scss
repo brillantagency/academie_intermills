@@ -1,0 +1,10 @@
+.link-home {
+	color: #000000;
+	font-weight: 700;
+	transition: .2s ease-in-out;
+
+	&:hover {
+		border-bottom: 1px solid #000000;
+		transition: .2s ease-in-out;
+	}
+}

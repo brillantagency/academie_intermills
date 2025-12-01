@@ -1,0 +1,267 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.text_media_section {
+    position: relative;
+
+    &_after::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: variables.$darkgreen;
+    }
+
+    &_right {
+        .img_wrapper_crop_form_border {
+            right: -25px;
+            bottom: -50px;
+
+            @include tablet {
+                right: -125px;
+            }
+        }
+
+        &.text_media_section_after::after {
+            border-top-right-radius: 50rem;
+            border-bottom-right-radius: 50rem;
+            transform: rotate(-12deg);
+            left: -25%;
+            bottom: 0;
+        }
+    }
+
+    &_left {
+        .img_wrapper_crop_form_border {
+            left: -25px;
+            bottom: -50px;
+
+            @include tablet {
+                left: -125px;
+            }
+        }
+
+        &.text_media_section_after::after {
+            border-top-left-radius: 50rem;
+            border-bottom-left-radius: 50rem;
+            transform: rotate(12deg);
+            right: -25%;
+            bottom: 0;
+        }
+    }
+
+    &_top,
+    &_bottom {
+        .img_wrapper_crop_form_border {
+            right: -125px;
+            bottom: -50px;
+        }
+
+        &.text_media_section_after::after {
+            content: none;
+        }
+    }
+
+    .text_media {
+        &_media_wrapper {
+            position: relative;
+        }
+
+        &_swiper-wrapper {
+            align-items: center;
+        }
+
+        &_img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &_title {
+            margin-top: 0;
+        }
+
+        &_position {
+            column-gap: 100px;
+            row-gap: 50px;
+            flex-direction: column;
+
+            &:not(.container) .text_media_position_top,
+            &:not(.container) .text_media_position_bottom {
+                max-width: 1000px;
+            }
+
+            .text_media_wrapper {
+                height: 100%;
+            }
+
+            &_top,
+            &_bottom {
+                margin: auto;
+            }
+
+            &_right,
+            &_left,
+            &_top,
+            &_bottom {
+                flex-direction: column-reverse;
+            }
+
+            &_right,
+            &_top {
+                .circle_text_wrapper {
+                    left: -105px;
+                }
+            }
+
+            &_left,
+            &_bottom {
+                .circle_text_wrapper {
+                    right: -105px;
+                }
+            }
+
+            &_left,
+            &_right {
+                .circle_text_wrapper {
+                    bottom: -105px;
+                }
+            }
+
+            &_top {
+                .circle_text_wrapper {
+                    top: -105px;
+                }
+            }
+
+            &_bottom {
+                .circle_text_wrapper {
+                    bottom: -105px;
+                }
+            }
+        }
+
+        &_text {
+            margin-bottom: 20px;
+
+            &_width {
+                &_full,
+                &_half,
+                &_third,
+                &_two-thirds {
+                    .text_media {
+                        &_media_wrapper,
+                        &_text_wrapper {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &_wrapper_align {
+                &_right {
+                    text-align: right;
+                }
+
+                &_center {
+                    text-align: center;
+                }
+            }
+        }
+
+        &_position,
+        &_media_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .text_media_wrapper_rotate {
+        .img_wrapper_crop_form {
+            transform: rotate(-5deg);
+
+            &_border {
+                transform: rotate(5deg);
+            }
+        }
+    }
+
+    .img_wrapper_crop_form_border {
+        border: 5px solid variables.$white;
+        position: absolute;
+        max-width: 150px;
+
+        @include tablet {
+            max-width: 250px;
+        }
+    }
+}
+
+@include tablet {
+    .text_media_section {
+        .text_media {
+            &_position {
+                flex-direction: row;
+
+                &_right {
+                    flex-direction: row-reverse;
+                }
+
+                &_left {
+                    flex-direction: row;
+                }
+
+                &_top {
+                    flex-direction: column;
+
+                    &.text_media_text_width_full .text_media_wrapper {
+                        width: 100%;
+                    }
+                }
+
+                &_bottom {
+                    flex-direction: column-reverse;
+
+                    &.text_media_text_width_full {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &_text_width {
+                &_full,
+                &_half {
+                    .text_media {
+                        &_media_wrapper,
+                        &_text_wrapper {
+                            width: 50%;
+                        }
+                    }
+                }
+                &_one-third {
+                    .text_media {
+                        &_media_wrapper {
+                            width: 75%;
+                        }
+                        &_text_wrapper {
+                            width: 25%;
+                        }
+                    }
+                }
+                &_two-thirds {
+                    .text_media {
+                        &_media_wrapper {
+                            width: 35%;
+                        }
+                        &_text_wrapper {
+                            width: 65%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

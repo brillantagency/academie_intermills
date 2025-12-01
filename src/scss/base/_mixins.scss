@@ -1,0 +1,92 @@
+//-------------------- Media Query --------------------//
+@mixin smartphone ($smartphone: 640){
+    @media only screen and (min-width: ($smartphone * 1px)){
+        @content;
+    }
+}
+
+@mixin tablet ($tablet: 768){
+    @media only screen and (min-width: ($tablet * 1px)){
+        @content;
+    }
+}
+
+@mixin large ($large: 992){
+    @media only screen and (min-width: ($large * 1px)){
+        @content;
+    }
+}
+
+@mixin desktop ($desktop: 1200){
+    @media only screen and (min-width: ($desktop * 1px)){
+        @content;
+    }
+}
+
+@mixin desktop-xl ($desktop-xl: 1441){
+    @media only screen and (min-width: ($desktop-xl * 1px)){
+        @content;
+    }
+}
+
+@mixin desktop-xxl ($desktop-xxl: 1680){
+    @media only screen and (min-width: ($desktop-xxl * 1px)){
+        @content;
+    }
+}
+
+@mixin desktop-xxxl ($desktop-xxxl: 1920){
+    @media only screen and (min-width: ($desktop-xxl * 1px)){
+        @content;
+    }
+}
+
+@mixin font_title {
+    font-family: 'roboto', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+}
+
+//-------------------- Container --------------------//
+
+@mixin container{
+    @include desktop{
+        max-width: 1400px;
+    }
+
+    @include large{
+        max-width: 992px;
+    }
+
+    @include tablet{
+        max-width: 720px;
+    }
+
+    @include smartphone{
+        max-width: 540px;
+    }
+
+    & {
+        max-width: 90vw;
+        padding: 0px 5%;
+        margin: auto;
+    }
+}
+
+@mixin container-universal{  
+    @include desktop{
+        max-width: 1200px;
+    }
+
+    & {
+        max-width: 90vw;
+        margin: 3% auto;
+    }
+}
+
+//-------------------- absolute --------------------//
+
+@mixin absolute{
+    content: '';
+    position: absolute;
+}
