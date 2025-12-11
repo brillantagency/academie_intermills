@@ -1,6 +1,5 @@
 <?php 
 $company_logo_header = get_field('company_logo_header', 'option');
-$theme_location      = 'menu_primary'; 
 ?>
 
 <header class="header">
@@ -21,15 +20,8 @@ $theme_location      = 'menu_primary';
                     <div class="menu_burger_wrapper_nav">
                         <button role="button" class="menu_burger_button_close menu_close-js"><?php echo __('Fermé', 'brillant'); ?></button>
                         <div class="menu_burger_nav_wrapper">
-                            <?php 
-                            wp_nav_menu(array(
-                                'theme_location'  => $theme_location,
-                                'container'       => 'nav',
-                                'container_class' => 'menu_burger_nav_wp',
-                                'menu_class'      => 'menu_burger_nav',
-                                'fallback_cb'     => false,
-                            ));
-                            ?>
+                            <?php $theme_location = 'topbar'; include(locate_template('parts/components/menu.php')); ?>
+                            <?php $theme_location = 'menu_primary'; include(locate_template('parts/components/menu.php')); ?>
                         </div>
                     </div>
                 </div>
@@ -37,16 +29,8 @@ $theme_location      = 'menu_primary';
 
             <!-- Menu Desktop -->
             <nav class="menu_nav">
-                <?php 
-                wp_nav_menu(array(
-                    'theme_location'  => $theme_location,
-                    'container'       => false,
-                    'menu_class'      => 'menu_desktop',
-                    'fallback_cb'     => false,
-                ));
-                ?>
-
-                <?php include_once(locate_template('parts/components/lang.php')); ?>
+                <?php //$theme_location = 'topbar'; include(locate_template('parts/components/menu.php')); ?>
+                <?php //$theme_location = 'menu_primary'; include(locate_template('parts/components/menu.php')); ?>
             </nav>
         </div>
     </div>

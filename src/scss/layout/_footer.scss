@@ -154,8 +154,13 @@
                 display: -ms-flexbox;
                 display: flex;
                 justify-content: center;
-                gap: 20px;
+                flex-wrap: wrap;
                 margin-bottom: 0;
+                gap: 10px;
+
+                @include tablet {
+                    gap: 20px;
+                }
             }
 
             &_legal {
@@ -185,9 +190,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 20px;
             flex-wrap: wrap;
             margin: 0;
+
+            @include tablet {
+                gap: 50px;
+            }
 
             img {
                 max-height: 50px;

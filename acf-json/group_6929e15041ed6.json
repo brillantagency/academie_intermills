@@ -43,6 +43,33 @@
             "prefix_name": 1
         },
         {
+            "key": "field_692df9184bc6f",
+            "label": "Testimonials select",
+            "name": "testimonials_select",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all testimonials will be displayed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "temoignage"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_6929e15d18928",
             "label": "Styles",
             "name": "",
@@ -102,5 +129,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764353151
+    "modified": 1764620654
 }

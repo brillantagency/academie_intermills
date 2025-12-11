@@ -14,7 +14,7 @@ $cta_color       = 'primary';
         <span class="banner_page_suptitle"><?php echo $banner_suptitle; ?></span>
         <div class="banner_page_title"><?php echo $banner_title; ?></div>
         <div><?php echo $banner_content; ?></div>
-        <?php include(locate_template('parts/components/cta.php')); ?>
+        <?php $page_single = false; include(locate_template('parts/components/cta.php')); ?>
     </section>
 </main>
 

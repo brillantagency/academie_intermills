@@ -1,9 +1,8 @@
 <?php 
-/*
 function cpt_temoignages() {
     $labels = array(
         'name'               => 'Témoignages',
-        'singular_name'      => 'temoignage',
+        'singular_name'      => 'Temoignage',
         'menu_name'          => 'Témoignages',
         'name_admin_bar'     => 'Témoignages',
         'add_new'            => 'Ajouter un nouveau',
@@ -21,6 +20,7 @@ function cpt_temoignages() {
         'labels'             => $labels,
         'public'             => true,
         'has_archive'        => false,
+        'show_in_admin_bar'  => true,
         'rewrite'            => array('slug' => 'temoignages'),
         'show_in_rest'       => true,
         'publicly_queryable' => true, // no de single page and remove URL on admin in single page
@@ -33,105 +33,102 @@ function cpt_temoignages() {
 add_action('init', 'cpt_temoignages');
 
 
-function taxo_marques() {
+function cpt_event() {
     $labels = array(
-        'name'              => 'Marques',
-        'singular_name'     => 'Marque',
-        'search_items'      => 'Rechercher des marques',
-        'all_items'         => 'Toutes les marques',
-        'parent_item'       => 'Marque parente',
-        'parent_item_colon' => 'Marque parente :',
-        'edit_item'         => 'Modifier la marque',
-        'update_item'       => 'Mettre à jour la marque',
-        'add_new_item'      => 'Ajouter une nouvelle marque',
-        'new_item_name'     => 'Nom de la nouvelle marque',
-        'menu_name'         => 'Marques',
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'show_in_rest'      => true,
-        'query_var'         => true,
-        'rewrite'           => array('slug' => 'marque'),
-    );
-
-    register_taxonomy('marque', array('temoignage'), $args);
-}
-add_action('init', 'taxo_marques');
-
-
-function cpt_team() {
-    $labels = array(
-        'name'               => 'Team',
-        'singular_name'      => 'Team',
-        'menu_name'          => 'Team',
-        'name_admin_bar'     => 'Team',
-        'add_new'            => 'Ajouter un nouveau',
-        'add_new_item'       => 'Ajouter un nouveau membre',
-        'new_item'           => 'Nouveau membre',
-        'edit_item'          => 'Modifier le membre',
-        'view_item'          => 'Voir le membre',
-        'all_items'          => 'Tous les membres',
-        'search_items'       => 'Rechercher des membres',
-        'not_found'          => 'Aucun membre trouvé',
-        'not_found_in_trash' => 'Aucun membre dans la corbeille'
+        'name'               => 'Évènements',
+        'singular_name'      => 'Évènement',
+        'menu_name'          => 'Évènements',
+        'name_admin_bar'     => 'Évènements',
+        'add_new'            => 'Ajouter un nouveau évènement',
+        'add_new_item'       => 'Ajouter un nouveau évènement',
+        'new_item'           => 'Nouvel événement',
+        'edit_item'          => 'Modifier l\'évènement',
+        'view_item'          => 'Voir l\'évènement',
+        'all_items'          => 'Tous les évènements',
+        'search_items'       => 'Rechercher des évènements',
+        'not_found'          => 'Aucun évènement trouvé',
+        'not_found_in_trash' => 'Aucun évènement dans la corbeille'
     );
 
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => false,
-        'publicly_queryable' => false,
-        'rewrite'            => array('slug' => 'equipe'),
-        'publicly_queryable' => true,
-        'supports'           => array('title', 'thumbnail', 'excerpt', 'custom-fields'),
-        'menu_icon'          => 'dashicons-admin-users',
-    );
-
-    register_post_type('team', $args);
-}
-add_action('init', 'cpt_team');
-
-
-function cpt_services() {
-    $labels = array(
-        'name'               => 'Services',
-        'singular_name'      => 'Service',
-        'menu_name'          => 'Services',
-        'name_admin_bar'     => 'Services',
-        'add_new'            => 'Ajouter un service',
-        'add_new_item'       => 'Ajouter un nouveau service',
-        'new_item'           => 'Nouveau service',
-        'edit_item'          => 'Modifier l\'service',
-        'view_item'          => 'Voir l\'service',
-        'all_items'          => 'Tous les services',
-        'search_items'       => 'Rechercher des services',
-        'not_found'          => 'Aucun service trouvé',
-        'not_found_in_trash' => 'Aucun service dans la corbeille'
-    );
-
-    register_taxonomy('services', ['team'], [
-        'labels' => $labels,
-        'hierarchical' => false,
-        'public' => true,
-        'rewrite' => ['slug' => 'services'],
-        'show_admin_column' => true,
-    ]);
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => false,
-        'publicly_queryable' => true,
+        'has_archive'        => true,
+        'show_in_admin_bar'  => true,
+        'rewrite'            => array(
+            'slug'       => 'evenements',
+            'with_front' => false,
+            'pages'      => true,
+        ),
         'show_in_rest'       => true,
-        'supports'           => array('title', 'custom-fields', 'excerpt'),
-        'menu_icon'          => 'dashicons-shield',
+        'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+        'menu_icon'          => 'dashicons-editor-quote',
     );
 
-    register_post_type('services', $args);
+    register_post_type('event', $args);
 }
-add_action('init', 'cpt_services');
-*/
+add_action('init', 'cpt_event');
+
+
+function cpt_carriere() {
+
+    $labels = array(
+        'name'               => 'Carrières',
+        'singular_name'      => 'Carrière',
+        'menu_name'          => 'Carrières',
+        'name_admin_bar'     => 'Carrière',
+        'add_new'            => 'Ajouter',
+        'add_new_item'       => 'Ajouter une nouvelle carrière',
+        'new_item'           => 'Nouvelle carrière',
+        'edit_item'          => 'Modifier la carrière',
+        'view_item'          => 'Voir la carrière',
+        'all_items'          => 'Toutes les carrières',
+        'search_items'       => 'Rechercher des carrières',
+        'not_found'          => 'Aucune carrière trouvée',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'carriere'),
+        'show_in_rest'       => true,
+        'supports'           => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'menu_icon'          => 'dashicons-businessman',
+    );
+
+    register_post_type('carriere', $args);
+}
+add_action('init', 'cpt_carriere');
+
+
+function cpt_article() {
+    $labels = [
+        'name'          => 'Articles',
+        'singular_name' => 'Article',
+        'add_new_item'  => 'Ajouter un nouvel article',
+        'edit_item'     => 'Modifier l’article',
+        'all_items'     => 'Tous les articles',
+    ];
+    $args = [
+        'label'             => 'Articles',
+        'labels'            => $labels,
+        'public'            => true,
+        'has_archive'       => true,
+        'menu_position'      => 5,
+        'show_in_admin_bar' => true,
+        'show_in_menu'      => true,
+        'capability_type'   => 'post',
+        'rewrite'           => ['slug' => 'actualites'],
+        'show_in_rest'      => true,
+        'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    ];
+    register_post_type('article', $args);
+}
+add_action('init', 'cpt_article');
+
+
+function remove_default_posts_menu() {
+    remove_menu_page('edit.php'); // Supprime "Articles" du menu admin
+}
+add_action('admin_menu', 'remove_default_posts_menu');

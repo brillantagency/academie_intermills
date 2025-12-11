@@ -17,10 +17,10 @@ function starkers_script_enqueuer() {
 
     ### CSS ###
     wp_enqueue_style( 'bases-css', get_stylesheet_directory_uri() . '/dist/css/bases.min.css', array(), '1.0.0', 'screen' );
+    wp_enqueue_style( 'banner-css', get_stylesheet_directory_uri() . '/parts/acf/blocks/block_banner/block_banner.min.css', array(), '1.0.0', 'screen' );
 }
 
 add_action( 'wp_enqueue_scripts', 'starkers_script_enqueuer' );
-
 
 function enqueue_block_assets($block_name) {
     $dir = get_template_directory() . '/parts/acf/blocks/' . $block_name;

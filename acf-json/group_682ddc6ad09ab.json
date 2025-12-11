@@ -62,7 +62,7 @@
             "display": "seamless",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 0
+            "prefix_name": 1
         },
         {
             "key": "field_682ddc6ad3735",
@@ -254,27 +254,6 @@
             "save_options": 0
         },
         {
-            "key": "field_68f0b3ae48a5d",
-            "label": "Rotate image",
-            "name": "text_media_img_rotate",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "Yes",
-            "ui_off_text": "No",
-            "ui": 1
-        },
-        {
             "key": "field_6908689d13280",
             "label": "Animation content",
             "name": "text_media_animation_content",
@@ -292,6 +271,36 @@
                 "none": "No animation",
                 "left-opacity": "Left opacity",
                 "perspective": "Perspective"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_693050d340e4b",
+            "label": "Background color text",
+            "name": "text_media_bg_color_text",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "red": "Red",
+                "dark": "Dark"
             },
             "default_value": "none",
             "return_format": "value",
@@ -324,5 +333,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764353284
+    "modified": 1764786189
 }

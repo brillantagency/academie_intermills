@@ -1,0 +1,136 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.lastpost {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include tablet {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &_wrapper {
+        &_content {
+            grid-area: content;
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+
+            @include desktop {
+                margin-right: calc((100vw - 1400px) / 2 );
+            }
+        }
+
+        &_post {
+            grid-area: post;
+            min-width: 0;
+            overflow: hidden;
+
+            &_focus {
+                grid-area: focus;
+
+                .post_card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    position: relative;
+                    margin-top: 0;
+
+                    &_img {
+                        height: 100%;
+
+                        &_wrapper {
+                            position: absolute;
+                            z-index: 0;
+                            height: 100%;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            border-radius: 10px;
+                            overflow: hidden;
+
+                            &:before {
+                                content: "";
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                background: variables.$dark;
+                                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                            }
+                        }
+                    }
+
+                    &_title,
+                    &_excerpt,
+                    &_meta,
+                    &_readmore {
+                        color: variables.$white;
+                    }
+                }
+            }
+        }
+    }
+
+    &_layout {
+        display: grid;
+        gap: 20px;
+
+        @include desktop {
+            margin-left: calc((100vw - 1400px) / 2 );
+        }
+
+        &_focus {
+            grid-template-areas: 
+            "focus content content"
+            "focus post post";
+
+
+            .lastpost {
+                &_flex {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+
+                &_wrapper_content {
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+            }
+
+            .swiper {
+                &-button {
+                    &-wrapper {
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 10px;
+                    }
+
+                    &-prev,
+                    &-next {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        right: auto;
+                        bottom: auto;
+                        margin-top: initial;
+                    }
+                }
+            }
+        }
+
+        &_simple {
+            grid-template-areas: 
+            "content content content"
+            "post post post";
+        }
+    }
+}

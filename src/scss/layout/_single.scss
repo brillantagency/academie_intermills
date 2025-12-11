@@ -1,0 +1,56 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.single {
+    &_container {
+        max-width: 1014px;
+        background: variables.$white;
+        border-radius: 20px;
+        margin-top: -40px;
+        padding: 20px;
+        position: relative;
+        z-index: 5;
+    }
+    &_infos {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .cta {
+        transition: margin-left 0.3s ease;
+        
+        &:hover {
+            margin-left: -10px;
+            transition: margin-left 0.3s ease;
+        }
+    }
+
+    &_date {
+        color: variables.$grey;
+        margin: 0;
+    }
+
+    &_wrapper_tags_download {
+        display: flex;
+        gap: 10px;
+    }
+
+    &_tag {
+        background: variables.$lightgrey;
+        border-radius: 50rem;
+
+        &s {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            padding-left: 0;
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -7,6 +7,12 @@
     $contact_text              = get_sub_field('contact_text');
     $contact_link              = get_sub_field('contact_link');
 
+    // General
+    $contact_phone        = get_field('company_phone', 'option');
+    $contact_mail         = get_field('company_mail', 'option');
+    $contact_address      = get_field('company_address', 'option');
+    $contact_address_link = get_field('company_address_link', 'option');
+
 
     if(empty($contact_title)) {
         $map_title = get_field('contact_title', 'option');
@@ -29,15 +35,41 @@
 <section class="block_contact p-<?php echo $contact_padding; ?>">
     <div class="container <?php echo !empty($contact_animation_content)? 'animatable-js animatable-' . $contact_animation_content : '' ?>">
         <div class="contact_text_wrapper">
-            <?php if(!empty($contact_title)) : ?>
-            <h2 class="contact_title title">           
-                <?php echo $contact_title; ?>
-            </h2>
-            <?php endif; ?>
+            <div class="contact_text_wrapper_header">
+                <?php if(!empty($contact_title)) : ?>
+                <h2 class="contact_title title">           
+                    <?php echo $contact_title; ?>
+                </h2>
+                <?php endif; ?>
 
-            <?php if(!empty($contact_text)) : ?>
-            <div class="contact_text"><?php echo $contact_text; ?></div>
-            <?php endif; ?>
+                <?php if(!empty($contact_text)) : ?>
+                <div class="contact_text"><?php echo $contact_text; ?></div>
+                <?php endif; ?>
+            </div>
+
+
+            <div class="contact_infos_wrapper">
+                <?php if(!empty($contact_phone)) : ?>
+                <a href="<?php echo phoneClean($contact_phone); ?>" class="contact_infos">
+                    <span class="contact_infos_title"><?php echo __('Téléphone', 'brillant'); ?></span>
+                    <span><?php echo $contact_phone; ?></span>
+                </a>
+                <?php endif; ?>
+
+                <?php if(!empty($contact_mail)) : ?>
+                <a href="mailto:<?php echo $contact_mail; ?>" class="contact_infos">
+                    <span class="contact_infos_title"><?php echo __('Mail', 'brillant'); ?></span>
+                    <span><?php echo $contact_mail; ?></span>
+                </a>
+                <?php endif; ?>
+
+                <?php if(!empty($contact_address)) : ?>
+                <a href="<?php echo $contact_address_link; ?>" target="_blank" rel="noopener noreferrer" class="contact_infos">
+                    <span class="contact_infos_title"><?php echo __('Adresse', 'brillant'); ?></span>
+                    <span><?php echo $contact_address; ?></span>
+                </a>
+                <?php endif; ?>
+            </div>
         </div>
 
         <?php if(!empty($contact_form)) : ?>

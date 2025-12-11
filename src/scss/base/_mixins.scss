@@ -41,10 +41,8 @@
     }
 }
 
-@mixin font_title {
+@mixin font {
     font-family: 'roboto', sans-serif;
-    letter-spacing: 0.5px;
-    font-weight: 100;
 }
 
 //-------------------- Container --------------------//

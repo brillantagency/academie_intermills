@@ -1,0 +1,85 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.teaser_section {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include tablet {
+        padding-left:  40px;
+        padding-right:  40px;
+    }
+
+    .swiper {
+        position: relative;
+        height: 100%;
+
+        &-pagination {
+            display: none;
+        }
+    }
+
+    .teaser {
+        &_img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &_text_wrapper {
+            background: variables.$dark;
+            color: variables.$white;
+            padding: 20px;
+            border-radius: 30px;
+            z-index: 1;
+
+            @include desktop {
+                max-width: 33%;
+            }
+
+            @include large {
+                max-width: 50%;
+            }
+
+            .cta {
+                background: variables.$white;
+                color: variables.$dark;
+
+                &:hover {
+                    background: variables.$red;
+                    color: variables.$white;
+                }
+            }
+        }
+
+        &_title {
+            margin-top: 0;
+        }
+
+        &_media {
+            &_media_wrapper {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            &_wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+                padding: 30px;
+                border-radius: 30px;
+                justify-content: flex-start;
+
+                @include tablet {
+                    padding: 60px;
+                }
+            }
+        }
+    }
+}

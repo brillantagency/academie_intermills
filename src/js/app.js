@@ -98,11 +98,110 @@ function doAnimations() {
     });
 }
 
+function sliderBanner() {
+    const swiperContainer = document.querySelector('.banner_swiper-js');
+
+    const swiper = new Swiper(swiperContainer, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".banner_next",
+            prevEl: ".banner_prev",
+        },
+    });
+}
+
+function accordeons() {
+    const accordions = document.querySelectorAll('.accordeon');
+
+    accordions.forEach(acc => {
+        const content = acc.querySelector('.accordeon_text');
+
+        // Si actif au chargement → définir la hauteur
+        if (acc.classList.contains('active')) {
+            content.style.height = content.scrollHeight + "px";
+        }
+
+        const button = acc.querySelector('.accordeons_button-js');
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const isOpen = acc.classList.contains('active');
+
+            if (isOpen) {
+                acc.classList.remove('active');
+                content.style.height = 0;
+                return;
+            }
+
+            // Sinon → désactiver les autres (si tu veux mode "un seul ouvert")
+            // accordions.forEach(other => {
+            //     if (other !== acc) {
+            //         other.classList.remove('active');
+            //         other.querySelector('.accordeon_text').style.height = 0;
+            //     }
+            // });
+
+            acc.classList.add('active');
+            content.style.height = content.scrollHeight + "px";
+        });
+    });
+}
+
+function video_popup() {
+    const playBtns = document.querySelectorAll('.icon_play');
+    const modal    = document.querySelector('.video_modal');
+    
+    if(modal) {
+        const closeBtn = modal.querySelector('.video_modal_close');
+
+        playBtns.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+        });
+    
+
+        closeBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            // Stop video playback when closing
+            const iframe = modal.querySelector('iframe');
+            const video = modal.querySelector('video');
+
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = ''; 
+                iframe.src = src;
+            }
+
+            if (video) {
+                video.pause();
+            }
+        });
+
+        // fermer en cliquant en dehors du contenu
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeBtn.click();
+            }
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     menu_open();
     menu_close();
     initSmoothScroll();
+    accordeons();
     showMore();
+    sliderBanner();
+    video_popup();
     initCircleSlider(".team_circle_slider__swiper-js", ".team_circle_slider__pagination-js");
     initCircleSlider(".testimonials_circle_slider__swiper-js", ".testimonials_circle_slider__pagination-js");
 

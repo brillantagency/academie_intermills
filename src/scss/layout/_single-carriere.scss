@@ -1,0 +1,23 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.single_carriere {
+    &_container {
+        @include tablet {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+    }
+
+    &_infos_contact {
+        background-color: variables.$lightgrey;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 15px;
+
+        p {
+            margin: 0;
+        }
+    }
+}

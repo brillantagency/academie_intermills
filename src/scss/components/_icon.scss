@@ -1,0 +1,40 @@
+@use "../base/variables" as variables;
+
+.icon {
+    width: 37px;
+    border-style: solid;
+    border-color: variables.$dark;
+    border-width: 1px;
+    height: 37px;
+    padding: 9px 12px;
+    border-radius: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+
+    svg {
+        width: 11.969px;
+        height: 19px;
+
+        path,
+        line {
+            fill: variables.$dark;
+            stroke: variables.$dark;
+            transition: fill 0.3s ease, stroke 0.3s ease;
+        }
+    }
+
+    &:hover {
+        border-color: variables.$red;
+        transition: border-color 0.3s ease;
+
+        path, 
+        line {
+            fill: variables.$red;
+            stroke: variables.$red;
+            transition: fill 0.3s ease, stroke 0.3s ease;
+        }
+    }
+}

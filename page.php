@@ -5,6 +5,7 @@ require get_template_directory() . '/parts/header.php';
 
 <main class="main" role="main">
 <?php 
+$banner_type = 'page';
 include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php')); 
 
 if (have_posts()) :

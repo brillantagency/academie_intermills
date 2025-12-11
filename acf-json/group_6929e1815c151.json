@@ -21,11 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_6929e19c53911",
-            "label": "",
+            "key": "field_692e057b6c907",
+            "label": "Réassurances",
             "name": "reassurances",
             "aria-label": "",
-            "type": "clone",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,13 +34,59 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_6929df6be404f"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_692e05896c908",
+                    "label": "Number",
+                    "name": "number",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_692e057b6c907"
+                },
+                {
+                    "key": "field_692e059a6c909",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_692e057b6c907"
+                }
+            ]
         },
         {
             "key": "field_6929e18e5390f",
@@ -102,5 +148,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764353212
+    "modified": 1764624250
 }

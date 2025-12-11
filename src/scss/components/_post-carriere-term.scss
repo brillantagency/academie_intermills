@@ -1,0 +1,14 @@
+@use "../base/variables" as variables;
+
+.post_card_term {
+    border: 1px solid variables.$grey;
+    color: variables.$grey;
+    border-radius: 50rem;
+    padding: 5px 10px;
+
+    &s{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

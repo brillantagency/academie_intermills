@@ -125,7 +125,7 @@
 
             a {
                 text-decoration: none;
-                @include font_title;
+                @include font;
                 font-size: 2rem;
                 text-transform: uppercase;
             }

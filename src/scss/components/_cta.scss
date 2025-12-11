@@ -20,7 +20,7 @@
         background-color: variables.$red;
 
         &:hover {
-            background-color: variables.$darkred;
+            background-color: variables.$dark;
 
             .cta_arrow path {
                 stroke: variables.$white;
@@ -33,7 +33,7 @@
     }
 
     &_secondary {
-        background-color: variables.$darkred;
+        background-color: variables.$red;
         
         &:hover {
             background-color:variables.$dark;
@@ -71,6 +71,15 @@
 
         path {
             transition: stroke .3s ease;
+        }
+    }
+
+    &_link {
+        padding: 0;
+        color: variables.$grey;
+
+        .cta_arrow_up {
+            fill: variables.$grey;
         }
     }
 }

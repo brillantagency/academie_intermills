@@ -21,6 +21,201 @@
             "selected": 0
         },
         {
+            "key": "field_69384d7f2bf8b",
+            "label": "Select type",
+            "name": "breakingnews_select_tax",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "type_opportunite",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_69385200bf5a7",
+            "label": "Select post - Coaching et orientation",
+            "name": "breakingnews_select_post_orientation",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all post will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69384d7f2bf8b",
+                        "operator": "==",
+                        "value": "11"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "carriere"
+            ],
+            "post_status": "",
+            "taxonomy": [
+                "type_opportunite:coaching-orientation"
+            ],
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_693852ebaff96",
+            "label": "Select post - Formations",
+            "name": "breakingnews_select_post_formations",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all post will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69384d7f2bf8b",
+                        "operator": "==",
+                        "value": "9"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "carriere"
+            ],
+            "post_status": "",
+            "taxonomy": [
+                "type_opportunite:formations"
+            ],
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_69385304aff97",
+            "label": "Select post - Formations en alternance",
+            "name": "breakingnews_select_alternance",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all post will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69384d7f2bf8b",
+                        "operator": "==",
+                        "value": "10"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "carriere"
+            ],
+            "post_status": "",
+            "taxonomy": [
+                "type_opportunite:formations-en-alternance"
+            ],
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_693853c0aff98",
+            "label": "Select post - Offres emploi",
+            "name": "breakingnews_select_emploi",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all post will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69384d7f2bf8b",
+                        "operator": "==",
+                        "value": "8"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "carriere"
+            ],
+            "post_status": "",
+            "taxonomy": [
+                "type_opportunite:offres-demploi"
+            ],
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_69304cf5d7801",
+            "label": "Suptitle",
+            "name": "breakingnews_suptitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6929e1cc3d596",
             "label": "",
             "name": "breakingnews",
@@ -102,5 +297,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764353263
+    "modified": 1765303581
 }

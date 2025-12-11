@@ -21,6 +21,29 @@ html, body {
     margin: 0;
 }
 
+body > form.search-form {
+    width: 250px!important;
+
+    input {
+        border: 2px solid transparent;
+        padding: 15px 20px!important;
+        color: variables.$white;
+    }
+
+    .search-submit {
+        right: 2px;
+        top: 2px;
+    }
+
+    @include tablet {
+        transform: rotate(-90deg);
+        position: fixed;
+        right: 20px;
+        top: 50vh;
+        z-index: 5;
+    }
+}
+
 button {
     border: 0;
 }
@@ -137,12 +160,6 @@ blockquote::before {
     }
 }
 
-.img_wrapper_crop_form {
-    overflow: hidden;
-    border-radius: 50px;
-    border-bottom-right-radius: 0;
-}
-
 .social {
     ul {
         display: flex;
@@ -173,5 +190,47 @@ blockquote::before {
         max-height: 15px;
         height: 100%;
         fill: variables.$white
+    }
+}
+
+.pagination {
+    width: 100%;
+    margin-top: 50px;
+    
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+
+        .page-numbers {
+            border-radius: 50rem;
+            border: 1px solid variables.$grey;
+            padding: 18px;
+            text-decoration: none;
+            color: initial;
+            aspect-ratio: 1 / 1;
+            min-width: 40px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: variables.$lightgrey;
+                transition: background-color 0.3s ease;
+            }
+        }
+
+        .current {
+            background-color: variables.$lightgrey;
+            border: 1px solid variables.$lightgrey;
+        }
+
+        .prev {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
     }
 }

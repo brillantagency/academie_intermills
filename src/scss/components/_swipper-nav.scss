@@ -1,0 +1,30 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.swiper {
+    &-pagination {
+        &-bullet {
+            &-active {
+                background-color: variables.$red!important;
+            }
+        }
+    }
+    &-button {
+        &-prev,
+        &-next {
+            background: variables.$red;
+            border-radius: 50rem;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background: variables.$dark;
+                transition: background-color 0.2s ease;
+            }
+
+            svg {
+                fill : transparent!important;
+                width: 13px!important;
+            }
+        }
+    }
+}

@@ -3,19 +3,17 @@
 @use "components/menu" as *; 
 @use "components/form" as *; 
 @use "components/video" as *; 
-@use "components/circle-text" as *; 
-@use "components/circle-slider" as *; 
+@use "components/swipper-nav" as *; 
+@use "components/post" as *; 
+@use "components/accordeons" as *; 
 @use "components/lang" as *; 
+@use "components/post-pagination" as *; 
+@use "components/icon" as *; 
+@use "components/post-carriere-term" as *; 
 
 //------------------- Layout --------------------//
 @use "layout/footer" as *;
-
-//------------------- Blocks --------------------//
-//@use "blocks/block-contact" as *;
-//@use "blocks/block-services" as *;
-//@use "blocks/block-values" as *;
-//@use "blocks/block-team" as *;
-//@use "blocks/block-brands" as *;
-//@use "blocks/block-hihtlight-services" as *;
-//@use "blocks/block-testimonials" as *;
-//@use "blocks/block-text-media" as *;
+@use "layout/single" as *;
+@use "layout/single-carriere" as *;
+@use "layout/archive" as *;
+@use "layout/archive-carriere" as *;

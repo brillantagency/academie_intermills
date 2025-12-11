@@ -1,6 +1,6 @@
 {
     "key": "group_6929e11631492",
-    "title": "Block - Lastnews",
+    "title": "Block - Lastpost",
     "fields": [
         {
             "key": "field_6929e116e6c93",
@@ -23,7 +23,7 @@
         {
             "key": "field_6929e13ae6c96",
             "label": "",
-            "name": "lastnews",
+            "name": "lastpost",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -41,6 +41,105 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
+        },
+        {
+            "key": "field_69316deda2b38",
+            "label": "Post",
+            "name": "lastpost_post",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "article": "Articles",
+                "event": "Events"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_692de7c943148",
+            "label": "Select article",
+            "name": "lastpost_post_news",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all article will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69316deda2b38",
+                        "operator": "==",
+                        "value": "article"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "80",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_69316e5812f4d",
+            "label": "Select event",
+            "name": "lastpost_select_events",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "If nothing is selected, all article will be displayed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69316deda2b38",
+                        "operator": "==",
+                        "value": "event"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "80",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_6929e124e6c94",
@@ -63,7 +162,7 @@
         {
             "key": "field_6929e129e6c95",
             "label": "",
-            "name": "lastnews",
+            "name": "lastpost",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -81,6 +180,27 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
+        },
+        {
+            "key": "field_69316c08f8aad",
+            "label": "Layout",
+            "name": "lastpost_layout",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "All simple",
+            "ui_off_text": "First focus",
+            "ui": 1
         }
     ],
     "location": [
@@ -102,5 +222,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764353224
+    "modified": 1764848696
 }

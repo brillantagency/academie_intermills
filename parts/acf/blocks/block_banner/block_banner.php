@@ -1,73 +1,94 @@
 <?php
-    $banner_suptitle = get_field('banner_suptitle');
     $banner_title    = get_field('banner_title');
     $banner_content  = get_field('banner_content');
+    $banner_suptitle = get_field('banner_suptitle');
     $cta             = get_field('banner_button');
-
-    // Styles
-    $banner_padding  = get_field('banner_padding');
-    $cta_color       = get_field('banner_button_color');
+    $cta_color       = 'primary';
 
     // video
-    $media                  = get_sub_field('banner_video_bool');
-    $video_embed            = get_sub_field('banner_video_embed');
-    $video_upload           = get_sub_field('banner_video_upload');
-    $video_autoplay         = get_sub_field('banner_video_autoplay');
-    $video_loop             = get_sub_field('banner_video_loop');
-    $video_control          = get_sub_field('banner_video_control');
-    $text_media_gallery     = get_sub_field('banner_gallery');
+    $media                  = get_field('banner_media_video_bool');
+    $video_embed            = get_field('banner_media_video_embed');
+    $video_upload           = get_field('banner_media_video_upload');
+    $video_autoplay         = get_field('banner_media_video_autoplay');
+    $video_loop             = get_field('banner_media_video_loop');
+    $video_control          = get_field('banner_media_video_control');
+    $banner_gallery         = get_field('banner_media_gallery');
+
+    if($banner_type === 'single') {
+        if(empty($banner_title)) {
+            $banner_title = $single_banner_title;
+        }
+        if (empty($banner_gallery) || !is_array($banner_gallery) || count($banner_gallery) === 0) {
+            $banner_gallery = [$single_banner_gallery];
+        }
+    } else {
+        $page_single = false;
+    }
+
+
+    if(!empty($banner_gallery) && is_array($banner_gallery)) {
+        $count = count($banner_gallery);
+    }
 ?>
 
-<section class="banner p-<?php echo $banner_padding; ?>">
+<section class="banner p-top banner_<?php echo $banner_type; //Define on the page ?>">
     
-    <?php if(!empty($video_embed) or !empty($video_upload) or !empty($text_media_gallery)) : ?>
-    <div class="text_media_wrapper text_media_media_wrapper <?php echo !empty($text_media_animation_content)? 'animatable-js animatable-' . $text_media_animation_content : '' ?> <?php echo $text_media_img_rotate? 'text_media_wrapper_rotate' : '' ; ?>">
+    <?php if(!empty($video_embed) or !empty($video_upload) or !empty($banner_gallery)) : ?>
+    <div class="banner_wrapper banner_wrapper_media">
         <?php if(!$media) : ?>
-            <?php if ($count > 2) : ?>
-                <div class="swiper text_media_swiper-js">
-                    <div class="swiper-wrapper text_media_swiper-wrapper">
-                        <?php foreach ($text_media_gallery as $image): ?>
+                <div class="swiper banner_swiper-js">
+                    <div class="swiper-wrapper banner_swiper-wrapper">
+                        <?php foreach ($banner_gallery as $image): ?>
                             <div class="swiper-slide img_wrapper_crop_form">
                                 <img loading="lazy"
                                     src="<?php echo esc_url($image['url']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>"
-                                    class="text_media_img">
+                                    class="banner_img">
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <?php if ($count > 1) :
+                    $class_button_prev = 'banner_prev';
+                    $class_button_next = 'banner_next';
+                    include get_template_directory() . '/parts/components/swiper-nav.php';
+                    endif; ?>
                 </div>
-            <?php else : ?>
-                <?php foreach($text_media_gallery as $index => $gallery) : ?>
-                    <?php if(!empty($index === 0) or !empty($index === 1)) : ?>
-                        <div class="img_wrapper_crop_form <?php echo $index === 1? 'img_wrapper_crop_form_border' : ''; ?>">
-                            <img loading="lazy" class="text_media_img <?php echo $index === 1? 'text_media_img_small': ''; ?>" src="<?php echo $gallery['url']; ?>" alt="<?php echo $gallery['alt']; ?>" >
-                        </div>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
         <?php else :
             include get_template_directory() . '/parts/components/video.php';
         endif; ?>
+
+        <div class="container">
+            <div class="banner_wrapper banner_wrapper_content">
+                <?php
+                    if($banner_type === 'single') {
+                        if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+                            rank_math_the_breadcrumbs();
+                        }
+                    }
+                ?>
+
+                <?php if(!empty($banner_suptitle)) : ?>
+                <span class="banner_suptitle subtitle"><?php echo $banner_suptitle; ?></span>
+                <?php endif; ?>
+
+                <h1 class="banner_title">
+                    <?php echo $banner_title; ?>
+                </h1>
+
+                <?php if(!empty($banner_content)) : ?>
+                <div><?php echo $banner_content; ?></div>
+                <?php endif; ?>
+
+                <?php
+                
+                include(locate_template('parts/components/cta.php')); ?>
+
+                
+                <?php if($banner_type === 'homepage') {
+                    include(locate_template('parts/components/searchbar.php')); 
+                } ?>
+            </div>
+        </div>
     </div>
     <?php endif ?>
-
-
-    <div class="container">
-        <?php if(!empty($banner_suptitle)) : ?>
-        <span class="banner_suptitle subtitle"><?php echo $banner_suptitle; ?></span>
-        <?php endif; ?>
-
-        <h1 class="banner_title">
-            <?php echo $banner_title; ?>
-        </h1>
-
-        <?php if(!empty($banner_content)) : ?>
-        <div><?php echo $banner_content; ?></div>
-        <?php endif; ?>
-
-        <?php include(locate_template('parts/components/cta.php')); ?>
-    </div>
 </section>

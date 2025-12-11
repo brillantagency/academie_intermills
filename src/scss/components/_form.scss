@@ -39,7 +39,7 @@ form {
     textarea,
     select {
         padding: 20px!important;
-        border-radius: variables.$border_rounded!important;
+        border-radius: 5px!important;
         color: variables.$dark!important;
         border: 1px solid variables.$grey;
         transition: border .3s ease;;
@@ -80,6 +80,76 @@ form {
             height: 20px!important;
             padding: 0!important;
             border-radius: 5px!important;
+        }
+    }
+
+    &.search-form {
+        position: relative;
+        width: 300px;
+
+        .search-submit {
+            aspect-ratio: 1/1;
+            border-radius: 50rem;
+            width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 4px;
+            top: calc(50% - 22.5px);
+            transition: background-color 0.3s ease;
+
+            path {
+                transition: fill 0.3s ease;
+            }
+
+            &:hover {
+                background-color: variables.$red;
+                transition: background-color 0.3s ease;
+
+                path {
+                    fill: variables.$white;
+                    transition: fill 0.3s ease;
+                }
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 17px 20px!important;
+            background-color: rgba(0,0,0,0.5);
+            border: 2px solid variables.$white;
+            transition: border 0.3s ease;
+            border-radius: variables.$border_rounded!important;
+
+            &:focus {
+                border: 2px solid variables.$red;
+                transition: border 0.3s ease;
+            }
+
+            &::placeholder {
+                color: variables.$white;
+            }
+        }
+    }
+
+    &.form_contact {
+        .gfield_radio {
+            border-radius: 5px;
+            background-color: variables.$lightgrey;
+            flex-direction: row!important;
+            flex-wrap: wrap;
+            padding: 3px;
+            justify-content: space-around;
+
+            .gchoice {
+                border-radius: 10px;
+                padding: 10px;;
+
+                input {
+                    appearance: none;
+                }
+            }
         }
     }
 }

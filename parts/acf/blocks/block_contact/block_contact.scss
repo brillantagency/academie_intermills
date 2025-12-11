@@ -7,13 +7,13 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr;
-		background-color: variables.$grey;
+		background-color: variables.$lightgrey;
 		flex-direction: column;
 		padding: 10px;
 		border-radius: 20px;
 
 		@include tablet {
-			max-width: 950px;
+			max-width: 1200px;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr;
 		}
@@ -25,6 +25,9 @@
 		}
 
 		&_text_wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			padding: 40px;
 		}
 
@@ -40,6 +43,40 @@
 				form {
 					margin-top: 50px;
 				}
+			}
+		}
+
+		&_infos {
+			padding: 15px;
+			border-radius: 10px;
+			background-color: variables.$white;
+			text-align: center;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			color: variables.$grey;
+			font-size: 12px;
+			width: 140px;
+
+			span:not(.contact_infos_title) {
+				font-size: initial;
+				color: variables.$dark;
+				display: block;
+				margin-top: 15px;
+			}
+
+			img {
+				width: 30px;
+				height: 30px;
+				display: block;
+			}
+
+			&_wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
 			}
 		}
 	}
