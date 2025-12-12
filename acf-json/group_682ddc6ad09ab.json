@@ -300,7 +300,8 @@
             "choices": {
                 "none": "None",
                 "red": "Red",
-                "dark": "Dark"
+                "dark": "Dark",
+                "lightgrey": "Lightgrey"
             },
             "default_value": "none",
             "return_format": "value",
@@ -333,5 +334,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764786189
+    "modified": 1765538986
 }

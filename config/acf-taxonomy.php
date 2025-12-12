@@ -56,3 +56,17 @@ function tax_contrat() {
     ));
 }
 add_action('init', 'tax_contrat');
+
+
+function tax_public() {
+
+    register_taxonomy('public', ['article', 'temoignage', 'event'], array(
+        'label'             => 'Public',
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'rewrite'           => array('slug' => 'public'),
+    ));
+}
+add_action('init', 'tax_public');

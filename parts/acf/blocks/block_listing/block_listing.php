@@ -2,95 +2,100 @@
     $filename = pathinfo($file, PATHINFO_FILENAME);
     enqueue_block_assets($filename);
 
-    $teaser_title          = get_sub_field('teaser_title');
-    $teaser_content        = get_sub_field('teaser_text');
-    $teaser_link           = get_sub_field('teaser_link');
+    $listing_title   = get_sub_field('listing_title');
 
     //Styles
-    $teaser_padding           = get_sub_field('teaser_padding'); 
-    $teaser_active            = get_sub_field('teaser_active');
-    $teaser_animation_content = get_sub_field('teaser_animation_content');
+    $listing_padding  = get_sub_field('listing_padding'); 
+    $listing_active   = get_sub_field('listing_active');
 
-    // video
-    $media                  = get_sub_field('teaser_media_video_bool');
-    $video_embed            = get_sub_field('teaser_media_video_embed');
-    $video_upload           = get_sub_field('teaser_media_video_upload');
-    $video_autoplay         = get_sub_field('teaser_media_video_autoplay');
-    $video_loop             = get_sub_field('teaser_media_video_loop');
-    $video_control          = get_sub_field('teaser_media_video_control');
-    $teaser_gallery         = get_sub_field('teaser_media_gallery');
+    if(empty($listing_title)) {
+        $listing_title = get_field('listing_title', 'option');
+    }
 
-    if(!empty($teaser_title) || !empty($teaser_content)) {
+    if(!empty($listing_title)) {
         $tag = 'section';
     } else {
         $tag = 'div';
     }
 
-    if(!empty($teaser_gallery)) {
-        $count = count($teaser_gallery);
-        $video_cover = $teaser_gallery[0];
-    } else {
-        $video_cover = '';
-    }
+    $args = [
+        'post_type'      => 'entreprise',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'post_status'    => 'publish',
+    ];
 
-    if($teaser_active) :
+    $post_query = new WP_Query($args);
+
+    if ($post_query->have_posts() && $listing_active) :
 ?>
 
-<<?php echo $tag; ?> class="teaser_section p-<?php echo $teaser_padding; ?>">
-    <?php if(!empty($video_embed) or !empty($video_upload) or !empty($teaser_gallery)) : ?>
-    <div class="teaser_wrapper teaser_media_wrapper <?php echo !empty($teaser_animation_content)? 'animatable-js animatable-' . $teaser_animation_content : '' ?>">
-        <div class="teaser_media_media_wrapper">
-        <?php if(!$media) : ?>
-            <?php if ($count > 2) : ?>
-                <div class="swiper teaser_swiper-js">
-                    <div class="swiper-wrapper teaser_swiper-wrapper">
-                        <?php foreach ($teaser_gallery as $image): ?>
-                            <div class="swiper-slide teaser_img_wrapper">
-                                <img loading="lazy"
-                                    src="<?php echo esc_url($image['url']); ?>"
-                                    alt="<?php echo esc_attr($image['alt']); ?>"
-                                    class="teaser_img">
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php include get_template_directory() . '/parts/components/swiper-nav.php'; ?>
-                </div>
-            <?php else : ?>
-                <?php foreach($teaser_gallery as $index => $gallery) : ?>
-                    <?php if(!empty($index === 0) or !empty($index === 1)) : ?>
-                        <div class="teaser_img_wrapper">
-                            <img loading="lazy" class="teaser_img <?php echo $index === 1? 'teaser_img_small': ''; ?>" src="<?php echo $gallery['url']; ?>" alt="<?php echo $gallery['alt']; ?>" >
+<<?php echo $tag; ?> class="listing_section container p-<?php echo $listing_padding; ?>">
+
+    <?php if(!empty($listing_title)): ?>
+    <h2 class="listing_title h3"><?php echo $listing_title; ?></h2>
+    <?php endif; ?>
+
+    <form class="listing_select_form">
+        <select id="listing_select">
+            <?php foreach ($post_query->posts as $post) : 
+                setup_postdata($post); 
+                $slug  = $post->post_name;   
+                $title = get_the_title();    
+            ?>
+                <option value="<?php echo $slug; ?>"><?php echo $title; ?></option>
+            <?php endforeach; wp_reset_postdata(); ?>
+        </select>
+    </form>
+
+    <table class="listing listing_table">
+        <thead>
+            <tr>
+            <th><?php echo __('SOCIÉTÉ', 'brillant'); ?></th>
+            <th><?php echo __('CONTACT', 'brillant'); ?></th>
+            <th><?php echo __('TÉLÉPHONE', 'brillant'); ?></th>
+            <th><?php echo __('EMAIL','brillant');?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($post_query->posts as $post) : 
+                setup_postdata($post);
+                $slug          = $post->post_name;    
+                $title         = get_the_title();    
+                $contact_mail  = get_field('entreprise_contact_mail');    
+                $contact_phone = get_field('entreprise_contact_phone');    
+                $thumbnail     = get_field('entreprise_contact_thumbnail');    
+                $contact_name  = get_field('entreprise_contact_name');    
+            ?>
+                <tr data-value="<?php echo $slug; ?>" class="listing_company_row">
+                    <?php if(!empty($title) or !empty($thumbnail)) : ?>
+                    <td class="listing_company_row_title">
+                        <?php if(!empty($thumbnail)) : ?>
+                        <div class="listing_img_wrapper">
+                            <img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>">
                         </div>
+                        <?php endif; ?>
+                        
+                        <?php echo $title; ?>
+                    </td>
                     <?php endif; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        <?php else :
-            include get_template_directory() . '/parts/components/video.php';
-        endif; ?>
-        </div>
 
+                    <?php if(!empty($contact_name)) : ?>
+                    <td class="listing_company_row_name"><?php echo $contact_name; ?></td>
+                    <?php endif; ?>
 
+                    <?php if(!empty($contact_phone)) : ?>
+                    <td class="listing_company_row_phone"><a href="tel:<?php echo clean_phone_number($contact_phone); ?>"><?php echo $contact_phone; ?></a></td>
+                    <?php endif; ?>
 
-        <?php if(!empty($teaser_title) || !empty($teaser_content)): ?>
-        <div class="teaser_wrapper <?php echo !empty($teaser_animation_media)? 'animatable-js animatable-' . $teaser_animation_media : '' ?> teaser_text_wrapper">
+                    <?php if(!empty($contact_mail)) : ?>
+                    <td class="listing_company_row_mail"><a href="mailto:<?php echo $contact_mail; ?>"><?php echo $contact_mail; ?></a></td>
+                    <?php endif; ?>
+                </tr>
+            <?php endforeach; wp_reset_postdata(); ?>
+        </tbody>
+    </table>
 
-            <?php if(!empty($teaser_title)): ?>
-            <h2 class="teaser_title title"><?php echo $teaser_title; ?></h2>
-            <?php endif; ?>
-
-            <?php if(!empty($teaser_content)): ?>
-            <div class="teaser_text"><?php echo $teaser_content; ?></div>
-            <?php endif; ?>
-
-            <?php if(!empty($teaser_link)):
-                $cta = $teaser_link;
-                $cta_color = 'primary';
-                include get_template_directory() . '/parts/components/cta.php';
-            endif; ?>
-        </div>
-        <?php endif; ?>
-
-    </div>
-    <?php endif ?>
 </<?php echo $tag; ?>>
 <?php endif; ?>

@@ -273,16 +273,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_6931a7cf24ce8": {
-                    "key": "layout_6931a7cf24ce8",
-                    "name": "block_promotion",
-                    "label": "Promotion",
+                "layout_693ad3262c9bc": {
+                    "key": "layout_693ad3262c9bc",
+                    "name": "block_listing",
+                    "label": "Listing",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6931a7cf24cea",
-                            "label": "Promotion",
-                            "name": "block_promotion",
+                            "key": "field_693ad3262c9be",
+                            "label": "Listing",
+                            "name": "block_listing",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -294,7 +294,39 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_6931a77a88e1d"
+                                "group_693ad22dad9d4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6931a7cf24ce8": {
+                    "key": "layout_6931a7cf24ce8",
+                    "name": "block_lastpromotion",
+                    "label": "Last promotion",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6931a7cf24cea",
+                            "label": "Promotion",
+                            "name": "block_lastpromotion",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_693bdae6c7c7f"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -339,6 +371,27 @@
                 "operator": "==",
                 "value": "carriere"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "promotion"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "archive-articles"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "archive-evenements"
+            }
         ]
     ],
     "menu_order": 0,
@@ -346,12 +399,10 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765273461
+    "modified": 1765557676
 }

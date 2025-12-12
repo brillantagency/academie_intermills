@@ -5,7 +5,6 @@
     $content    = get_the_content();
     $thumbnail  = get_field('post_thumbnail');
     $permalink  = get_permalink();
-    $categories = get_the_category();
 ?>
 <div class="swiper-slide post_card">
     <?php if(!empty($thumbnail)) : ?>
@@ -14,13 +13,9 @@
         </div>
     <?php endif; ?>
 
-    <?php if (!empty($categories)): ?>
-    <div class="post_card_tags">
-        <?php foreach ($categories as $category) : ?>
-            <span class="post_card_tag"><?php echo $category->name; ?></span>
-        <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
+    <?php
+    $taxonomies = ['public'];
+    include(locate_template('parts/components/post/post_term.php')); ?>
 
     <?php if(!empty($title)) : ?>
     <h3 class="post_card_title"><?php echo $title; ?></h3>

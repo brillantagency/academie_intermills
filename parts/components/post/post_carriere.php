@@ -22,7 +22,10 @@
             <h3 class="post_card_title"><?php echo $title; ?></h3>
             <?php endif; ?>
 
-            <?php include(locate_template('parts/components/post/post_term_carriere.php')); ?>
+            <?php 
+            $taxonomies = ['type_opportunite', 'region', 'secteur', 'contrat'];
+            include(locate_template('parts/components/post/post_term.php')); 
+            ?>
         </div>
 
         <?php if(!empty($excerpt)) : ?>

@@ -6,8 +6,6 @@
     $file                   = get_field('post_download_file');
     $single_link_archive    = get_field('archive_link_event', 'option');
     $page_single            = true;
-    $post_next              = get_field('link_next_event', 'option');
-    $post_prev              = get_field('link_previous_event', 'option');
 
     require get_template_directory() . '/parts/html-header.php';
     require get_template_directory() . '/parts/header.php';

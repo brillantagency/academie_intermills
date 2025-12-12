@@ -8,6 +8,31 @@
     $media                  = get_field('carriere_video');
     $file                   = get_field('carriere_file_download');
     $lang                   = get_field('carriere_language');
+    $company_contact_specific = get_field('company_contact');
+
+    // CPT "Entreprise"
+    $company            = get_field('carriere_select_company');
+    $entreprise_id      = $company->ID;
+    $name               = get_the_title($entreprise_id);
+    $contact_thumbnail  = get_field('entreprise_contact_thumbnail', $entreprise_id);
+
+    if(empty($company_contact_specific['mail'])) {
+        $contact_mail       = get_field('entreprise_contact_mail', $entreprise_id);
+    } else {
+        $contact_mail       = $company_contact_specific['mail'];
+    }
+
+    if(empty($company_contact_specific['name'])) {
+        $contact_name       = get_field('entreprise_contact_name', $entreprise_id);
+    } else {
+        $contact_name       = $company_contact_specific['name'];
+    }
+
+    if(empty($company_contact_specific['phone'])) {
+        $contact_phone      = get_field('entreprise_contact_phone', $entreprise_id);
+    } else {
+        $contact_phone      = $company_contact_specific['phone'];
+    }
 
     require get_template_directory() . '/parts/html-header.php';
     require get_template_directory() . '/parts/header.php';
@@ -18,7 +43,10 @@
 
     <div class="container single_carriere_container p-top">
         <div>
-            <?php include_once(locate_template('parts/components/post/post_term_carriere.php')); ?>
+            <?php 
+            $taxonomies = ['type_opportunite', 'region', 'secteur', 'contrat'];
+            include_once(locate_template('parts/components/post/post_term.php')); 
+            ?>
 
             <?php echo the_content(); ?>
 
@@ -26,15 +54,29 @@
         </div>
 
         <div class="single_carriere_encart">
-            <?php /*if(!empty($text_media_link)):
-                $cta = $text_media_link;
-                $cta_color = $text_media_link_color;
-                $page_single = false;
-                include get_template_directory() . '/parts/components/cta.php';
-            endif;*/ ?>
-
             <div class="single_carriere_infos_contact">
-                <p class="h3"><?php echo __('Information de contact', 'brillant'); ?></p>
+                <p class="h3 single_carriere_infos_contact_title"><?php echo __('Information de contact', 'brillant'); ?></p>
+
+                <?php if(!empty($contact_name)): ?>
+                <p class="single_carriere_infos_contact_name">
+                    <span><?php echo __('Nom de la personne de contact', 'brillant'); ?></span>
+                    <?php echo $contact_name; ?>
+                </p>
+                <?php endif; ?>
+
+                <?php if(!empty($contact_mail)): ?>
+                <p class="single_carriere_infos_contact_mail">
+                    <span><?php echo __('Email', 'brillant'); ?></span>
+                    <a href="mailto:<?php echo $contact_mail; ?>"><?php echo $contact_mail; ?></a>
+                </p>
+                <?php endif; ?>
+
+                <?php if(!empty($contact_phone)): ?>
+                <p class="single_carriere_infos_contact_phone">
+                    <span><?php echo __('Téléphone', 'brillant'); ?></span>
+                    <a href="tel:<?php echo clean_phone_number($contact_phone); ?>"><?php echo $contact_phone; ?></a>
+                </p>
+                <?php endif; ?>
             </div>
 
             <?php 

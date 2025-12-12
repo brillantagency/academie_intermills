@@ -1,0 +1,47 @@
+@use "../base/variables" as variables;
+
+.pagination {
+    width: 100%;
+    margin-top: 50px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .page-numbers {
+        border-radius: 50rem;
+        border: 1px solid variables.$grey;
+        padding: 18px;
+        text-decoration: none;
+        color: initial;
+        aspect-ratio: 1 / 1;
+        min-width: 40px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: variables.$lightgrey;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+    .current {
+        background-color: variables.$lightgrey;
+        border: 1px solid variables.$lightgrey;
+    }
+
+    .prev {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+}

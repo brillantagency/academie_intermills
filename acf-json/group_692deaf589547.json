@@ -64,6 +64,13 @@
                 "operator": "==",
                 "value": "event"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "promotion"
+            }
         ]
     ],
     "menu_order": 0,
@@ -76,5 +83,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765192183
+    "modified": 1765531707
 }

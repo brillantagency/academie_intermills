@@ -17,7 +17,7 @@ require get_template_directory() . '/parts/header.php';
     endif;
     ?>
 
-    <div class="container container_carriere_filter">
+    <div class="container container_carriere_filter p-both">
         <div class="archive_carriere_filter">
             <h3><?php echo __('Filtre', 'brillant'); ?></h3>
             <form method="GET" class="carriere-filters">
@@ -100,14 +100,7 @@ require get_template_directory() . '/parts/header.php';
                     <?php include get_template_directory() . '/parts/components/post/post_carriere.php'; ?>
                 <?php endwhile; ?>
 
-                <div class="pagination">
-                    <?php
-                    echo paginate_links([
-                        'total' => $query->max_num_pages,
-                        'current' => get_query_var('paged') ?: 1,
-                    ]);
-                    ?>
-                </div>
+                <?php include get_template_directory() . '/parts/components/post/posts_pagination.php'; ?>
 
                 <?php wp_reset_postdata(); ?>
             <?php else : ?>

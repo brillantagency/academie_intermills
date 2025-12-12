@@ -35,6 +35,34 @@ function menu_close() {
     });
 }
 
+function menu() {
+  const burgerButton = document.querySelector('.burger_button-js');
+  const burgerMenu = document.querySelector('.menu_burger');
+  const closeButton = document.createElement('button');
+
+  closeButton.classList.add('menu_burger_button_close');
+  closeButton.innerHTML = '×';
+  burgerMenu.appendChild(closeButton);
+
+  burgerButton.addEventListener('click', () => {
+    burgerMenu.classList.add('menu_burger_open');
+    document.body.classList.add('no-scroll');
+  });
+
+  closeButton.addEventListener('click', () => {
+    burgerMenu.classList.remove('menu_burger_open');
+    document.body.classList.remove('no-scroll');
+  });
+
+  // Optionnel : fermer au clic sur un lien
+  burgerMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burgerMenu.classList.remove('menu_burger_open');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+}
+
 function initSmoothScroll() {
     const header = document.querySelector('header');
 
@@ -194,12 +222,53 @@ function video_popup() {
     }
 }
 
+function newsletter_popup() {
+    const searchForm = document.querySelector('body > form.search-form');
+    const popup = document.getElementById('search_popup');
+    const closeBtn = document.getElementById('close_popup');
+
+    // Ouvrir la popup au clic
+    if(searchForm && popup) {
+        searchForm.addEventListener('click', function(e) {
+        e.preventDefault(); // Empêche le submit normal
+        popup.classList.add('active');
+        popup.querySelector('input').focus();
+        });
+    }
+
+    // Fermer la popup
+    if(closeBtn && popup) {
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('active');
+        });
+    }
+
+    // Fermer si clic en dehors
+    if(popup) {
+        window.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            popup.classList.remove('active');
+        }
+        });
+    }
+
+      // Fermer la popup si clic en dehors
+    document.addEventListener('click', function(e) {
+        const isClickInsideForm = searchForm.contains(e.target);
+        const isClickInsidePopup = popup.contains(e.target);
+
+        if (!isClickInsideForm && !isClickInsidePopup) {
+        popup.classList.remove('active');
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    menu_open();
-    menu_close();
     initSmoothScroll();
     accordeons();
+    newsletter_popup();
     showMore();
+    menu();
     sliderBanner();
     video_popup();
     initCircleSlider(".team_circle_slider__swiper-js", ".team_circle_slider__pagination-js");

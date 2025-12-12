@@ -67,8 +67,6 @@
                 $excerpt          = get_the_excerpt();
                 $date             = get_the_date();
                 $photo            = get_field('testimonials_image');
-
-
                 $noteStars = ''; 
                 $max_stars = 5;
                 for ($i = 1; $i <= $max_stars; $i++) {
@@ -96,7 +94,12 @@
                     </div>
                     <?php endif; ?>
 
-                    <div class="">
+                    <div >
+                        <?php 
+                        $taxonomies = ['public'];
+                        include(locate_template('parts/components/post/post_term.php')); 
+                        ?>
+
                         <?php if(!empty($name)) : ?>
                             <h3 class="testimonials_slide_author_name"><?php echo $name; ?></h3>
                         <?php endif; ?>

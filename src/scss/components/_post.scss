@@ -1,5 +1,4 @@
 @use "../base/variables" as variables;
-@use "../base/mixins" as *;
 
 .post {
     &_card {
@@ -10,7 +9,8 @@
         &_title,
         &_excerpt,
         &_meta,
-        &_tags {
+        &_tags,
+        &_readmore {
             position: relative;
             z-index: 1;
         }

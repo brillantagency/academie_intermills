@@ -88,6 +88,56 @@
             "delay": 0
         },
         {
+            "key": "field_693bf62b59bcc",
+            "label": "Background color",
+            "name": "banner_bg_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "darkred": "Darkred",
+                "darkgreen": "Darkgreen"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_693ad008eb747",
+            "label": "Searchbar \/ Button",
+            "name": "banner_search_bool",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Searchbar",
+            "ui_off_text": "Button",
+            "ui": 1
+        },
+        {
             "key": "field_68ee597111ff4",
             "label": "Button",
             "name": "banner_button",
@@ -95,9 +145,17 @@
             "type": "link",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_693ad008eb747",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -126,6 +184,27 @@
                 "operator": "==",
                 "value": "article"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "promotion"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "archive-articles"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "archive-evenements"
+            }
         ]
     ],
     "menu_order": 0,
@@ -138,5 +217,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764875790
+    "modified": 1765557685
 }

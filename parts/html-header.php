@@ -37,8 +37,6 @@
     <?php endif; ?>
 </head>
 <body> 
-    <?php include(locate_template('parts/components/searchbar.php')); ?>
-
     <?php if(!empty($script_body)) : ?>
         <?php echo $script_body; ?>   
     <?php endif; ?>

@@ -1,9 +1,9 @@
 {
-    "key": "group_6931a77a88e1d",
-    "title": "Block - Promotion",
+    "key": "group_693ad22dad9d4",
+    "title": "Block - Listing",
     "fields": [
         {
-            "key": "field_6931a77a2c38d",
+            "key": "field_693ad25f5ba9b",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,11 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_6931a82a2d2d0",
-            "label": "",
-            "name": "promotion",
+            "key": "field_693ad267930f5",
+            "label": "Title",
+            "name": "listing_title",
             "aria-label": "",
-            "type": "clone",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,16 +34,15 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_6929df6be404f"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_6931a78a2c38e",
+            "key": "field_693ad22e5ba99",
             "label": "Styles",
             "name": "",
             "aria-label": "",
@@ -61,9 +60,9 @@
             "selected": 0
         },
         {
-            "key": "field_6931a7912c38f",
+            "key": "field_693ad2415ba9a",
             "label": "",
-            "name": "promotion",
+            "name": "listing",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -102,5 +101,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764866212
+    "modified": 1765463052
 }

@@ -89,9 +89,15 @@
 
         &_focus {
             grid-template-areas: 
-            "focus content content"
-            "focus post post";
+            "content"
+            "focus"
+            "post";
 
+            @include tablet {
+                grid-template-areas: 
+                "focus content content"
+                "focus post post";
+            }
 
             .lastpost {
                 &_flex {

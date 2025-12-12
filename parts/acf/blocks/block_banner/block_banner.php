@@ -1,18 +1,35 @@
 <?php
-    $banner_title    = get_field('banner_title');
-    $banner_content  = get_field('banner_content');
-    $banner_suptitle = get_field('banner_suptitle');
-    $cta             = get_field('banner_button');
-    $cta_color       = 'primary';
+    if( is_post_type_archive() ) {
+        $option = 'option';
+    } else {
+        $option = null;
+    }
+
+    $banner_title       = get_field('banner_title', $option);
+    $banner_content     = get_field('banner_content', $option);
+    $banner_suptitle    = get_field('banner_suptitle', $option);
+    $banner_search_bool = get_field('banner_search_bool', $option);
+    $cta                = get_field('banner_button', $option);
 
     // video
-    $media                  = get_field('banner_media_video_bool');
-    $video_embed            = get_field('banner_media_video_embed');
-    $video_upload           = get_field('banner_media_video_upload');
-    $video_autoplay         = get_field('banner_media_video_autoplay');
-    $video_loop             = get_field('banner_media_video_loop');
-    $video_control          = get_field('banner_media_video_control');
-    $banner_gallery         = get_field('banner_media_gallery');
+    $media                  = get_field('banner_media_video_bool', $option);
+    $video_embed            = get_field('banner_media_video_embed', $option);
+    $video_upload           = get_field('banner_media_video_upload', $option);
+    $video_autoplay         = get_field('banner_media_video_autoplay', $option);
+    $video_loop             = get_field('banner_media_video_loop', $option);
+    $video_control          = get_field('banner_media_video_control', $option);
+    $banner_gallery         = get_field('banner_media_gallery', $option);
+    $banner_bg_color        = get_field('banner_bg_color', $option);
+
+
+    if(!$media && empty($banner_gallery)) {
+        if ($banner_bg_color === 'darkred') {
+            $banner_bg_color = 'banner_bg banner_bg_darkred';
+        }
+        elseif($banner_bg_color === 'darkgreen') {
+            $banner_bg_color = 'banner_bg banner_bg_darkgreen';
+        }
+    }
 
     if($banner_type === 'single') {
         if(empty($banner_title)) {
@@ -33,9 +50,8 @@
 
 <section class="banner p-top banner_<?php echo $banner_type; //Define on the page ?>">
     
-    <?php if(!empty($video_embed) or !empty($video_upload) or !empty($banner_gallery)) : ?>
-    <div class="banner_wrapper banner_wrapper_media">
-        <?php if(!$media) : ?>
+    <div class="banner_wrapper banner_wrapper_media <?php echo $banner_bg_color; ?>">
+        <?php if(!$media && !empty($banner_gallery)) : ?>
                 <div class="swiper banner_swiper-js">
                     <div class="swiper-wrapper banner_swiper-wrapper">
                         <?php foreach ($banner_gallery as $image): ?>
@@ -53,12 +69,12 @@
                     include get_template_directory() . '/parts/components/swiper-nav.php';
                     endif; ?>
                 </div>
-        <?php else :
+        <?php elseif($media && ($video_embed || $video_upload)) :
             include get_template_directory() . '/parts/components/video.php';
         endif; ?>
 
         <div class="container">
-            <div class="banner_wrapper banner_wrapper_content">
+            <div class="banner_wrapper_content">
                 <?php
                     if($banner_type === 'single') {
                         if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
@@ -79,16 +95,12 @@
                 <div><?php echo $banner_content; ?></div>
                 <?php endif; ?>
 
-                <?php
-                
-                include(locate_template('parts/components/cta.php')); ?>
-
-                
-                <?php if($banner_type === 'homepage') {
+                <?php if($banner_type === 'homepage' && $banner_search_bool) {
                     include(locate_template('parts/components/searchbar.php')); 
+                } else {
+                    $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
                 } ?>
             </div>
         </div>
     </div>
-    <?php endif ?>
 </section>

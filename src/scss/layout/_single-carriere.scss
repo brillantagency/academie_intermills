@@ -16,8 +16,30 @@
         padding: 20px;
         margin-bottom: 15px;
 
-        p {
-            margin: 0;
+        &_title {
+            margin-top: 0;
+        }
+
+        &_name,
+        &_mail,
+        &_phone {
+            margin-bottom: 10px;    
+        }
+
+        span {
+            display: block;
+            font-weight: bold;
+        }
+
+        a {
+            color: variables.$dark;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: variables.$red;
+                transition: color 0.3s ease;
+            }
         }
     }
 }

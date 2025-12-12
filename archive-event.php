@@ -10,14 +10,14 @@ require get_template_directory() . '/parts/header.php';
     ?>
 
     <?php 
-    if (have_posts()) :
-        while (have_posts()) : the_post();
-            include('parts/acf/acf_builder.php');
+    if( have_rows('page_builder', 'option') ):
+        while( have_rows('page_builder', 'option') ): the_row('page_builder', 'option');
+            include get_template_directory() . '/parts/acf/acf_builder.php';
         endwhile; wp_reset_postdata();
     endif;
     ?>
 
-    <div class="container">
+    <div class="container p-both">
         <div class="archive_post_grid">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
@@ -28,18 +28,7 @@ require get_template_directory() . '/parts/header.php';
             <?php endif; ?>
         </div>
 
-        <div class="pagination">
-            <?php
-                the_posts_pagination([
-                    'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                    <path d="M1 1L9 9L1 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>',
-                    'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                    <path d="M1 1L9 9L1 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>',
-                ]);
-            ?>
-        </div>
+        <?php include get_template_directory() . '/parts/components/post/posts_pagination.php'; ?>
     </div>
 </main>
 

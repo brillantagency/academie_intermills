@@ -56,7 +56,7 @@ function cpt_event() {
         'has_archive'        => true,
         'show_in_admin_bar'  => true,
         'rewrite'            => array(
-            'slug'       => 'evenements',
+            'slug'       => 'evenements-1',
             'with_front' => false,
             'pages'      => true,
         ),
@@ -68,6 +68,14 @@ function cpt_event() {
     register_post_type('event', $args);
 }
 add_action('init', 'cpt_event');
+
+
+
+
+
+
+
+
 
 
 function cpt_carriere() {
@@ -102,6 +110,18 @@ function cpt_carriere() {
 add_action('init', 'cpt_carriere');
 
 
+
+
+
+
+
+
+
+
+
+
+
+// ----------- CPT Articles -----------
 function cpt_article() {
     $labels = [
         'name'          => 'Articles',
@@ -110,8 +130,52 @@ function cpt_article() {
         'edit_item'     => 'Modifier l’article',
         'all_items'     => 'Tous les articles',
     ];
+
     $args = [
         'label'             => 'Articles',
+        'labels'            => $labels,
+        'public'            => true,
+        'has_archive'       => true,
+        'menu_position'     => 5,
+        'show_in_admin_bar' => true,
+        'show_in_menu'      => true,
+        'capability_type'   => 'post',
+        'rewrite'           => ['slug' => 'actualites-1'],
+        'show_in_rest'      => true,
+        'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    ];
+
+    register_post_type('article', $args);
+}
+add_action('init', 'cpt_article');
+
+// ----------- Supprimer le menu "Articles" par défaut -----------
+function remove_default_posts_menu() {
+    remove_menu_page('edit.php'); // Supprime "Articles" du menu admin
+}
+add_action('admin_menu', 'remove_default_posts_menu');
+
+
+
+
+
+
+
+
+
+
+
+
+function cpt_promotions() {
+    $labels = [
+        'name'          => 'Promotions',
+        'singular_name' => 'Promotion',
+        'add_new_item'  => 'Ajouter une nouvelle promotion',
+        'edit_item'     => 'Modifier la promotion',
+        'all_items'     => 'Tous les promotions',
+    ];
+    $args = [
+        'label'             => 'Promotions',
         'labels'            => $labels,
         'public'            => true,
         'has_archive'       => true,
@@ -119,16 +183,37 @@ function cpt_article() {
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'actualites'],
+        'rewrite'           => ['slug' => 'promotions'],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];
-    register_post_type('article', $args);
+    register_post_type('promotion', $args);
 }
-add_action('init', 'cpt_article');
+add_action('init', 'cpt_promotions');
 
 
-function remove_default_posts_menu() {
-    remove_menu_page('edit.php'); // Supprime "Articles" du menu admin
+
+function cpt_entreprises() {
+    $labels = [
+        'name'          => 'Entreprises',
+        'singular_name' => 'Entreprise',
+        'add_new_item'  => 'Ajouter une nouvelle entreprise',
+        'edit_item'     => 'Modifier la entreprise',
+        'all_items'     => 'Tous les entreprises',
+    ];
+    $args = [
+        'label'             => 'Entreprises',
+        'labels'            => $labels,
+        'public'            => true,
+        'has_archive'       => false,
+        'menu_position'      => 5,
+        'show_in_admin_bar' => true,
+        'show_in_menu'      => true,
+        'capability_type'   => 'post',
+        'rewrite'           => ['slug' => 'entreprises'],
+        'show_in_rest'      => true,
+        'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+    ];
+    register_post_type('entreprise', $args);
 }
-add_action('admin_menu', 'remove_default_posts_menu');
+add_action('init', 'cpt_entreprises');

@@ -13,7 +13,6 @@
 html, body {
 	font-family: variables.$font_text;
 	font-weight: 400;
-	overflow-x: hidden;
 	scroll-behavior: smooth;
 	font-size: variables.$text_normal;
     color: variables.$dark;
@@ -21,26 +20,9 @@ html, body {
     margin: 0;
 }
 
-body > form.search-form {
-    width: 250px!important;
-
-    input {
-        border: 2px solid transparent;
-        padding: 15px 20px!important;
-        color: variables.$white;
-    }
-
-    .search-submit {
-        right: 2px;
-        top: 2px;
-    }
-
-    @include tablet {
-        transform: rotate(-90deg);
-        position: fixed;
-        right: 20px;
-        top: 50vh;
-        z-index: 5;
+body {
+    &.no-scroll {
+        overflow: hidden;
     }
 }
 
@@ -193,44 +175,105 @@ blockquote::before {
     }
 }
 
-.pagination {
+.popup {
+    top: -200px;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
     width: 100%;
-    margin-top: 50px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: top 0.5s ease;
+
+    &_content {
+        padding: 100px 20px 20px 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 1200px;
+        text-align: center;
+    }
+
+    &.active {
+      top: 0;
+    }
+
+    &_close {
+        font-size: 40px;
+        position: absolute;
+        cursor: pointer;
+        right: 40px;
+        top: 20px;
+    }
+
+    form.search-form {
+        width: 100%!important;
+
+        input {
+            color: variables.$white!important;
+        }
+    }
+}
+
+footer + form.search-form {
+    width: 49px!important;
+    transition: width 0.3s ease;
+    z-index: 5;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    @include tablet {
+        //transform: rotate(-90deg);
+        right: 60px;
+        top: 50vh;
+        bottom: auto;
+    }
+
+    &:hover {
+        width: 280px!important;
+        transition: width 0.3s ease;
+
+        input {
+            opacity: 1!important;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    .search-submit {
+        right: 2px;
+        top: 2px;
+    }
+
+    input {
+        opacity: 0!important;
+        border: 2px solid transparent;
+        padding: 15px 50px 15px 20px!important;
+        color: variables.$white;
+        transition: opacity 0.3s ease;
+    }
+}
+
+.post_card_term {
+    font-size: 12px;
     
-    .nav-links {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-
-        .page-numbers {
-            border-radius: 50rem;
-            border: 1px solid variables.$grey;
-            padding: 18px;
-            text-decoration: none;
-            color: initial;
-            aspect-ratio: 1 / 1;
-            min-width: 40px;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: variables.$lightgrey;
-                transition: background-color 0.3s ease;
-            }
+    &.tag_post {
+        &_entreprise {
+            background-color: variables.$darkgreen;
+            border-color: variables.$darkgreen;
         }
 
-        .current {
-            background-color: variables.$lightgrey;
-            border: 1px solid variables.$lightgrey;
+        &_jeune {
+            background-color: variables.$darkred;
+            border-color: variables.$darkred;
         }
 
-        .prev {
-            svg {
-                transform: rotate(180deg);
-            }
+        &_jeune,
+        &_entreprise {
+            color: variables.$white;
         }
     }
 }

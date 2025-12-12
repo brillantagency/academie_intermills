@@ -25,6 +25,8 @@
         $text_media_bg_color_text = 'text_media_bg_color_text text_media_bg_color_text_red';
     } elseif($text_media_bg_color_text === 'dark') {
         $text_media_bg_color_text = 'text_media_bg_color_text text_media_bg_color_text_dark';
+    } elseif($text_media_bg_color_text === 'lightgrey') {
+        $text_media_bg_color_text = 'text_media_bg_color_text text_media_bg_color_text_lightgrey';
     } else {
         $text_media_bg_color_text = '';
     }

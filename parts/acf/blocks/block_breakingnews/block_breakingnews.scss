@@ -7,6 +7,12 @@
         padding: 20px;
         border-radius: 20px;
         width: fit-content;
+        z-index: 1;
+        position: relative;
+    }
+
+    .container {
+        max-width: 1200px;
     }
 
     .cta_link {
@@ -15,11 +21,6 @@
         .cta_arrow_up {
             fill: variables.$white;
         }
-    }
-
-    &_header {
-        z-index: 1;
-        position: relative;
     }
 
     &_title {
@@ -52,10 +53,6 @@
         .swiper-wrapper {
             display: flex;
         }
-    }
-
-
-    &_slide {
     }
 
     &_img_wrapper {

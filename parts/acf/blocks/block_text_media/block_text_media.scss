@@ -192,6 +192,18 @@
                     color: variables.$dark;
                 }
             }
+
+            &_lightgrey {
+                .text_media_text_wrapper {
+                    background-color: variables.$lightgrey;
+                    color: variables.$dark;
+                }
+
+                .cta {
+                    background-color: variables.$white;
+                    color: variables.$dark;
+                }
+            }
         }
     }
     /*.img_wrapper_crop_form_border {
