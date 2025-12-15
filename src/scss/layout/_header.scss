@@ -54,6 +54,14 @@
                 margin-bottom: 20px;
                 margin-top: 60px;
             }
+
+            ul {
+                flex-direction: column!important;
+            }
+
+            .menu_burger_nav_wrapper:not(:last-child) {
+                margin-bottom: 30px!important;
+            }
         }
     }
 
@@ -69,6 +77,8 @@
         ul {
             @include tablet {
                 justify-content: flex-end;
+                flex-wrap: wrap;
+                row-gap: 25px;
             }
         }
     }

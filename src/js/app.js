@@ -36,17 +36,21 @@ function menu_close() {
 }
 
 function menu() {
-  const burgerButton = document.querySelector('.burger_button-js');
+  const burgerButtons = document.querySelectorAll('.burger_button-js');
   const burgerMenu = document.querySelector('.menu_burger');
-  const closeButton = document.createElement('button');
 
+  if (!burgerMenu || burgerButtons.length === 0) return;
+
+  const closeButton = document.createElement('button');
   closeButton.classList.add('menu_burger_button_close');
   closeButton.innerHTML = '×';
   burgerMenu.appendChild(closeButton);
 
-  burgerButton.addEventListener('click', () => {
-    burgerMenu.classList.add('menu_burger_open');
-    document.body.classList.add('no-scroll');
+  burgerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      burgerMenu.classList.add('menu_burger_open');
+      document.body.classList.add('no-scroll');
+    });
   });
 
   closeButton.addEventListener('click', () => {

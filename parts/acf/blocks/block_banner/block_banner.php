@@ -9,7 +9,7 @@
     $banner_content     = get_field('banner_content', $option);
     $banner_suptitle    = get_field('banner_suptitle', $option);
     $banner_search_bool = get_field('banner_search_bool', $option);
-    $cta                = get_field('banner_button', $option);
+    $ctas               = get_field('banner_buttons', $option);
 
     // video
     $media                  = get_field('banner_media_video_bool', $option);
@@ -95,10 +95,14 @@
                 <div><?php echo $banner_content; ?></div>
                 <?php endif; ?>
 
+
+
                 <?php if($banner_type === 'homepage' && $banner_search_bool) {
                     include(locate_template('parts/components/searchbar.php')); 
                 } else {
-                    $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
+                    foreach($ctas as $cta):
+                        $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
+                    endforeach;
                 } ?>
             </div>
         </div>

@@ -30,7 +30,7 @@ require get_template_directory() . '/parts/header.php';
             // WP_Query pour le CPT 'article'
             $args = [
                 'post_type'      => 'article',
-                'posts_per_page' => 4,
+                'posts_per_page' => 12,
                 'paged'          => $paged,
             ];
             $articles_query = new WP_Query($args);

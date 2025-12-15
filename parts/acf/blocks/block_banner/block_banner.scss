@@ -23,6 +23,8 @@
 
     .swiper {
         &-pagination {
+            display: none;
+            
             &-bullet {
                 background-color: variables.$white!important;
                 opacity: 1!important;

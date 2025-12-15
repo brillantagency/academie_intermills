@@ -114,9 +114,17 @@
         }
 
         .cta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            &,
+            &.burger_button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-color: variables.$red;
+                &:hover {
+                    color: variables.$white;
+                    border-color: variables.$dark;
+                }
+            }
         }
     }
     

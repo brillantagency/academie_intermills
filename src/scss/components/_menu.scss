@@ -25,7 +25,6 @@
 
 .menu {
     &_burger {
-        display: block;
         position: fixed;
         top: 0;
         right: 0;
@@ -35,10 +34,6 @@
         background-color: rgba(255, 255, 255, 0.95);
         transform: translateX(100%);
         transition: transform 0.3s ease;
-
-        @include tablet {
-            display: none;
-        }
 
         &_open {
             transform: translateX(0);
