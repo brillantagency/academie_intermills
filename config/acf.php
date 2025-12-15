@@ -30,12 +30,23 @@ function my_acf_option_init() {
 
 		acf_add_options_page(
 				array(
-				'page_title'  => 'Archive Evènements',    // Titre de la page
-				'menu_title'  => 'Archive Evènements',    // Titre du menu
-				'menu_slug'   => 'archive-evenements',    // Slug
+				'page_title'  => 'Archive Evènements',
+				'menu_title'  => 'Archive Evènements',
+				'menu_slug'   => 'archive-evenements',
 				'capability'  => 'edit_posts',
 				'redirect'    => false,
-				'parent_slug' => 'edit.php?post_type=event' // ← sous-menu du CPT
+				'parent_slug' => 'edit.php?post_type=event'
+			)
+		);
+
+		acf_add_options_page(
+			array(
+				'page_title'  => 'Archive Carrières',
+				'menu_title'  => 'Archive Carrières',
+				'menu_slug'   => 'archive-carrieres',
+				'capability'  => 'edit_posts',
+				'redirect'    => false,
+				'parent_slug' => 'edit.php?post_type=carriere'
 			)
 		);
 	}

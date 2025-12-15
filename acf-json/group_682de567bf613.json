@@ -205,6 +205,13 @@
                 "operator": "==",
                 "value": "archive-evenements"
             }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "archive-carrieres"
+            }
         ]
     ],
     "menu_order": 0,
@@ -217,5 +224,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765557685
+    "modified": 1765798548
 }

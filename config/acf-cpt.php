@@ -56,7 +56,7 @@ function cpt_event() {
         'has_archive'        => true,
         'show_in_admin_bar'  => true,
         'rewrite'            => array(
-            'slug'       => 'evenements-1',
+            'slug'       => 'evenements',
             'with_front' => false,
             'pages'      => true,
         ),
@@ -140,7 +140,7 @@ function cpt_article() {
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'actualites-1'],
+        'rewrite'           => ['slug' => 'actualites'],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];
