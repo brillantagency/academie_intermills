@@ -100,9 +100,11 @@
                 <?php if($banner_type === 'homepage' && $banner_search_bool) {
                     include(locate_template('parts/components/searchbar.php')); 
                 } else {
-                    foreach($ctas as $cta):
-                        $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
-                    endforeach;
+                    if(!empty($ctas)) {
+                        foreach($ctas as $cta):
+                            $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
+                        endforeach;
+                    }
                 } ?>
             </div>
         </div>
