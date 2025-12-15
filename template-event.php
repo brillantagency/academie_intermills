@@ -33,10 +33,10 @@ require get_template_directory() . '/parts/header.php';
                 'posts_per_page' => 4,
                 'paged'          => $paged,
             ];
-            $articles_query = new WP_Query($args);
+            $events_query = new WP_Query($args);
 
-            if( $articles_query->have_posts() ):
-                while( $articles_query->have_posts() ): $articles_query->the_post();
+            if( $events_query->have_posts() ):
+                while( $events_query->have_posts() ): $events_query->the_post();
                     include get_template_directory() . '/parts/components/post/post.php';
                 endwhile;
 

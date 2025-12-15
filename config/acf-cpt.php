@@ -56,7 +56,7 @@ function cpt_event() {
         'has_archive'        => true,
         'show_in_admin_bar'  => true,
         'rewrite'            => array(
-            'slug'       => 'evenements',
+            'slug'       => 'evenements-1',
             'with_front' => false,
             'pages'      => true,
         ),
@@ -99,7 +99,7 @@ function cpt_carriere() {
         'labels'             => $labels,
         'public'             => true,
         'has_archive'        => true,
-        'rewrite'            => array('slug' => 'carriere'),
+        'rewrite'            => array('slug' => 'carriere-1'),
         'show_in_rest'       => true,
         'supports'           => ['title', 'editor', 'thumbnail', 'excerpt'],
         'menu_icon'          => 'dashicons-businessman',
@@ -140,7 +140,7 @@ function cpt_article() {
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'actualites'],
+        'rewrite'           => ['slug' => 'actualites-1'],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];

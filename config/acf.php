@@ -17,7 +17,7 @@ function my_acf_option_init() {
 			)
 		);
 
-		acf_add_options_page(
+		/*acf_add_options_page(
 			array(
 				'page_title'  => 'Archive Articles',    // Titre de la page
 				'menu_title'  => 'Archive Articles',    // Titre du menu
@@ -48,6 +48,6 @@ function my_acf_option_init() {
 				'redirect'    => false,
 				'parent_slug' => 'edit.php?post_type=carriere'
 			)
-		);
+		);*/
 	}
 }
