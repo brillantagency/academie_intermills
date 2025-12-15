@@ -10,6 +10,10 @@
         padding-right: 0;
     }
 
+    .swiper {
+        height: 100%;
+    }
+
     &_wrapper {
         &_content {
             grid-area: content;
@@ -25,10 +29,6 @@
             @include desktop {
                 margin-right: calc((100vw - 1400px) / 2 );
             }
-        }
-
-        .swiper {
-            height: 100%;
         }
 
         &_post {
