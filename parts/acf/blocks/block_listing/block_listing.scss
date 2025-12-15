@@ -48,13 +48,15 @@
                 display: block;
             }
 
-            th, td {
+            th, 
+            td {
                 border-bottom: 1px solid #ccc;
                 text-align: left;
                 padding: 15px 10px;
 
                 @include tablet {
                     display: table-cell;
+                    align-items: center;
                     width: auto;
                     padding: 25px 10px;
                 }

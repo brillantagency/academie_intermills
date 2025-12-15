@@ -1,37 +1,49 @@
 <?php 
-    $banner_type            = 'single';
-    $single_banner_title    = get_the_title();
-    $single_banner_gallery  = get_field('carriere_thumbnail');
-    $single_date            = get_the_date();
-    $single_link_archive    = get_field('archive_link_carriere', 'option');
-    $page_single            = true;
-    $media                  = get_field('carriere_video');
-    $file                   = get_field('carriere_file_download');
-    $lang                   = get_field('carriere_language');
+    $banner_type              = 'single';
+    $single_banner_title      = get_the_title();
+    $single_banner_gallery    = get_field('carriere_thumbnail');
+    $single_date              = get_the_date();
+    $single_link_archive      = get_field('archive_link_carriere', 'option');
+    $page_single              = true;
+    $media                    = get_field('carriere_video');
+    $file                     = get_field('carriere_file_download');
+    $lang                     = get_field('carriere_language');
     $company_contact_specific = get_field('company_contact');
 
     // CPT "Entreprise"
     $company            = get_field('carriere_select_company');
-    $entreprise_id      = $company->ID;
-    $name               = get_the_title($entreprise_id);
-    $contact_thumbnail  = get_field('entreprise_contact_thumbnail', $entreprise_id);
 
-    if(empty($company_contact_specific['mail'])) {
-        $contact_mail       = get_field('entreprise_contact_mail', $entreprise_id);
-    } else {
-        $contact_mail       = $company_contact_specific['mail'];
-    }
+    if (is_object($company) && !empty($company)) {
+        $entreprise_id      = $company->ID;
+        $name               = get_the_title($entreprise_id);
+        $contact_thumbnail  = get_field('entreprise_contact_thumbnail', $entreprise_id);
 
-    if(empty($company_contact_specific['name'])) {
-        $contact_name       = get_field('entreprise_contact_name', $entreprise_id);
-    } else {
-        $contact_name       = $company_contact_specific['name'];
-    }
+        if (!empty($company_contact_specific['mail'])) {
+            $contact_mail = $company_contact_specific['mail'];
+        } else {
+            $contact_mail = get_field('entreprise_contact_mail', $entreprise_id);
+        }
 
-    if(empty($company_contact_specific['phone'])) {
-        $contact_phone      = get_field('entreprise_contact_phone', $entreprise_id);
+        if (!empty($company_contact_specific['name'])) {
+            $contact_name = $company_contact_specific['name'];
+        } else {
+            $contact_name = get_field('entreprise_contact_name', $entreprise_id);
+        }
+
+        if (!empty($company_contact_specific['phone'])) {
+            $contact_phone = $company_contact_specific['phone'];
+        } else {
+            $contact_phone = get_field('entreprise_contact_phone', $entreprise_id);
+        }
+
     } else {
-        $contact_phone      = $company_contact_specific['phone'];
+        // Cas où $company est null ou invalide
+        $entreprise_id      = null;
+        $name               = null;
+        $contact_thumbnail  = null;
+        $contact_mail       = null;
+        $contact_name       = null;
+        $contact_phone      = null;
     }
 
     require get_template_directory() . '/parts/html-header.php';

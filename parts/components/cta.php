@@ -1,7 +1,7 @@
 <?php if(!empty($cta)) :  
     // Si on est sur une single page et que $cta['url'] est vide, fallback sur get_permalink()
-    $cta_url = !empty($cta['url']) ? $cta['url'] : ($page_single ? get_permalink() : '#');
-    $cta_title = !empty($cta['title']) ? $cta['title'] : __('Lire la suite', 'brillant');
+    $cta_url    = !empty($cta['url']) ? $cta['url'] : ($page_single ? get_permalink() : '#');
+    $cta_title  = !empty($cta['title']) ? $cta['title'] : __('Lire la suite', 'brillant');
     $cta_target = !empty($cta['target']) ? 'target="_blank" rel="noopener noreferrer"' : '';
 ?>
 
