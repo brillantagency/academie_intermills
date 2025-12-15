@@ -12,6 +12,9 @@
 
     .swiper {
         height: 100%;
+        &-pagination {
+            display: none;
+        }
     }
 
     &_wrapper {
