@@ -1,23 +1,17 @@
 <?php
 /*
-Template Name: Archive Article
+Template Name: Archive Carriere
 */
 
 require get_template_directory() . '/parts/html-header.php';
 require get_template_directory() . '/parts/header.php';
 ?>
 
-<main class="main archive archive_article" role="main">
+<main class="main archive archive_carriere" role="main">
 
     <?php 
     $banner_type = 'page';
     include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php'));
-
-    if (have_posts()) :
-        while (have_posts()) : the_post();
-            include('parts/acf/acf_builder.php');
-        endwhile; wp_reset_postdata();
-    endif;
     ?>
 
     <div class="container p-both">
@@ -27,9 +21,9 @@ require get_template_directory() . '/parts/header.php';
             // Pagination
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-            // WP_Query pour le CPT 'article'
+            // WP_Query pour le CPT 'carriere'
             $args = [
-                'post_type'      => 'article',
+                'post_type'      => 'carriere',
                 'posts_per_page' => 4,
                 'paged'          => $paged,
             ];
@@ -41,13 +35,23 @@ require get_template_directory() . '/parts/header.php';
                 endwhile;
 
                 wp_reset_postdata();
+
             else:
-                echo '<p>' . __('Aucun article trouvé.', 'brillant') . '</p>';
+                echo '<p>' . __('Aucun évènement trouvé.', 'brillant') . '</p>';
             endif;
             ?>
         </div>
-        <?php include get_template_directory() . '/parts/components/post/post_pagination_event_articles.php'; ?>
+        <?php include get_template_directory() . '/parts/components/post/post_pagination.php'; ?>
     </div>
+
+    <?php 
+        if (have_posts()) :
+            var_dump('ok');
+            while (have_posts()) : the_post();
+                include('parts/acf/acf_builder.php');
+            endwhile; wp_reset_postdata();
+        endif;
+    ?>
 </main>
 
 <?php 

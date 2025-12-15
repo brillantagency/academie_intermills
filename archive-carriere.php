@@ -9,14 +9,6 @@ require get_template_directory() . '/parts/header.php';
     include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php'));
     ?>
 
-    <?php 
-    if (have_posts()) :
-        while (have_posts()) : the_post();
-            include('parts/acf/acf_builder.php');
-        endwhile; wp_reset_postdata();
-    endif;
-    ?>
-
     <div class="container container_carriere_filter p-both">
         <div class="archive_carriere_filter">
             <h3><?php echo __('Filtre', 'brillant'); ?></h3>
@@ -108,6 +100,14 @@ require get_template_directory() . '/parts/header.php';
             <?php endif; ?>
         </div>
     </div>
+
+    <?php 
+    if( have_rows('page_builder', 'option') ):
+        while( have_rows('page_builder', 'option') ): the_row('page_builder', 'option');
+            include get_template_directory() . '/parts/acf/acf_builder.php';
+        endwhile; wp_reset_postdata();
+    endif;
+    ?>
 </main>
 
 <?php 

@@ -1,6 +1,5 @@
 <?php 
 if(!is_post_type_archive()) :
-
     if (have_rows('page_builder')) :
         while (have_rows('page_builder')) : the_row();
 
@@ -23,7 +22,6 @@ if(!is_post_type_archive()) :
     endif;
 
 else :
-
     $blocs = get_field('page_builder', 'option');
     if( $blocs ):
         // Boucle sur tous les blocs
