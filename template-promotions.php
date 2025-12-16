@@ -23,16 +23,29 @@ require get_template_directory() . '/parts/header.php';
 
     <div class="container p-both">
         <div class="archive_post_grid">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
-                    <?php include get_template_directory() . '/parts/components/post/post_promotion.php'; ?>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php echo __('Aucun événement trouvé.', 'brillant'); ?></p>
-            <?php endif; ?>
-        </div>
+            <?php
+            // Pagination
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-        <?php include get_template_directory() . '/parts/components/post/posts_pagination.php'; ?>
+            // WP_Query pour le CPT 'promotion'
+            $args = [
+                'post_type'      => 'promotion',
+                'posts_per_page' => 4,
+                'paged'          => $paged,
+            ];
+            $query = new WP_Query($args);
+
+            if( $query->have_posts() ):
+                while( $query->have_posts() ): $query->the_post();
+                    include get_template_directory() . '/parts/components/post/post.php';
+                endwhile;
+
+                wp_reset_postdata();
+
+            else:
+                echo '<p>' . __('Aucun évènement trouvé.', 'brillant') . '</p>';
+            endif;
+        ?>
     </div>
 </main>
 
