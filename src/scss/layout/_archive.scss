@@ -1,17 +1,32 @@
 @use "../base/mixins" as *;
 
 .archive {
-    &_post_grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+    &_post {
+        &_grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
 
-        @include tablet {
-            grid-template-columns: repeat(2, 1fr);
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include large {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
+    }
 
-        @include large {
-            grid-template-columns: repeat(4, 1fr);
+    .post_link-js {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease, padding 0.3s ease;
+        padding: 0;
+
+        &.post_active-js {
+            height: 100%;
+            padding: 20px;
+            transition: height 0.3s ease, padding 0.3s ease;
         }
     }
 }

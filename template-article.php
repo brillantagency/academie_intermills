@@ -21,9 +21,14 @@ require get_template_directory() . '/parts/header.php';
     ?>
 
     <div class="container p-both">
+        <?php 
+            $terms = ['public'];
+            include(locate_template('parts/components/post/post_filter.php'));
+        ?>
         <div class="archive_post_grid">
 
             <?php
+
             // Pagination
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -33,10 +38,10 @@ require get_template_directory() . '/parts/header.php';
                 'posts_per_page' => 12,
                 'paged'          => $paged,
             ];
-            $articles_query = new WP_Query($args);
+            $query = new WP_Query($args);
 
-            if( $articles_query->have_posts() ):
-                while( $articles_query->have_posts() ): $articles_query->the_post();
+            if( $query->have_posts() ):
+                while( $query->have_posts() ): $query->the_post();
                     include get_template_directory() . '/parts/components/post/post.php';
                 endwhile;
 

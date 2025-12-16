@@ -1,0 +1,28 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.post_filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &_btn {
+        padding: 10px 15px;
+        border-radius: 50rem;
+        background: variables.$white;
+        color: variables.$dark;
+        border: 1px solid variables.$lightgrey;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: variables.$lightgrey;
+        }
+
+        &.active {
+            background: variables.$lightgrey;
+            border-color: variables.$lightgrey;
+            transition: background 0.3s ease,;
+        }
+    }
+}

@@ -11,6 +11,7 @@
 @use "components/posts-pagination" as *; 
 @use "components/icon" as *; 
 @use "components/post-carriere-term" as *; 
+@use "components/post-filter" as *; 
 
 //------------------- Layout --------------------//
 @use "layout/footer" as *;

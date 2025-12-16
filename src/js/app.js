@@ -267,6 +267,28 @@ function newsletter_popup() {
     });
 }
 
+function postsFitler() {
+    const buttons = document.querySelectorAll('.post_filter_btn-js');
+    const posts = document.querySelectorAll('.post_link-js');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            posts.forEach(p => {
+                if (filter === 'all' || p.classList.contains(filter)) {
+                    p.classList.add('post_active-js');
+                } else {
+                    p.classList.remove('post_active-js');
+                }
+            });
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     accordeons();
@@ -274,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showMore();
     menu();
     sliderBanner();
+    postsFitler();
     video_popup();
     initCircleSlider(".team_circle_slider__swiper-js", ".team_circle_slider__pagination-js");
     initCircleSlider(".testimonials_circle_slider__swiper-js", ".testimonials_circle_slider__pagination-js");

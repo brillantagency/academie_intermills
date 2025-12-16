@@ -5,17 +5,24 @@
     $content    = get_the_content();
     $thumbnail  = get_field('post_thumbnail');
     $permalink  = get_permalink();
+
+    $taxonomy = 'public';
+    $post_terms = get_the_terms(get_the_ID(), $taxonomy);
+    $terms_classes = '';
+
+    if ($post_terms && !is_wp_error($post_terms)) {
+        $slugs = wp_list_pluck($post_terms, 'slug');
+        $terms_classes = implode(' ', $slugs);
+    }
 ?>
-<div class="swiper-slide post_card">
+<div class="swiper-slide post_card post_link-js post_active-js <?php echo esc_attr($terms_classes); ?>">
     <?php if(!empty($thumbnail)) : ?>
         <div class="post_card_img_wrapper">
             <img class="post_card_img" src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" loading="lazy">
         </div>
     <?php endif; ?>
 
-    <?php
-    $taxonomies = ['public'];
-    include(locate_template('parts/components/post/post_term.php')); ?>
+    <?php include(locate_template('parts/components/post/post_term.php')); ?>
 
     <?php if(!empty($title)) : ?>
     <h3 class="post_card_title"><?php echo $title; ?></h3>
