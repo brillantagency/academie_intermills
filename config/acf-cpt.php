@@ -183,7 +183,7 @@ function cpt_promotions() {
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'promotions'],
+        'rewrite'           => ['slug' => 'promotions-1'],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];
