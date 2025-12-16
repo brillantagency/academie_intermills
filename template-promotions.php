@@ -1,4 +1,8 @@
 <?php 
+/*
+Template Name: Archive Promotion
+*/
+
 require get_template_directory() . '/parts/html-header.php';
 require get_template_directory() . '/parts/header.php';
 ?>
