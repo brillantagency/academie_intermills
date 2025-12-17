@@ -28,9 +28,9 @@
             &_card {
                 background-color: transparent;
                 border: 1px solid variables.$grey;
+                flex-direction: row;
 
                 @include tablet {
-                    display: flex;
                     gap: 20px;
                 }
 
@@ -72,10 +72,8 @@
                 &_bottom {
                     display: flex;
                     flex-wrap: wrap;
-
-                    @include tablet {
-                        justify-content: space-between;
-                    }
+                    justify-content: space-between;
+                    align-items: center;
 
                     &_infos {
                         display: flex;

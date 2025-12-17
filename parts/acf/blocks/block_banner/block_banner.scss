@@ -10,11 +10,7 @@
     }
 
     &.p-top {
-        padding-top: 20px;
-
-        @include tablet {
-            margin-top: 50px;
-        }
+        margin-top: 80px;
     }
 
     form.search-form input {
