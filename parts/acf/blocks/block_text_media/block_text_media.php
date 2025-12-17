@@ -19,6 +19,9 @@
     $text_media_bg_color_text     = get_sub_field('text_media_bg_color_text');
 
     $media                        = get_sub_field('text_media_media_video_bool');
+    $video                        = get_sub_field('text_media_video');
+    $video_embed                  = $video['video_embed'];
+    $video_upload                 = $video['video_upload'];
     $text_media_gallery           = get_sub_field('text_media_media_gallery');
 
     if($text_media_bg_color_text === 'red') {

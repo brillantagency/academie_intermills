@@ -5,45 +5,39 @@
     $single_date              = get_the_date();
     $single_link_archive      = get_field('archive_link_carriere', 'option');
     $page_single              = true;
-    $media                    = get_field('carriere_video');
     $file                     = get_field('carriere_file_download');
     $lang                     = get_field('carriere_language');
     $company_contact_specific = get_field('company_contact');
 
-    // CPT "Entreprise"
-    $company            = get_field('carriere_select_company');
-
-    if (is_object($company) && !empty($company)) {
+    $company                  = get_field('carriere_select_company');
+    if (!empty($company)) {
         $entreprise_id      = $company->ID;
-        $name               = get_the_title($entreprise_id);
-        $contact_thumbnail  = get_field('entreprise_contact_thumbnail', $entreprise_id);
+        //$name               = get_the_title($entreprise_id);
+        //$contact_thumbnail  = get_field('entreprise_contact_thumbnail', $entreprise_id);
+    }
 
-        if (!empty($company_contact_specific['mail'])) {
-            $contact_mail = $company_contact_specific['mail'];
-        } else {
-            $contact_mail = get_field('entreprise_contact_mail', $entreprise_id);
-        }
-
-        if (!empty($company_contact_specific['name'])) {
-            $contact_name = $company_contact_specific['name'];
-        } else {
-            $contact_name = get_field('entreprise_contact_name', $entreprise_id);
-        }
-
-        if (!empty($company_contact_specific['phone'])) {
-            $contact_phone = $company_contact_specific['phone'];
-        } else {
-            $contact_phone = get_field('entreprise_contact_phone', $entreprise_id);
-        }
-
+    if (!empty($company_contact_specific['mail'])) {
+        $contact_mail = $company_contact_specific['mail'];
+    } elseif(!empty($company)) {
+        $contact_mail = get_field('entreprise_contact_mail', $entreprise_id);
     } else {
-        // Cas où $company est null ou invalide
-        $entreprise_id      = null;
-        $name               = null;
-        $contact_thumbnail  = null;
-        $contact_mail       = null;
-        $contact_name       = null;
-        $contact_phone      = null;
+        $contact_mail = null;
+    }
+
+    if (!empty($company_contact_specific['name'])) {
+        $contact_name = $company_contact_specific['name'];
+    } elseif(!empty($company)) {
+        $contact_name = get_field('entreprise_contact_name', $entreprise_id);
+    } else {
+        $contact_name = null;
+    }
+
+    if (!empty($company_contact_specific['phone'])) {
+        $contact_phone = $company_contact_specific['phone'];
+    } elseif(!empty($company)) {
+        $contact_phone = get_field('entreprise_contact_phone', $entreprise_id);
+    } else {
+        $contact_name = null;
     }
 
     require get_template_directory() . '/parts/html-header.php';
@@ -56,7 +50,15 @@
     <div class="container single_carriere_container p-top">
         <div>
             <?php 
+            $post_terms = [];
             $taxonomies = ['type_opportunite', 'region', 'secteur', 'contrat'];
+
+            foreach ($taxonomies as $taxonomy) {
+                $terms = get_the_terms(get_the_ID(), $taxonomy);
+                if ($terms && !is_wp_error($terms)) {
+                    $post_terms = array_merge($post_terms, $terms);
+                }
+            }
             include_once(locate_template('parts/components/post/post_term.php')); 
             ?>
 
@@ -66,6 +68,7 @@
         </div>
 
         <div class="single_carriere_encart">
+            <?php if(!empty($contact_name) or !empty($contact_mail) or !empty($contact_phone)) : ?>
             <div class="single_carriere_infos_contact">
                 <p class="h3 single_carriere_infos_contact_title"><?php echo __('Information de contact', 'brillant'); ?></p>
 
@@ -90,11 +93,14 @@
                 </p>
                 <?php endif; ?>
             </div>
+            <?php endif; ?>
 
             <?php 
                 include_once(locate_template('parts/components/file_download.php'));
 
-                $block_video = 'carriere'; include_once(locate_template('parts/components/play_video.php'));
+                $media       = get_field('carriere_video');
+                $block_video = 'carriere'; 
+                include_once(locate_template('parts/components/video_modal.php'));
             ?>
 
             <p class="single_date">

@@ -109,7 +109,7 @@
 
     &.banner_homepage .container {
         @include tablet {
-            min-height: 800px;
+            min-height: calc(100vh - 140px);
         }
     }
 

@@ -1,6 +1,19 @@
 @use "../base/variables" as variables;
 @use "../base/mixins" as *;
 
+.header.scrolled-js {
+    .header_nav_desktop {
+        .menu_burger_nav_wrapper:first-child {
+            @include tablet {
+                height: 0;
+                overflow: hidden;
+                position: absolute;
+                transition: height 0.3s ease;
+            }
+        }
+    }
+}
+
 .burger {
     &_button {
         border-radius: 50rem;
@@ -43,6 +56,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: auto;
+            transition: height 0.3s ease;
 
             li {
                 &:not(:last-child) {
@@ -64,6 +79,7 @@
 
             a {
                 text-decoration: none;
+                display: inline-block;
             }
 
             ul {

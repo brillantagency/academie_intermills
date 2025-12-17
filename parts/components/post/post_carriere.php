@@ -6,6 +6,8 @@
     $permalink   = get_permalink();
     $thumbnail   = get_field('carriere_thumbnail');
     $media       = get_field('carriere_video');
+    $video_embed = get_field('video_embed');
+    $video_upload= get_field('video_upload');
     $file        = get_field('carriere_file_download');
     $lang        = get_field('carriere_language');
 ?>
@@ -23,7 +25,14 @@
             <?php endif; ?>
 
             <?php 
+            $post_terms = [];
             $taxonomies = ['type_opportunite', 'region', 'secteur', 'contrat'];
+            foreach ($taxonomies as $taxonomy) {
+                $terms = get_the_terms(get_the_ID(), $taxonomy);
+                if ($terms && !is_wp_error($terms)) {
+                    $post_terms = array_merge($post_terms, $terms);
+                }
+            }
             include(locate_template('parts/components/post/post_term.php')); 
             ?>
         </div>
@@ -43,7 +52,7 @@
                 <span class="post_card_date"><?php echo $date; ?></span>
 
                 <?php 
-                $block_video = 'carriere'; include(locate_template('parts/components/play_video.php'));
+                $block_video = 'carriere'; include(locate_template('parts/components/video_modal.php'));
                 include(locate_template('parts/components/file_download.php'));
                 ?>
 

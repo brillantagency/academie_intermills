@@ -1,11 +1,9 @@
 <?php
-$taxonomy = 'public';
-$all_terms = get_the_terms(get_the_ID(), $taxonomy);
+if ($post_terms && !is_wp_error($post_terms)) :
 
-if ($all_terms && !is_wp_error($all_terms)) :
 ?>
     <div class="post_card_terms">
-        <?php foreach ($all_terms as $term) :
+        <?php foreach ($post_terms as $term) :
 
             $tag_class = '';
 
