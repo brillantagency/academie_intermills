@@ -11,6 +11,10 @@
 
     &.p-top {
         margin-top: 80px;
+
+        @include tablet {
+            margin-top: 100px;
+        }
     }
 
     form.search-form input {
