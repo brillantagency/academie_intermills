@@ -67,8 +67,8 @@
                 $excerpt          = get_the_excerpt();
                 $date             = get_the_date();
                 $photo            = get_field('testimonials_image');
-                $noteStars = ''; 
-                $max_stars = 5;
+                $noteStars        = ''; 
+                $max_stars        = 5;
                 for ($i = 1; $i <= $max_stars; $i++) {
                     if ($i <= $note) {
                         $noteStars .= '★';
@@ -96,7 +96,9 @@
 
                     <div >
                         <?php 
-                        $taxonomies = ['public'];
+                        $taxonomy = 'public';
+                        $post_terms = get_the_terms(get_the_ID(), $taxonomy);
+
                         include(locate_template('parts/components/post/post_term.php')); 
                         ?>
 
