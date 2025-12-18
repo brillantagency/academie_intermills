@@ -17,9 +17,9 @@
 ?>
 <div class="swiper-slide post_card post_link-js post_active-js <?php echo esc_attr($terms_classes); ?>">
     <?php if(!empty($thumbnail)) : ?>
-        <div class="post_card_img_wrapper">
+        <a href="<?php echo $permalink; ?>" class="post_card_img_wrapper">
             <img class="post_card_img" src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" loading="lazy">
-        </div>
+        </a>
     <?php endif; ?>
 
     <?php include(locate_template('parts/components/post/post_term.php')); ?>

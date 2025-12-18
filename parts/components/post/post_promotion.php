@@ -17,9 +17,9 @@
 ?>
 <div class="post_card">
     <?php if(!empty($thumbnail && !$is_last)) : ?>
-        <div class="post_card_img_wrapper">
+        <a href="<?php echo $permalink; ?>" class="post_card_img_wrapper">
             <img class="post_card_img" src="<?php echo esc_url($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" loading="lazy">
-        </div>
+        </a>
     <?php endif; ?>
 
     <div class="post_card_content_wrapper">

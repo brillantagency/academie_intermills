@@ -226,13 +226,6 @@ footer + form.search-form {
     right: 20px;
     bottom: 20px;
 
-    @include tablet {
-        //transform: rotate(-90deg);
-        right: 60px;
-        top: 50vh;
-        bottom: auto;
-    }
-
     &:hover {
         width: 280px!important;
         transition: width 0.3s ease;
@@ -252,7 +245,7 @@ footer + form.search-form {
         opacity: 0!important;
         border: 2px solid transparent;
         padding: 15px 50px 15px 20px!important;
-        color: variables.$white;
+        color: variables.$white!important;
         transition: opacity 0.3s ease;
     }
 }

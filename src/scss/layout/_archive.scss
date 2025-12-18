@@ -3,30 +3,31 @@
 .archive {
     &_post {
         &_grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            display: flex;
             gap: 20px;
-
-            @include tablet {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @include large {
-                grid-template-columns: repeat(4, 1fr);
-            }
         }
     }
 
     .post_link-js {
         height: 0;
+        width: 0;
         overflow: hidden;
-        transition: height 0.3s ease, padding 0.3s ease;
+        transition: height 0.3s ease, width 0.3s ease;
         padding: 0;
 
         &.post_active-js {
             height: 100%;
             padding: 20px;
-            transition: height 0.3s ease, padding 0.3s ease;
+            transition: height 0.3s ease, width 0.3s ease;
+            width: 100%;
+
+            @include tablet {
+                width: 50%;
+            }
+
+            @include large {
+                width: 25%;
+            }
         }
     }
 }

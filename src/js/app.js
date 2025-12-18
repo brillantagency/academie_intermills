@@ -226,7 +226,7 @@ function video_popup() {
     }
 }
 
-function newsletter_popup() {
+/*function newsletter_popup() {
     const searchForm = document.querySelector('body > form.search-form');
     const popup = document.getElementById('search_popup');
     const closeBtn = document.getElementById('close_popup');
@@ -265,7 +265,7 @@ function newsletter_popup() {
         popup.classList.remove('active');
         }
     });
-}
+}*/
 
 function postsFitler() {
     const buttons = document.querySelectorAll('.post_filter_btn-js');
@@ -292,7 +292,7 @@ function postsFitler() {
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     accordeons();
-    newsletter_popup();
+    //newsletter_popup();
     showMore();
     menu();
     sliderBanner();

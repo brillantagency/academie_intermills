@@ -76,7 +76,11 @@
                 .post_card_content_wrapper {
                     justify-content: flex-end;
                 }
-            }          
+            }  
+            
+            &_readmore {
+                text-decoration: none;
+            }
         }
     }
 }

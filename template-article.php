@@ -22,7 +22,7 @@ require get_template_directory() . '/parts/header.php';
 
     <div class="container p-both">
         <?php 
-            $terms = ['public'];
+            $terms = 'public';
             include(locate_template('parts/components/post/post_filter.php'));
         ?>
         <div class="archive_post_grid">
