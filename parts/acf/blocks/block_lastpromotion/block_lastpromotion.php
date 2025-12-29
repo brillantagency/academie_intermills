@@ -57,7 +57,7 @@ if ($post_query->have_posts() && $lastpost_promotion_active) :
     <div class="lastpost_promotion_wrapper_content">
         <div class="lastpost_promotion_wrapper_text">
             <?php if(!empty($lastpost_promotion_title)): ?>
-            <h2 class="lastpost_promotion_title h3"><?php echo $lastpost_promotion_title; ?></h2>
+            <h2 class="lastpost_promotion_title"><?php echo $lastpost_promotion_title; ?></h2>
             <?php endif; ?>
 
             <?php if(!empty($lastpost_promotion_text)): ?>

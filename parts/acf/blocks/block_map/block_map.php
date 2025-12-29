@@ -2,9 +2,9 @@
     $filename = pathinfo($file, PATHINFO_FILENAME);
     enqueue_block_assets($filename);
     
-    $map_title = get_field('map_title');
-    $map_text  = get_field('map_text');
-    $map_link  = get_field('map_link');
+    $map_title = get_sub_field('map_title');
+    $map_text  = get_sub_field('map_text');
+    $map_link  = get_sub_field('map_link');
 
     // Styles
     $map_active   = get_sub_field('map_active');
