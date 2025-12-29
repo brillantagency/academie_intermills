@@ -2,7 +2,7 @@
     $filename = pathinfo($file, PATHINFO_FILENAME);
     enqueue_block_assets($filename);
     
-    $reassurances_repeater  = get_field('reassurances');
+    $reassurances_repeater  = get_sub_field('reassurances');
 
     if(empty($reassurances_repeater)) {
         $reassurances_repeater = get_field('reassurances', 'option');
