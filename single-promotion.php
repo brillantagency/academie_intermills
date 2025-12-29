@@ -4,8 +4,12 @@
     $single_banner_gallery  = get_field('post_thumbnail');
     $single_date            = get_the_date();
     $file                   = get_field('post_download_file');
-    $single_link_archive    = get_field('archive_link_promotion', 'option');
+    $single_link            = get_field('promotion_link');
     $page_single            = true;
+
+    if(empty($single_link)) {
+        $single_link = get_field('archive_link_promotion', 'option');
+    }
 
     require get_template_directory() . '/parts/html-header.php';
     require get_template_directory() . '/parts/header.php';
@@ -16,9 +20,9 @@
 
     <div class="container single_container">
         <div class="single_infos">
-            <?php if(!empty($single_link_archive)) : ?>
-                <?php if(!empty($single_link_archive)):
-                    $cta = $single_link_archive;
+            <?php if(!empty($single_link)) : ?>
+                <?php if(!empty($single_link)):
+                    $cta = $single_link;
                     $cta_color = 'link';
                     include get_template_directory() . '/parts/components/cta.php';
                 endif; ?>

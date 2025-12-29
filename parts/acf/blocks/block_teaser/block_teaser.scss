@@ -34,6 +34,10 @@
             border-radius: 30px;
             z-index: 1;
 
+            a { 
+                color: variables.$white;
+            }
+
             @include desktop {
                 max-width: 33%;
             }

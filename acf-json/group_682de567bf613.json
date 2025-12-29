@@ -216,27 +216,6 @@
                 "operator": "==",
                 "value": "promotion"
             }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-options-generales"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-options-generales"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-options-generales"
-            }
         ]
     ],
     "menu_order": 0,
@@ -249,5 +228,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765805321
+    "modified": 1767031857
 }

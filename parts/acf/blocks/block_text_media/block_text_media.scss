@@ -191,6 +191,10 @@
                     background-color: variables.$white;
                     color: variables.$dark;
                 }
+
+                a {
+                    color: variables.$white;
+                }
             }
 
             &_lightgrey {
