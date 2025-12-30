@@ -166,3 +166,35 @@ form:not(#adminbarsearch) {
         }
     }
 }
+
+footer + form:not(#adminbarsearch).search-form {
+    width: 49px!important;
+    transition: width 0.3s ease;
+    z-index: 5;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    &:hover {
+        width: 280px!important;
+        transition: width 0.3s ease;
+
+        input {
+            opacity: 1!important;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    .search-submit {
+        right: 2px;
+        top: 2px;
+    }
+
+    input {
+        opacity: 0!important;
+        border: 2px solid transparent;
+        padding: 15px 50px 15px 20px!important;
+        color: variables.$white!important;
+        transition: opacity 0.3s ease;
+    }
+}
