@@ -7,7 +7,7 @@
     }
 }
 
-form {
+form:not(#adminbarsearch) {
     .gform {
         &_footer {
             display: flex;
