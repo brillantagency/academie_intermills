@@ -13,17 +13,6 @@
     $contact_address      = get_field('company_address', 'option');
     $contact_address_link = get_field('company_address_link', 'option');
 
-
-    if(empty($contact_title)) {
-        $map_title = get_field('contact_title', 'option');
-    } 
-    if(empty($contact_text)) {
-        $map_text = get_field('contact_text', 'option');
-    } 
-    if(empty($contact_link)) {
-        $map_cta = get_field('contact_link', 'option');
-    } 
-
     // Styles
     $contact_padding           = get_sub_field('contact_padding');
     $contact_active            = get_sub_field('contact_active');
