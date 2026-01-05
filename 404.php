@@ -12,7 +12,7 @@ $cta_color       = 'primary';
 <main class="main page-404 p-top-bottom" role="main">
     <section class="banner_page text-align-center container p-top">
         <span class="banner_page_suptitle"><?php echo $banner_suptitle; ?></span>
-        <div class="banner_page_title"><?php echo $banner_title; ?></div>
+        <h1 class="banner_page_title"><?php echo $banner_title; ?></h1>
         <div><?php echo $banner_content; ?></div>
         <?php $page_single = false; include(locate_template('parts/components/cta.php')); ?>
     </section>
