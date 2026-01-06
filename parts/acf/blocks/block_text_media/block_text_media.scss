@@ -179,6 +179,19 @@
 
                 .cta {
                     background-color: variables.$dark;
+
+                    &:hover {
+                        background-color: variables.$white;
+                        color: variables.$dark;
+
+                        path {
+                            stroke: variables.$red;
+                        }
+                    }
+                    
+                    path {
+                        stroke: variables.$white;
+                    }
                 }
             }
 
@@ -190,6 +203,19 @@
                 .cta {
                     background-color: variables.$white;
                     color: variables.$dark;
+
+                    &:hover {
+                        background-color: variables.$red;
+                        color: variables.$white;
+
+                        path {
+                            stroke: variables.$dark;
+                        }
+                    }
+                    
+                    path {
+                        stroke: variables.$dark;
+                    }
                 }
 
                 a {

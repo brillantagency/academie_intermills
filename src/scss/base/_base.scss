@@ -37,6 +37,14 @@ a {
     }
 }
 
+a {
+    color: variables.$red;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
 ul {
     list-style: outside;
     font-weight: 300;
