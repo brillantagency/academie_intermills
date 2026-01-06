@@ -1,6 +1,4 @@
-<?php if($media): 
-    
-    var_dump($video_upload);?>
+<?php if($media): ?>
 <div class="component_video">
     <?php if ($video_upload): ?>
         <iframe class="video"

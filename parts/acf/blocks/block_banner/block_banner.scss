@@ -17,8 +17,12 @@
         }
     }
 
-    form.search-form input {
-        color: variables.$white!important;
+    form.search-form {
+        margin-top: 30px;
+        
+        input {
+            color: variables.$white!important;
+        }
     }
 
     .swiper {

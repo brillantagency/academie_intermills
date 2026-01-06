@@ -22,6 +22,9 @@
     $video                        = get_sub_field('text_media_video');
     $video_embed                  = $video['video_embed'];
     $video_upload                 = $video['video_upload'];
+    $video_control                = $video['video_control'];
+    $video_autoplay               = $video['video_autoplay'];
+    $video_loop                   = $video['video_loop'];
     $text_media_gallery           = get_sub_field('text_media_media_gallery');
 
     if($text_media_bg_color_text === 'red') {

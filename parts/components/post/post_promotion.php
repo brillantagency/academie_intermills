@@ -36,7 +36,7 @@
         <div class="post_card_bottom">
             <?php if(!empty($permalink)): ?>
                 <a href="<?php echo $permalink; ?>" class="post_card_readmore">
-                    <?php echo __('Vers la promotion', 'brillant') ?>
+                    <?php echo __('Vers l\'action', 'brillant') ?>
                 </a>
             <?php endif; ?>
 

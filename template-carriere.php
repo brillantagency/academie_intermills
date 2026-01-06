@@ -17,6 +17,10 @@ require get_template_directory() . '/parts/header.php';
     include locate_template('parts/acf/blocks/block_banner/block_banner.php');
     ?>
 
+    <div class="container">
+        <?php echo get_the_content(); ?>
+    </div>
+
     <div class="container container_carriere_filter p-both">
         <div class="archive_carriere_filter">
             <h3><?php _e('Filtre', 'brillant'); ?></h3>

@@ -48,6 +48,10 @@
         transform: translateX(100%);
         transition: transform 0.3s ease;
 
+        @include tablet {
+            display: none;
+        }
+
         &_open {
             transform: translateX(0);
         }
