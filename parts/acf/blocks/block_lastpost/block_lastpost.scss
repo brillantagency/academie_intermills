@@ -146,4 +146,16 @@
             "post post post";
         }
     }
+
+    .post_card {
+        &_terms {
+            margin-bottom: 30px;
+            margin-top: -60px;
+            margin-left: 10px;
+        }
+
+        &_img_wrapper {
+            margin-bottom: 20px;
+        }
+    }
 }

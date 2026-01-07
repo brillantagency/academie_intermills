@@ -13,7 +13,7 @@ require get_template_directory() . '/parts/header.php';
     include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php'));
     ?>
 
-    <div class="container">
+    <div class="container p-top-bottom">
         <?php echo get_the_content(); ?>
     </div>
 
