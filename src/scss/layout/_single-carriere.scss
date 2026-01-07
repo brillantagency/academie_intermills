@@ -20,6 +20,12 @@
             margin-top: 0;
         }
 
+        &_logo {
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 20px;
+        }
+
         &_name,
         &_mail,
         &_phone {

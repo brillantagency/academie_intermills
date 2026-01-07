@@ -40,6 +40,22 @@
         $contact_name = null;
     }
 
+    if (!empty($company_contact_specific['name_company'])) {
+        $contact_name_company = $company_contact_specific['name_company'];
+    } elseif(!empty($company)) {
+        $contact_name_company = get_the_title($entreprise_id);
+    } else {
+        $contact_name = null;
+    }
+
+    if (!empty($company_contact_specific['logo'])) {
+        $contact_logo_company = $company_contact_specific['logo'];
+    } elseif(!empty($company)) {
+        $contact_logo_company = get_field('entreprise_contact_thumbnail', $entreprise_id);
+    } else {
+        $contact_name = null;
+    }
+
     require get_template_directory() . '/parts/html-header.php';
     require get_template_directory() . '/parts/header.php';
 ?>
@@ -70,7 +86,18 @@
         <div class="single_carriere_encart">
             <?php if(!empty($contact_name) or !empty($contact_mail) or !empty($contact_phone)) : ?>
             <div class="single_carriere_infos_contact">
+                <?php if(!empty($contact_logo_company)): ?>
+                    <img class="single_carriere_infos_contact_logo" width="150" src="<?php echo $contact_logo_company['url']; ?>" alt="<?php echo $contact_logo_company['alt']; ?>">
+                <?php endif; ?>
+
                 <p class="h3 single_carriere_infos_contact_title"><?php echo __('Information de contact', 'brillant'); ?></p>
+
+                <?php if(!empty($contact_name_company)): ?>
+                <p class="single_carriere_infos_contact_name_company">
+                    <span><?php echo __('Nom de l\'entreprise', 'brillant'); ?></span>
+                    <?php echo $contact_name_company; ?>
+                </p>
+                <?php endif; ?>
 
                 <?php if(!empty($contact_name)): ?>
                 <p class="single_carriere_infos_contact_name">
