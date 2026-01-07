@@ -5,6 +5,8 @@ Template Name: Archive Article
 
 require get_template_directory() . '/parts/html-header.php';
 require get_template_directory() . '/parts/header.php';
+$get_the_content = get_the_content();
+
 ?>
 
 <main class="main archive archive_article" role="main">
@@ -13,9 +15,11 @@ require get_template_directory() . '/parts/header.php';
     $banner_type = 'page';
     include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php')); ?>
 
-    <div class="container p-top-bottom">
-        <?php echo get_the_content(); ?>
+    <?php if(!empty($get_the_content)) : ?>
+    <div class="container p-both">
+        <?php echo $get_the_content; ?>
     </div>
+    <?php endif; ?>
 
     <?php if (have_posts()) :
         while (have_posts()) : the_post();

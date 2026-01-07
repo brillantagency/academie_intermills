@@ -11,7 +11,7 @@ include_once(locate_template('parts/acf/blocks/block_banner/block_banner.php'));
 
 <?php if(!empty($get_the_content)) : ?>
 <div class="container p-both">
-    <?php echo get_the_content(); ?>
+    <?php echo $get_the_content; ?>
 </div>
 <?php endif; ?>
 

@@ -5,6 +5,8 @@ Template Name: Archive Carriere
 
 require get_template_directory() . '/parts/html-header.php';
 require get_template_directory() . '/parts/header.php';
+$get_the_content = get_the_content();
+
 ?>
 
 <main class="main archive archive_carriere" role="main">
@@ -17,9 +19,11 @@ require get_template_directory() . '/parts/header.php';
     include locate_template('parts/acf/blocks/block_banner/block_banner.php');
     ?>
 
-    <div class="container p-top-bottom">
-        <?php echo get_the_content(); ?>
+    <?php if(!empty($get_the_content)) : ?>
+    <div class="container p-both">
+        <?php echo $get_the_content; ?>
     </div>
+    <?php endif; ?>
 
     <div class="container container_carriere_filter p-both">
         <div class="archive_carriere_filter">
@@ -128,3 +132,4 @@ require get_template_directory() . '/parts/header.php';
 <?php
 require get_template_directory() . '/parts/footer.php';
 require get_template_directory() . '/parts/html-footer.php';
+?>

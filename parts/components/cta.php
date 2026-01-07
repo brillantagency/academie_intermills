@@ -1,8 +1,24 @@
 <?php if(!empty($cta)) :  
-    // Si on est sur une single page et que $cta['url'] est vide, fallback sur get_permalink()
-    $cta_url    = !empty($cta['url']) ? $cta['url'] : ($page_single ? get_permalink() : '#');
-    $cta_title  = !empty($cta['title']) ? $cta['title'] : __('Lire la suite', 'brillant');
-    $cta_target = !empty($cta['target']) ? 'target="_blank" rel="noopener noreferrer"' : '';
+
+if ($banner && !empty($cta['banner_button'])) {
+    $source_cta = $cta['banner_button']; // On prend la version banner
+} elseif ($page_single) {
+    $source_cta = null; // Pas besoin de tableau, on utilisera get_permalink()
+} else {
+    $source_cta = $cta; // On prend le CTA standard
+}
+
+// Assignation sécurisée
+if ($page_single) {
+    $cta_url    = get_permalink();
+    $cta_title  = __('Par ici', 'brillant');
+    $cta_target = '';
+} else {
+    $cta_url    = !empty($source_cta['url']) ? $source_cta['url'] : '#';
+    $cta_title  = !empty($source_cta['title']) ? $source_cta['title'] : __('Par ici', 'brillant');
+    $cta_target = !empty($source_cta['target']) ? 'target="_blank" rel="noopener noreferrer"' : '';
+}
+
 ?>
 
 <a href="<?php echo esc_url($cta_url); ?>" title="<?php echo esc_attr($cta_title); ?>" <?php echo $cta_target; ?> class="cta cta_<?php echo esc_attr($cta_color); ?>">
@@ -28,5 +44,4 @@
     </svg>
   <?php endif; ?>
 </a>
-
 <?php endif; ?>

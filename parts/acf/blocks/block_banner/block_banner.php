@@ -10,6 +10,7 @@
     $banner_suptitle    = get_field('banner_suptitle', $option);
     $banner_search_bool = get_field('banner_search_bool', $option);
     $ctas               = get_field('banner_buttons', $option);
+    $banner             = true;
 
     // video
     $media                  = get_field('banner_media_video_bool', $option);
@@ -102,7 +103,9 @@
                 } else {
                     if(!empty($ctas)) {
                         foreach($ctas as $cta):
-                            $cta_color = 'primary'; include(locate_template('parts/components/cta.php')); 
+                            $cta_color = 'primary';
+
+                            include(locate_template('parts/components/cta.php')); 
                         endforeach;
                     }
                 } ?>

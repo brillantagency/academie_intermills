@@ -117,12 +117,6 @@
         }
     }
 
-    &_suptitle,
-    &_title,
-    p {
-        color: variables.$white;
-    }
-
     &_bg {
         border-radius: 50px;
 
@@ -154,13 +148,28 @@
         }
     }
 
+    &_wrapper:not(.banner_bg) {
+        .banner_suptitle,
+        .banner_title,
+        p,
+        a,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: variables.$white;
+        }
+    }
+
     &_suptitle,
     &_title{
         margin: 0;
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .rank-math-breadcrumb {
