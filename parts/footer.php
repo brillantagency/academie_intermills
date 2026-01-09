@@ -85,8 +85,21 @@
 
                 <?php if(!empty($footer_logos)) : ?>
                 <ul class="footer_bottom_logos">
-                    <?php foreach($footer_logos as $logo) : ?>
-                    <li><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"></li>
+                    <?php foreach($footer_logos as $logo) : 
+                        $media_id = $logo['ID'];
+                        $media_link = get_field('media_link', $media_id);
+                    ?>
+                    <li>
+                        <?php if(!empty($media_link)) : ?>
+                            <a href="<?php echo esc_url($media_link['url']); ?>" title="<?php echo $media_link['title']; ?>" target="<?php echo $media_link['target']? $media_link['target'] : '_self'; ?>">
+                        <?php endif; ?>
+
+                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+
+                        <?php if(!empty($media_link)) : ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
                     <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>
