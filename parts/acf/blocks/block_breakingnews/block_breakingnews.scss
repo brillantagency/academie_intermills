@@ -103,6 +103,7 @@
     &_nav {
         z-index: 10;
         position: relative;
+        top: 150px;
 
         @include tablet {
             top: 490px;

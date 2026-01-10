@@ -27,9 +27,9 @@ $get_the_content = get_the_content();
 
     <div class="container container_carriere_filter p-both">
         <div class="archive_carriere_filter">
-            <h3><?php _e('Filtre', 'brillant'); ?></h3>
+            <button id="button_filter_show" class="h3 archive_carriere_filter_title"><?php _e('Filtre', 'brillant'); ?></button>
 
-            <form method="GET" class="carriere-filters">
+            <form method="GET" id="form_filter" class="carriere-filters">
 
                 <?php
                 $filters = [
@@ -59,7 +59,7 @@ $get_the_content = get_the_content();
                     </div>
                 <?php endforeach; ?>
 
-                <button type="submit" class="cta cta_primary">
+                <button id="button_filter" type="submit" class="cta cta_primary">
                     <?php echo __('Filtrer', 'brillant'); ?>
                 </button>
             </form>

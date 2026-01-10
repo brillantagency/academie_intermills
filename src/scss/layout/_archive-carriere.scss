@@ -15,8 +15,26 @@
     &_filter {
         background-color: variables.$lightgrey;
         border-radius: 20px;
-        padding: 50px;
+        padding: 20px;
         height: max-content;
+
+        @include tablet {
+            padding: 50px;
+        }
+
+        &_title {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+            border-radius: 10px;
+
+            @include tablet {
+                &:hover {
+                    cursor: initial;
+                }
+            }
+        }
     }
 
     &_posts {
@@ -28,17 +46,20 @@
             &_card {
                 background-color: transparent;
                 border: 1px solid variables.$grey;
-                flex-direction: row;
+                flex-direction: column;
+                gap: 20px;
 
                 @include tablet {
-                    gap: 20px;
+                    flex-direction: row;
                 }
 
                 &_img {
                     &_wrapper {
                         width: 100%;
+                        display: none;
 
                         @include tablet {
+                            display: block;
                             max-width: 180px;
                         }
                     }
@@ -94,6 +115,22 @@
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        margin-top: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease, margin-top 0.3s ease;
+
+        @include tablet {
+            height: 100%;
+            transition: height 0.3s ease, margin-top 0.3s ease;
+            margin-top: 20px;
+        }
+    
+        &.active {
+            height: 100%;
+            transition: height 0.3s ease;
+            margin-top: 20px;
+        }
 
         h4 {
             margin-top: 0;

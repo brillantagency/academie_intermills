@@ -169,7 +169,11 @@
     }
 
     p {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
+
+        @include tablet {
+            font-size: 1.6rem;
+        }
     }
 
     .rank-math-breadcrumb {

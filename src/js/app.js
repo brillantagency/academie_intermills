@@ -289,6 +289,23 @@ function postsFitler() {
     });
 }
 
+function button_mobile_filter_show() {
+    const button_show = document.querySelector("#button_filter_show");
+    const button = document.querySelector("#button_filter");
+    const form = document.querySelector("#form_filter");
+
+    if (button_show && form) {
+        button_show.addEventListener("click", function () {
+            form.classList.toggle("active");
+        });
+    }
+    if (button && form) {
+        button.addEventListener("click", function () {
+            form.classList.toggle("active");
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     accordeons();
@@ -298,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sliderBanner();
     postsFitler();
     video_popup();
+    button_mobile_filter_show();
     initCircleSlider(".team_circle_slider__swiper-js", ".team_circle_slider__pagination-js");
     initCircleSlider(".testimonials_circle_slider__swiper-js", ".testimonials_circle_slider__pagination-js");
 
