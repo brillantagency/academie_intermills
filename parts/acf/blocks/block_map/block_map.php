@@ -229,6 +229,8 @@
 
             <?php 
             $cta = $map_link; 
+            $cta_color = 'secondary';
+            $page_single = false;
             include(locate_template('parts/components/cta.php')); ?>
         </div>
     </div>
