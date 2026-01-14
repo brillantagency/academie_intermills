@@ -5,7 +5,17 @@
         &_grid {
             display: flex;
             gap: 20px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+            @include tablet {
+                flex-direction: row;
+            }
         }
+    }
+
+    .post_card_img_wrapper {
+        margin-bottom: 30px;
     }
 
     .post_link-js {
@@ -16,17 +26,18 @@
         padding: 0;
 
         &.post_active-js {
-            height: 100%;
+            align-items: stretch;
+            height: auto;
             padding: 20px;
             transition: height 0.3s ease, width 0.3s ease;
             width: 100%;
 
             @include tablet {
-                width: 50%;
+                width: calc(50% - 20px)
             }
 
             @include large {
-                width: 25%;
+                width: calc(25% - 20px)
             }
         }
     }

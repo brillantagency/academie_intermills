@@ -85,7 +85,7 @@
                 <?php if($results['reid']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['reid']['formations']; ?>" transform="translate(550.8581,320.771)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['reid']['formations']; ?>
                     </text>
                 </g>
@@ -94,7 +94,7 @@
                 <?php if($results['trois-ponts']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['trois-ponts']['formations']; ?>" transform="translate(501.8581,420.972)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['trois-ponts']['formations']; ?>
                     </text>
                 </g>
@@ -103,16 +103,16 @@
                 <?php if($results['verviers']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['verviers']['formations']; ?>" transform="translate(691.8581,236.42)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['verviers']['formations']; ?>
                     </text>
                 </g>
                 <?php endif; ?>
 
-                <text x="650" y="200" font-size="20" fill="black"><?php echo __('Verviers', 'brillant'); ?></text>
-                <text x="450" y="250" font-size="20" fill="black"><?php echo __('Liège', 'brillant'); ?></text>
-                <text x="450" y="390" font-size="20" fill="black"><?php echo __('Trois-Ponts', 'brillant'); ?></text>
-                <text x="530" y="290" font-size="20" fill="black"><?php echo __('Reid', 'brillant'); ?></text>
+                <text x="650" y="200" fill="black"><?php echo __('Verviers', 'brillant'); ?></text>
+                <text x="450" y="250" fill="black"><?php echo __('Liège', 'brillant'); ?></text>
+                <text x="450" y="390" fill="black"><?php echo __('Trois-Ponts', 'brillant'); ?></text>
+                <text x="530" y="290" fill="black"><?php echo __('Reid', 'brillant'); ?></text>
                 <g filter="url(#filter0_d_20_12004)">
                     <path d="M456.515 517.75C448.427 519.268 448.331 531.032 449.294 536.725H466.143L453.145 562.816C451.861 579.102 449.294 612.245 449.294 614.522C449.294 616.799 430.68 627.173 421.372 632.074L415.596 650.575L400.672 663.383V673.345L449.294 667.653L475.771 673.345L573.494 632.074L594.195 629.228C609.118 621.796 639.831 606.932 643.297 606.932C646.763 606.932 651.481 616.736 653.407 621.638L672.181 624.484L679.883 621.638L685.66 632.074L707.805 629.228L711.174 621.638L721.765 632.074L748.723 635.869H765.091L785.791 629.228L800.233 635.869L805.047 654.37L835.857 657.216L845.966 703.705L875.813 694.218L879.664 673.345L924.434 676.666L938.394 684.256L947.06 673.345H960.539L965.834 663.383H1000.98L1027.93 632.074H1040.45L1043.34 621.638L1078 603.137V588.432L1056.82 574.675C1056.66 560.444 1056.43 529.135 1056.82 517.75C1057.3 503.519 1045.26 493.557 1043.34 488.339C1041.8 484.164 1065.8 472.684 1078 467.466V452.76L1062.11 439.952L1040.45 443.747V429.516L1016.86 419.554L983.646 425.247L986.534 387.771L954.762 362.155L947.06 373.54H917.694V387.771L849.817 425.247L813.231 402.476H800.233L794.456 419.554L751.612 436.632V448.965C735.244 447.542 681.809 479.325 672.181 483.595C662.553 487.864 659.665 496.403 657.739 496.403C655.814 496.403 602.86 520.596 594.195 520.596C585.529 520.596 544.129 510.16 536.908 505.89C531.131 502.475 527.12 507.314 525.836 510.16C519.096 506.049 503.98 497.541 497.433 496.403C489.25 494.98 490.694 499.724 488.768 505.89C487.228 510.824 479.461 513.006 475.771 513.48C472.722 514.271 464.602 516.232 456.515 517.75Z" fill="white"/>
                     <path d="M456.515 517.75C448.427 519.268 448.331 531.032 449.294 536.725H466.143L453.145 562.816C451.861 579.102 449.294 612.245 449.294 614.522C449.294 616.799 430.68 627.173 421.372 632.074L415.596 650.575L400.672 663.383V673.345L449.294 667.653L475.771 673.345L573.494 632.074L594.195 629.228C609.118 621.796 639.831 606.932 643.297 606.932C646.763 606.932 651.481 616.736 653.407 621.638L672.181 624.484L679.883 621.638L685.66 632.074L707.805 629.228L711.174 621.638L721.765 632.074L748.723 635.869H765.091L785.791 629.228L800.233 635.869L805.047 654.37L835.857 657.216L845.966 703.705L875.813 694.218L879.664 673.345L924.434 676.666L938.394 684.256L947.06 673.345H960.539L965.834 663.383H1000.98L1027.93 632.074H1040.45L1043.34 621.638L1078 603.137V588.432L1056.82 574.675C1056.66 560.444 1056.43 529.135 1056.82 517.75C1057.3 503.519 1045.26 493.557 1043.34 488.339C1041.8 484.164 1065.8 472.684 1078 467.466V452.76L1062.11 439.952L1040.45 443.747V429.516L1016.86 419.554L983.646 425.247L986.534 387.771L954.762 362.155L947.06 373.54H917.694V387.771L849.817 425.247L813.231 402.476H800.233L794.456 419.554L751.612 436.632V448.965C735.244 447.542 681.809 479.325 672.181 483.595C662.553 487.864 659.665 496.403 657.739 496.403C655.814 496.403 602.86 520.596 594.195 520.596C585.529 520.596 544.129 510.16 536.908 505.89C531.131 502.475 527.12 507.314 525.836 510.16C519.096 506.049 503.98 497.541 497.433 496.403C489.25 494.98 490.694 499.724 488.768 505.89C487.228 510.824 479.461 513.006 475.771 513.48C472.722 514.271 464.602 516.232 456.515 517.75Z" stroke="black" stroke-width="5"/>
@@ -120,15 +120,15 @@
                 <path d="M848.373 426.195L837.301 456.555L842.596 475.53L856.557 495.929L837.301 523.442L810.824 529.135L803.603 557.123L814.675 576.098L833.45 590.804L856.557 601.24L880.627 632.074V671.922" stroke="black" stroke-width="2"/>
                 <path d="M985.572 426.67L974.018 446.593L968.241 458.927C966.316 461.299 963.62 466.707 968.241 469.363C972.863 472.02 970.167 484.702 968.241 490.71L963.427 509.211L968.241 526.763L934.543 550.956L958.613 591.752V609.779L974.018 624.959L985.572 645.831H994.237L1017.83 638.716L1026.97 633.023" stroke="black" stroke-width="2"/>
                 <path d="M643.779 607.407L678.921 583.688L684.698 572.303V559.021L696.733 545.264L709.249 534.827L724.172 515.852L727.542 487.864L730.431 477.428L724.172 469.838L727.542 454.184" stroke="black" stroke-width="2"/>
-                <text x="500" y="580" font-size="20" fill="black"><?php echo __('Stoumont', 'brillant'); ?></text>
-                <text x="700" y="600" font-size="20" fill="black"><?php echo __('Stavelot', 'brillant'); ?></text>
-                <text x="840" y="570" font-size="20" fill="black"><?php echo __('Malmedy', 'brillant'); ?></text>
-                <text x="970" y="567" font-size="20" fill="black"><?php echo __('Waimes', 'brillant'); ?></text>
+                <text x="500" y="580" fill="black"><?php echo __('Stoumont', 'brillant'); ?></text>
+                <text x="700" y="600" fill="black"><?php echo __('Stavelot', 'brillant'); ?></text>
+                <text x="840" y="570" fill="black"><?php echo __('Malmedy', 'brillant'); ?></text>
+                <text x="970" y="567" fill="black"><?php echo __('Waimes', 'brillant'); ?></text>
 
                 <?php if($results['stavelot']['offres-demploi'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['stavelot']['offres-demploi']; ?>" transform="translate(806,506.191)">
                     <circle cx="0" cy="0" r="20" fill="#E50044"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['stavelot']['offres-demploi']; ?>
                     </text>
                 </g>
@@ -137,7 +137,7 @@
                 <?php if($results['stoumont']['offres-demploi'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['stoumont']['offres-demploi']; ?>" transform="translate(645,559.191)">
                     <circle cx="0" cy="0" r="20" fill="#E50044"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['stoumont']['offres-demploi']; ?>
                     </text>
                 </g>
@@ -146,7 +146,7 @@
                 <?php if($results['malmedy']['offres-demploi'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['malmedy']['offres-demploi']; ?>" transform="translate(892.672,502.191)">
                     <circle cx="0" cy="0" r="20" fill="#E50044"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['malmedy']['offres-demploi']; ?>
                     </text>
                 </g>
@@ -155,7 +155,7 @@
                 <?php if($results['waimes']['offres-demploi'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['waimes']['offres-demploi']; ?>" transform="translate(1020.67,603.191)">
                     <circle cx="0" cy="0" r="20" fill="#E50044"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['waimes']['offres-demploi']; ?>
                     </text>
                 </g>
@@ -164,7 +164,7 @@
                 <?php if($results['stavelot']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['stavelot']['formations']; ?>" transform="translate(743.672,542.191)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['stavelot']['formations']; ?>
                     </text>
                 </g>
@@ -173,7 +173,7 @@
                 <?php if($results['stoumont']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['stoumont']['formations']; ?>" transform="translate(500,619.191)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['stoumont']['formations']; ?>
                     </text>
                 </g>
@@ -182,7 +182,7 @@
                 <?php if($results['malmedy']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['malmedy']['formations']; ?>" transform="translate(931,603.191)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['malmedy']['formations']; ?>
                     </text>
                 </g>
@@ -191,17 +191,17 @@
                 <?php if($results['waimes']['formations'] !== 0) : ?>
                 <g class="rond" data-value="<?php echo $results['waimes']['formations']; ?>" transform="translate(1000,500.191)">
                     <circle cx="0" cy="0" r="20" fill="#9FC114"/>
-                    <text x="0" y="0" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">
+                    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="white">
                         <?php echo $results['waimes']['formations']; ?>
                     </text>
                 </g>
                 <?php endif; ?>
 
                 <circle cx="103.152" cy="549.008" r="7.5" fill="#9FC114"/>
-                <text x="120" y="555" font-size="20" fill="black"><?php echo __('Formations', 'brillant'); ?></text>
+                <text x="120" y="555" fill="black"><?php echo __('Formations', 'brillant'); ?></text>
                 
                 <circle cx="103.152" cy="588.008" r="7.5" fill="#E50044"/>
-                <text x="120" y="594" font-size="20" fill="black"><?php echo __('Offres d\'emploi', 'brillant'); ?></text>
+                <text x="120" y="594" fill="black"><?php echo __('Offres d\'emploi', 'brillant'); ?></text>
                 
                 <defs>
                 <filter id="filter0_d_20_12004" x="398.172" y="358.502" width="687.328" height="353.417" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
