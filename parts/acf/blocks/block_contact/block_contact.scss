@@ -14,12 +14,21 @@
 
 		@include tablet {
 			max-width: 1200px;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr;
 		}
 	}
 
+	&:not(.contact_container) .contact_text_wrapper {
+		max-width: 900px;
+	}
+
 	.contact {
+		&_container {
+			@include tablet {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr;
+			}
+		}
+
 		&_title {
 			margin-top: 0;
 		}
@@ -58,7 +67,12 @@
 			flex-direction: column;
 			color: variables.$grey;
 			font-size: 12px;
-			width: 140px;
+			min-width: 140px;
+			width: 100%;
+
+			@include tablet {	
+				flex: 1;
+			}
 
 			span:not(.contact_infos_title) {
 				font-size: initial;

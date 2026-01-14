@@ -22,7 +22,7 @@
 ?>
 
 <section class="block_contact p-<?php echo $contact_padding; ?>">
-    <div class="container <?php echo !empty($contact_animation_content)? 'animatable-js animatable-' . $contact_animation_content : '' ?>">
+    <div class="container <?php echo !empty($contact_form)? 'contact_container' : '' ?> <?php echo !empty($contact_animation_content)? 'animatable-js animatable-' . $contact_animation_content : '' ?>">
         <div class="contact_text_wrapper">
             <div class="contact_text_wrapper_header">
                 <?php if(!empty($contact_title)) : ?>
