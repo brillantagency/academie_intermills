@@ -29,7 +29,7 @@
             "name": "video_upload",
             "aria-label": "",
             "type": "text",
-            "instructions": "Enter only the YouTube video ID. For example, for the URL https:\/\/www.youtube.com\/watch?v=q7QmX96kt_o&t=7s, enter only: q7QmX96kt_o&t=7s",
+            "instructions": "Enter only the YouTube video ID. For example, for the URL https:\/\/www.youtube.com\/watch?v=q7QmX96kt_o&t=7s, enter only: q7QmX96kt_o",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -127,5 +127,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1768484867
+    "modified": 1768491607
 }
