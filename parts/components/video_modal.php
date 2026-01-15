@@ -2,9 +2,13 @@
 
 if($block_video === 'carriere') {
     if(!empty($media['video_upload']) or !empty($media['video_embed'])) {
-        $video        = get_field('carriere_video');
-        $video_embed  = $video['video_embed'];
-        $video_upload = $video['video_upload'];
+        $video          = get_field('carriere_video');
+        $video_embed    = $video['video_embed'];
+        $video_upload   = $video['video_upload'];
+        $video_autoplay = $video['video_autoplay'];
+        $video_loop     = $video['video_loop'];
+        $video_control  = $video['video_control'];
+
         $media        = true;
     } else {
         $media = false;

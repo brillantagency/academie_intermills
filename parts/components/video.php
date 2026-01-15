@@ -8,11 +8,12 @@
         </iframe>
     <?php elseif($video_embed): ?>
         <video class="video"
-            src="<?php echo $video_embed['url']; ?>" 
-            <?php echo $video_autoplay ? 'autoplay muted' : ''; ?> 
-            <?php echo $video_loop ? 'loop' : ''; ?> 
-            <?php echo $video_control ? 'controls' : ''; ?> 
-            playsinline>
+            src="<?php echo esc_url($video_embed['url']); ?>"
+            <?php echo $video_autoplay ? 'autoplay muted' : ''; ?>
+            <?php echo $video_loop ? 'loop' : ''; ?>
+            <?php echo $video_control ? 'controls' : ''; ?>
+            playsinline
+            preload="metadata">
         </video>
     <?php else: ?>
         <p><?php echo __('⚠️ Aucune vidéo disponible', 'brillant'); ?></p>
