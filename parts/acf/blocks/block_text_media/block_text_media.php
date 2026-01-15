@@ -10,6 +10,7 @@
     $text_media_link_color        = get_sub_field('text_media_link_color');
     $text_media_position          = get_sub_field('text_media_position'); 
     $text_media_padding           = get_sub_field('text_media_padding'); 
+    $text_media_id                = get_sub_field('text_media_id'); 
     $text_media_text_align        = get_sub_field('text_media_text_align'); 
     $text_media_active            = get_sub_field('text_media_active');
     $text_media_img_full          = get_sub_field('text_media_img_fullwidth');
@@ -53,7 +54,7 @@
     if($text_media_active) :
 ?>
 
-<<?php echo $tag; ?> class="text_media_section p-<?php echo $text_media_padding; ?> text_media_section_<?php echo $text_media_position; ?>">
+<<?php echo $tag; ?> class="text_media_section p-<?php echo $text_media_padding; ?> text_media_section_<?php echo $text_media_position; ?>" <?php echo !empty($text_media_id)? 'id="' . $text_media_id . '"' : ''; ?>>
     <div class="<?php echo $text_media_img_full ? '' : 'container'; ?> text_media_position text_media_position_<?php echo $text_media_position; ?> text_media_text_width_<?php echo $text_media_content_width; ?> <?php echo $text_media_bg_color_text ?>">
         <?php if(!empty($video_embed) or !empty($video_upload) or !empty($text_media_gallery)) : ?>
         <div class="text_media_wrapper text_media_media_wrapper <?php echo !empty($text_media_animation_content)? 'animatable-js animatable-' . $text_media_animation_content : '' ?>">

@@ -9,6 +9,7 @@
     // Styles
     $map_active   = get_sub_field('map_active');
     $map_padding  = get_sub_field('map_padding');
+    $map_id       = get_sub_field('map_id');
 
     if(empty($map_title)) {
         $map_title = get_field('map_title', 'option');
@@ -19,8 +20,6 @@
     if(empty($map_link)) {
         $map_link = get_field('map_link', 'option');
     } 
-
-
 
     // Récupérer toutes les régions
     $regions = get_terms(array(
@@ -71,7 +70,7 @@
    if($map_active) :
 ?>
 
-<section class="map p-<?php echo $map_padding; ?>">
+<section <?php echo !empty($map_id)? 'id="' . $map_id . '"' : ''; ?> class="map p-<?php echo $map_padding; ?>">
     <div class="container map_wrapper">
         <div class="map_wrapper_svg">
             <svg xmlns="http://www.w3.org/2000/svg" width="1086" height="726" viewBox="0 0 1086 726" fill="none">

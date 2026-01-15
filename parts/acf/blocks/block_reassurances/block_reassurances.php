@@ -11,11 +11,12 @@
     // Styles
     $reassurances_active   = get_sub_field('reassurances_active');
     $reassurances_padding  = get_sub_field('reassurances_padding');
+    $reassurances_id       = get_sub_field('reassurances_id'); 
 
     if($reassurances_active) :
 ?>
 
-<div class="reassurances p-<?php echo $reassurances_padding; ?>">
+<div class="reassurances p-<?php echo $reassurances_padding; ?>" <?php echo !empty($reassurances_id)? 'id="' . $reassurances_id . '"' : ''; ?>>
     <div class="container">
         <?php if(!empty($reassurances_repeater)) : ?>
         <div class="reassurances_list">

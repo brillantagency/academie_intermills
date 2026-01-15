@@ -14,6 +14,7 @@ $lastpost_active     = get_sub_field('lastpost_active');
 $lastpost_padding    = get_sub_field('lastpost_padding');
 $lastpost_link_color = get_sub_field('lastpost_link_color');
 $lastpost_layout     = get_sub_field('lastpost_layout');
+$lastpost_id         = get_sub_field('lastpost_id'); 
 
 if(empty($lastpost_title)) {
     $lastpost_title = get_field('lastpost_title', 'option');
@@ -76,7 +77,7 @@ if ($lastpost_layout === 'focus' && !empty($posts)) {
 if ($post_query->have_posts() && $lastpost_active) :
 
 ?>
-<section class="lastpost p-<?php echo $lastpost_padding; ?>">
+<section class="lastpost p-<?php echo $lastpost_padding; ?>" <?php echo !empty($lastpost_id)? 'id="' . $lastpost_id . '"' : ''; ?>>
     <div class="lastpost_layout lastpost_layout_<?php echo $lastpost_layout; ?>">
     <?php if(!empty($lastpost_title) || !empty($lastpost_content)): ?>
         <div class="lastpost_wrapper_content <?php echo !empty($lastpost_animation_media)? 'animatable-js animatable-' . $lastpost_animation_media : '' ?>">

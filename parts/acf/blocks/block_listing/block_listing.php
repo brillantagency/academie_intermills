@@ -7,6 +7,7 @@
     //Styles
     $listing_padding  = get_sub_field('listing_padding'); 
     $listing_active   = get_sub_field('listing_active');
+    $listing_id      = get_sub_field('listing_id'); 
 
     if(empty($listing_title)) {
         $listing_title = get_field('listing_title', 'option');
@@ -31,7 +32,7 @@
     if ($post_query->have_posts() && $listing_active) :
 ?>
 
-<<?php echo $tag; ?> class="listing_section container p-<?php echo $listing_padding; ?>">
+<<?php echo $tag; ?> class="listing_section container p-<?php echo $listing_padding; ?>" <?php echo !empty($listing_id)? 'id="' . $listing_id . '"' : ''; ?>>
 
     <?php if(!empty($listing_title)): ?>
     <h2 class="listing_title h3"><?php echo $listing_title; ?></h2>

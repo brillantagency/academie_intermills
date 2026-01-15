@@ -17,11 +17,12 @@
     $contact_padding           = get_sub_field('contact_padding');
     $contact_active            = get_sub_field('contact_active');
     $contact_animation_content = get_sub_field('contact_animation_content');
+    $contact_id                = get_sub_field('contact_id'); 
 
     if($contact_active) :
 ?>
 
-<section class="block_contact p-<?php echo $contact_padding; ?>">
+<section class="block_contact p-<?php echo $contact_padding; ?>" <?php echo !empty($contact_id)? 'id="' . $contact_id . '"' : ''; ?>>
     <div class="container <?php echo !empty($contact_form)? 'contact_container' : '' ?> <?php echo !empty($contact_animation_content)? 'animatable-js animatable-' . $contact_animation_content : '' ?>">
         <div class="contact_text_wrapper">
             <div class="contact_text_wrapper_header">

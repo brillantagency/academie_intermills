@@ -11,6 +11,7 @@ $lastpost_promotion_link   = get_sub_field('lastpost_promotion_link');
 $lastpost_promotion_active     = get_sub_field('lastpost_promotion_active');
 $lastpost_promotion_padding    = get_sub_field('lastpost_promotion_padding');
 $lastpost_promotion_link_color = get_sub_field('lastpost_promotion_link_color');
+$lastpost_promotion_id  = get_sub_field('lastpost_promotion_id'); 
 
 if(empty($lastpost_promotion_title)) {
     $lastpost_promotion_title = get_field('lastpost_promotion_title', 'option');
@@ -52,7 +53,7 @@ $last_post_index = $post_query->post_count - 1;
 if ($post_query->have_posts() && $lastpost_promotion_active) :
 
 ?>
-<section class="lastpost_promotion container p-<?php echo $lastpost_promotion_padding; ?>">
+<section class="lastpost_promotion container p-<?php echo $lastpost_promotion_padding; ?>" <?php echo !empty($lastpost_promotion_id)? 'id="' . $lastpost_promotion_id . '"' : ''; ?>>
     <?php if(!empty($lastpost_promotion_title) || !empty($lastpost_promotion_text)): ?>
     <div class="lastpost_promotion_wrapper_content">
         <div class="lastpost_promotion_wrapper_text">

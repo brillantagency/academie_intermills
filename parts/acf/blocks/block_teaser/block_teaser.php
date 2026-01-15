@@ -10,6 +10,7 @@
     $teaser_padding           = get_sub_field('teaser_padding'); 
     $teaser_active            = get_sub_field('teaser_active');
     $teaser_animation_content = get_sub_field('teaser_animation_content');
+    $teaser_id                = get_sub_field('teaser_id'); 
 
     // video
     $media                    = get_sub_field('teaser_media_video_bool');
@@ -31,7 +32,7 @@
     if($teaser_active) :
 ?>
 
-<<?php echo $tag; ?> class="teaser_section p-<?php echo $teaser_padding; ?>">
+<<?php echo $tag; ?> class="teaser_section p-<?php echo $teaser_padding; ?>" <?php echo !empty($teaser_id)? 'id="' . $teaser_id . '"' : ''; ?>>
     <?php if(!empty($video_embed) or !empty($video_upload) or !empty($teaser_gallery)) : ?>
     <div class="teaser_wrapper teaser_media_wrapper <?php echo !empty($teaser_animation_content)? 'animatable-js animatable-' . $teaser_animation_content : '' ?>">
         <div class="teaser_media_media_wrapper">

@@ -15,6 +15,7 @@ if(empty($breakingnews_title)) {
 // Styles
 $breakingnews_active  = get_sub_field('breakingnews_active');
 $breakingnews_padding = get_sub_field('breakingnews_padding');
+$breakingnews_id      = get_sub_field('breakingnews_id'); 
 
 $post_fields = [
     'breakingnews_select_post_orientation',
@@ -56,7 +57,7 @@ if( empty($posts_to_show) && !empty($selected_tax) ) {
 
 if ($breakingnews_active) :
 ?>
-<div class="breakingnews p-<?php echo $breakingnews_padding; ?>">
+<div class="breakingnews p-<?php echo $breakingnews_padding; ?>" <?php echo !empty($breakingnews_id)? 'id="' . $breakingnews_id . '"' : ''; ?>>
     <div class="container">
         <?php if(!empty($breakingnews_suptitle) or !empty($breakingnews_title) or !empty($breakingnews_link) or !empty($breakingnews_content)): ?>
         <div class="breakingnews_header">

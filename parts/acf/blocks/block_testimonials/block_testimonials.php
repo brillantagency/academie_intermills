@@ -10,6 +10,7 @@
     // Styles
     $testimonials_padding = get_sub_field('testimonials_padding');
     $testimonials_active   = get_sub_field('testimonials_active');
+    $testimonials_id       = get_sub_field('testimonials_id'); 
 
     if(empty($testimonials_title)) {
         $testimonials_title = get_field('testimonials_title', 'option');
@@ -43,7 +44,7 @@
 
     if ($testimonial_query->have_posts()) :
 ?>
-<section class="testimonials container p-<?php echo $testimonials_padding; ?>">
+<section class="testimonials container p-<?php echo $testimonials_padding; ?>" <?php echo !empty($testimonials_id)? 'id="' . $testimonials_id . '"' : ''; ?>>
     <div class="testimonials_txt">
         <?php if (!empty($testimonials_title)) : ?>
             <h2 class="testimonials_title"><?php echo $testimonials_title; ?></h2>
