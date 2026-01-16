@@ -4,6 +4,6 @@ $remote_ip = $_SERVER['REMOTE_ADDR'] ?? '';
 
 if (!in_array($remote_ip, $exclude_ips)) { ?>
     <!-- CookieYes script -->
-	<script id="cookieyes" src="https://cdn-cookieyes.com/client_data/aa8aa9d7aaf13674082c5837/script.js"></script> 
+	<script id="cookieyes" src="https://cdn-cookieyes.com/client_data/18d8a39f1057f2e5784427dd77c6f6df/script.js"></script> 
     <?php
 } else {}
