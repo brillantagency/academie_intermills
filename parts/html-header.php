@@ -1,6 +1,6 @@
 <?php 
-    $script_header = get_field('script_header', 'option');
-    $script_body   = get_field('script_body', 'option');
+    $script_header = get_field('scripts_header', 'option');
+    $script_body   = get_field('scripts_body', 'option');
  ?>
 
 

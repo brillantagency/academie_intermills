@@ -1,5 +1,5 @@
 <?php 
-    $script_footer = get_field('script_footer', 'option');
+    $script_footer = get_field('scripts_footer', 'option');
     $search = get_field('footer_search', 'option');
     if($search) :
         include(locate_template('parts/components/searchbar.php'));
