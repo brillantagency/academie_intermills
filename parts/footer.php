@@ -72,7 +72,7 @@
                         <?php endif; ?>
 
                         <div class="footer_bottom_infos_created">
-                            <?php echo __('© Copyright', 'brillant'); ?> <?php the_time('Y'); ?> <?php include_once(locate_template('parts/components/designby.php')); ?>
+                            <?php echo __('© Copyright', 'brillant'); ?> <?php echo current_time('Y'); ?> <?php include_once(locate_template('parts/components/designby.php')); ?>
                         </div>
 
                         <div class="footer_bottom_infos_legal">
