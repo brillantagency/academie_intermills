@@ -113,7 +113,7 @@ if ($breakingnews_active) :
 
                         <?php if(!empty($cta)):
                             $cta = $cta;
-                            $page_single_carriere = true;
+                            $page_single = true;
                             $cta_color = 'link';
                             include get_template_directory() . '/parts/components/cta.php';
                         endif; ?>
