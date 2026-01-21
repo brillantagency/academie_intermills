@@ -121,6 +121,7 @@ form:not(#adminbarsearch) {
             border: 2px solid variables.$white;
             transition: border 0.3s ease;
             border-radius: variables.$border_rounded!important;
+            color: variables.$white!important;
 
             &:focus {
                 border: 2px solid variables.$red;
