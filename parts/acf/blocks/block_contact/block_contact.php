@@ -40,7 +40,7 @@
 
             <div class="contact_infos_wrapper">
                 <?php if(!empty($contact_phone)) : ?>
-                <a href="<?php echo phoneClean($contact_phone); ?>" class="contact_infos">
+                <a href="tel:<?php echo phoneClean($contact_phone); ?>" class="contact_infos">
                     <span class="contact_infos_title"><?php echo __('Téléphone', 'brillant'); ?></span>
                     <span><?php echo $contact_phone; ?></span>
                 </a>
