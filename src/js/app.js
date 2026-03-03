@@ -226,6 +226,24 @@ function video_popup() {
     }
 }
 
+function searchForm() {
+    const forms = document.querySelectorAll('.search-form');
+    if (!forms.length) return;
+
+    forms.forEach(form => {
+        const input = form.querySelector('.search-field');
+        if (!input) return;
+
+        form.addEventListener('submit', function (e) {
+            if (input.value.trim() === '') {
+                e.preventDefault();
+                e.stopPropagation();
+                input.focus();
+            }
+        });
+    });
+}
+
 /*function newsletter_popup() {
     const searchForm = document.querySelector('body > form.search-form');
     const popup = document.getElementById('search_popup');
@@ -316,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
     postsFitler();
     video_popup();
     button_mobile_filter_show();
+    searchForm();
     initCircleSlider(".team_circle_slider__swiper-js", ".team_circle_slider__pagination-js");
     initCircleSlider(".testimonials_circle_slider__swiper-js", ".testimonials_circle_slider__pagination-js");
 
