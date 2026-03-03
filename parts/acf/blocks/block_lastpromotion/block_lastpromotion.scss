@@ -35,6 +35,10 @@
                 width: 100%;
             }
 
+            &_img {
+                object-fit: initial;
+            }
+
             &:not(:nth-child(5)) .post_card_content_wrapper:before {
                 content: "";
                 position: absolute;
