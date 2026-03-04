@@ -3,6 +3,7 @@ function sliderTextMedia() {
 
     const swiper = new Swiper(swiperContainer, {
         loop: true,
+        autoHeight: true,
         slidesPerView: 1,
         spaceBetween: 0,
         pagination: {

@@ -39,6 +39,12 @@
             align-items: center;
         }
 
+        &_wrapper {
+            .swiper {
+                padding-bottom: 40px;
+            }
+        }
+
         &_img {
             height: 100%;
             width: 100%;
