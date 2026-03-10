@@ -43,7 +43,7 @@ if ($lastpost_select) {
         'post_type'      => $post_type,
         'post__in'       => wp_list_pluck($lastpost_select, 'ID'),
         'orderby'        => 'post__in',
-        'order'          => 'ASC',
+        'order'          => 'DESC',
         'posts_per_page' => -1,
         'post_status'    => 'publish',
     ];
@@ -52,7 +52,7 @@ if ($lastpost_select) {
         'post_type'      => $post_type,
         'posts_per_page' => 8,
         'orderby'        => 'date',
-        'order'          => 'ASC',
+        'order'          => 'DESC',
         'post_status'    => 'publish',
     ];
 }
