@@ -94,7 +94,7 @@
                 "id": ""
             },
             "post_type": [
-                "post"
+                "article"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -222,5 +222,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764848696
+    "modified": 1774375886
 }
