@@ -27,33 +27,20 @@
             padding: 0;
             
             &_content_wrapper {
-                height: 100%;
+                height: calc(auto + 50px);
                 display: flex;
-                padding: 20px;
                 flex-direction: column;
                 position: absolute;
                 width: 100%;
+                padding: 20px;
+                background: variables.$dark;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 1%, rgba(0, 0, 0, 0) 100%);
+                z-index: 1;
+                bottom: 0;
             }
 
             &_img {
                 object-fit: initial;
-            }
-
-            &:not(:nth-child(5)) .post_card_content_wrapper:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 20%;
-                min-height: 100px;
-                width: 100%;
-                z-index: 1;
-                background: variables.$dark;
-                background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-
-                @include tablet {
-                    bottom: 0;
-                }
             }
 
             &_img_wrapper {
