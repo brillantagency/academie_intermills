@@ -64,12 +64,12 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    <?php if ($count > 1) :
+                </div>
+                <?php if ($count > 1) :
                     $class_button_prev = 'banner_prev';
                     $class_button_next = 'banner_next';
                     include get_template_directory() . '/parts/components/swiper-nav.php';
-                    endif; ?>
-                </div>
+                endif; ?>
         <?php elseif($media && ($video_embed || $video_upload)) :
             include get_template_directory() . '/parts/components/video.php';
         endif; ?>
