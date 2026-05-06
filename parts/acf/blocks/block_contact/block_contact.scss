@@ -9,11 +9,14 @@
 		grid-template-rows: auto auto;
 		background-color: variables.$lightgrey;
 		flex-direction: column;
+		gap: 10px;
 		padding: 10px;
 		border-radius: 20px;
 
 		@include tablet {
 			max-width: 1200px;
+			padding: 30px;
+			gap: 30px;
 		}
 	}
 
@@ -54,10 +57,6 @@
 				background-color: variables.$white;
 				padding: 20px;
 				border-radius: 20px;
-
-				form {
-					margin-top: 50px;
-				}
 			}
 		}
 
