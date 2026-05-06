@@ -17,19 +17,6 @@
         gap: 65px;
     }
 
-    /*.menu {
-        &_burger {
-            position: absolute;
-            top: 100%;
-            left: -100vw;
-            width: 100vw;
-            background-color: variables.$white;
-            padding: 40px 20px;
-            transition: left .3s ease;
-            z-index: 10;
-        }
-    }*/
-
     .menu_burger_nav_wrapper ul,
     ul {
         padding-left: 0;
@@ -94,18 +81,36 @@
             ul {
                 display: flex;
                 flex-direction: column;
-                padding: 40px 20px;
                 justify-content: center;
                 align-items: center;
                 gap: 15px;
-                border-radius: variables.$border_rounded;
-                border: 1px solid variables.$red;
-                background: rgba(229, 0, 68, 0.10);
 
                 @include tablet {
                     flex-direction: row;
                     gap: 40px;
                     padding: 15px 20px;
+                    border-radius: variables.$border_rounded;
+                    border: 1px solid variables.$red;
+                    background: rgba(229, 0, 68, 0.10);
+                }
+
+                li {
+                    border-radius: variables.$border_rounded;
+                    border: 1px solid variables.$red;
+                    background: rgba(229, 0, 68, 0.10);
+                    display: flex;
+                    padding: 15px 40px!important;
+                    margin-bottom: 0;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    @include tablet {
+                        border: none;
+                        width: auto;
+                        padding: 0!important;
+                        background: transparent;
+                    }
                 }
 
                 a {

@@ -250,3 +250,10 @@ blockquote::before {
         }
     }
 }
+
+
+.page_search {
+    .h3 a {
+        color: variables.$red;
+    }
+}

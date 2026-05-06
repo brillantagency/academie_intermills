@@ -49,11 +49,22 @@
         transition: transform 0.3s ease;
 
         @include tablet {
-            display: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         &_open {
             transform: translateX(0);
+            overflow-y: auto;
+
+            @include tablet {
+                .menu_burger_nav_wp ul {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
         }
 
         &_nav_wrapper {

@@ -3,37 +3,6 @@
 
 .text_media_section {
     position: relative;
-
-    /*&_right {
-        .img_wrapper_crop_form_border {
-            right: -25px;
-            bottom: -50px;
-
-            @include tablet {
-                right: -125px;
-            }
-        }
-    }
-
-    &_left {
-        .img_wrapper_crop_form_border {
-            left: -25px;
-            bottom: -50px;
-
-            @include tablet {
-                left: -125px;
-            }
-        }
-    }
-
-    &_top,
-    &_bottom {
-        .img_wrapper_crop_form_border {
-            right: -125px;
-            bottom: -50px;
-        }
-    }*/
-
     .text_media {
         &_swiper-wrapper {
             align-items: center;
@@ -255,15 +224,6 @@
             }
         }
     }
-    /*.img_wrapper_crop_form_border {
-        border: 5px solid variables.$white;
-        position: absolute;
-        max-width: 150px;
-
-        @include tablet {
-            max-width: 250px;
-        }
-    }*/
 }
 
 @include tablet {

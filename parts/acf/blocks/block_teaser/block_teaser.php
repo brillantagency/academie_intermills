@@ -80,6 +80,7 @@
             <?php if(!empty($teaser_link)):
                 $cta = $teaser_link;
                 $cta_color = 'primary';
+                $page_single = false;
                 include get_template_directory() . '/parts/components/cta.php';
             endif; ?>
         </div>

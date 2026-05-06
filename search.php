@@ -4,13 +4,13 @@ require get_template_directory() . '/parts/header.php';
 ?>
 
 <main class="main" role="main">
-    <div class="container p-top">
+    <div class="container p-top page_search">
         <h1><?php echo __('Résultats pour :', 'brillant'); ?> <?php echo get_search_query(); ?></h1>
 
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <article>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <p class="h3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                     <?php the_excerpt(); ?>
                 </article>
             <?php endwhile; ?>

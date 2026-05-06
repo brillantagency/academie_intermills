@@ -9,22 +9,30 @@
     }
 
     .page-numbers {
-        border-radius: 50rem;
-        border: 1px solid variables.$grey;
-        padding: 18px;
         text-decoration: none;
         color: initial;
-        aspect-ratio: 1 / 1;
-        min-width: 40px;
-        min-height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s ease;
+        transition: opacity 0.3s ease;
+
+        &:not(.next):not(.prev) {
+            border-radius: 50rem;
+            border: 1px solid variables.$grey;
+            padding: 10px;
+            aspect-ratio: 1 / 1;
+            min-width: 40px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: variables.$lightgrey;
+                transition: background-color 0.3s ease;
+            }
+        }
 
         &:hover {
-            background-color: variables.$lightgrey;
-            transition: background-color 0.3s ease;
+            opacity: 0.5;
         }
     }
 
@@ -43,5 +51,6 @@
         display: flex;
         gap: 15px;
         justify-content: center;
+        align-items: center;
     }
 }

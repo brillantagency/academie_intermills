@@ -122,6 +122,9 @@
 
             &_date {
                 margin-top: 0;
+                margin-bottom: 0;
+                font-size: variables.$text_small;
+                font-style: italic;
             }
         }
     }
