@@ -9,6 +9,11 @@
         padding: 0 40px;
     }
 
+    &_next,
+    &_prev {
+        z-index: 2;
+    }
+
     &.p-top {
         margin-top: 80px;
 
@@ -38,15 +43,6 @@
                 }
             }
         }
-        /*&-button {
-            &-prev {
-                left: -22px;
-            }
-
-            &-next {
-                right: -22px;
-            }
-        }*/
     }
     
     &_wrapper {
@@ -80,8 +76,8 @@
                 height: 100%;
                 position: absolute;
                 border-radius: 40px;
-                z-index: 2;
-                border-radius: 48px;
+                z-index: 0;
+                border-radius: 40px;
             }
         }
 
