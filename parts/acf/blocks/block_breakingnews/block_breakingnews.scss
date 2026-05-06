@@ -122,12 +122,8 @@
         color: variables.$dark;
         font-weight: 700;
 
-        svg path {
-            fill: variables.$dark;
-        }
-
-        & > svg:first-child {
-            display: none;
+        svg  {
+            stroke: variables.$dark;
         }
     }
 }

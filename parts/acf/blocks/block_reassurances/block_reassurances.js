@@ -8,11 +8,14 @@ function dynamicNumber() {
         const elTop = counter.getBoundingClientRect().top + window.scrollY;
         const scrollPos = window.scrollY + window.innerHeight;
 
-        if (elTop < scrollPos - 20) { // 20px avant le bas de l'écran
-            const target = +counter.getAttribute('data-target');
-            if (!target) return;
+        if (elTop < scrollPos - 20) {
+            counter.dataset.animated = 'true';
 
-            let current = 0;
+            const target = parseInt(counter.getAttribute('data-target'), 10);
+            if (isNaN(target)) return;
+
+            counter.textContent = '0'; // 👈 démarre visuellement à 0
+
             const duration = 2000;
             const startTime = performance.now();
 
@@ -25,7 +28,6 @@ function dynamicNumber() {
                     requestAnimationFrame(updateCounter);
                 } else {
                     counter.textContent = target;
-                    counter.dataset.animated = 'true';
                 }
             }
 
