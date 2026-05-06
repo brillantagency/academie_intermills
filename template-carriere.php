@@ -25,7 +25,7 @@ $get_the_content = get_the_content();
     </div>
     <?php endif; ?>
 
-    <div class="container container_carriere_filter p-both">
+    <div class="container container_carriere_filter p-bottom">
         <div class="archive_carriere_filter">
             <button id="button_filter_show" class="h3 archive_carriere_filter_title"><?php _e('Filtre', 'brillant'); ?></button>
 
