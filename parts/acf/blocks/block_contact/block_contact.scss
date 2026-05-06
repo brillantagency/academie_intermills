@@ -33,11 +33,17 @@
 			margin-top: 0;
 		}
 
-		&_text_wrapper {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			padding: 40px;
+		&_text {
+			a {
+				text-decoration: none;
+
+				&_wrapper {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					padding: 40px;
+				}
+			}
 		}
 
 		&_form {
@@ -66,7 +72,6 @@
 			justify-content: center;
 			flex-direction: column;
 			color: variables.$grey;
-			font-size: 12px;
 			min-width: 140px;
 			width: 100%;
 
@@ -78,7 +83,7 @@
 				font-size: initial;
 				color: variables.$dark;
 				display: block;
-				margin-top: 15px;
+				margin-top: 5px;
 				word-break: break-word;
 			}
 
