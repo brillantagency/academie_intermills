@@ -22,11 +22,13 @@
         height: 0;
         width: 0;
         overflow: hidden;
+        display: none!important;
         transition: height 0.3s ease, width 0.3s ease;
         padding: 0;
 
         &.post_active-js {
             align-items: stretch;
+            display: flex!important;
             height: auto;
             padding: 20px;
             transition: height 0.3s ease, width 0.3s ease;
