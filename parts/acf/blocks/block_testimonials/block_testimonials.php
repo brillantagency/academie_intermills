@@ -59,6 +59,8 @@
             $page_single = false;
             include get_template_directory() . '/parts/components/cta.php';
         endif; ?>
+
+        <div class="swiper-pagination testimonials_swiper-pagination"></div>
     </div>
 
     <div class="swiper testimonials_swiper testimonials_swiper-js">

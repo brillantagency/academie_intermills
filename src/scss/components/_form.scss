@@ -84,7 +84,8 @@ form:not(#adminbarsearch) {
 
     &.search-form {
         position: relative;
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
 
         .search-submit {
             aspect-ratio: 1/1;

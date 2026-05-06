@@ -8,7 +8,8 @@
 
     .swiper {
         &-pagination {
-            display: none;
+            text-align: initial;
+            margin-top: 25px;
         }
 
         &-button {

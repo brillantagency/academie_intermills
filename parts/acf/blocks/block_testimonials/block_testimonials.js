@@ -6,7 +6,7 @@ function sliderTestimonials() {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-            el: ".swiper-pagination",
+            el: ".testimonials_swiper-pagination",
             clickable: true,
         },
         navigation: {
