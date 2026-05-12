@@ -190,6 +190,12 @@
             grid-template-areas: 
             "content content content"
             "post post post";
+
+            .swiper {
+                @include tablet {
+                    padding: 0 200px 0 0;
+                }
+            }
         }
     }
 
