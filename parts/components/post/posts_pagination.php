@@ -1,11 +1,26 @@
-<?php
-    the_posts_pagination([
-        'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                <path d="M1 1L9 9L1 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>',
-        'next_text' => 
-        '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                <path d="M1 1L9 9L1 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>',
-    ]);
-?>
+<div class="pagination">
+    <div class="nav-links">
+        <?php
+
+        $big = 999999999;
+
+        echo paginate_links([
+            'base' => str_replace(
+                $big,
+                '%#%',
+                esc_url(get_pagenum_link($big))
+            ),
+
+            'format'   => '',
+            'current'  => $paged,
+            'total'    => $query->max_num_pages,
+
+            'mid_size' => 2,
+            'end_size' => 1,
+
+            'prev_text' => '‹',
+            'next_text' => '›',
+        ]);
+        ?>
+    </div>
+</div>

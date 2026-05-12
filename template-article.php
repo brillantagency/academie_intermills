@@ -60,7 +60,7 @@ $get_the_content = get_the_content();
             ?>
 
         </div>
-        <?php include get_template_directory() . '/parts/components/post/post_pagination_event_articles.php'; ?>
+        <?php include get_template_directory() . '/parts/components/post/posts_pagination.php'; ?>
     </div>
 </main>
 

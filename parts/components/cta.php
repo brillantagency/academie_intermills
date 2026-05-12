@@ -10,7 +10,8 @@ if ($banner && !empty($cta['banner_button'])) {
 
 // Assignation sécurisée
 if ($page_single) {
-    $cta_url    = get_permalink();
+    $current_url = get_permalink();
+    $cta_url = dirname($current_url);
     $cta_title  = __('Par ici', 'brillant');
     $cta_target = '';
 } else {

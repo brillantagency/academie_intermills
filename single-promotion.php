@@ -24,6 +24,7 @@
                 <?php if(!empty($single_link)):
                     $cta = $single_link;
                     $cta_color = 'link';
+                    $page_single = true;
                     include get_template_directory() . '/parts/components/cta.php';
                 endif; ?>
             <?php endif; ?>

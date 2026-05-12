@@ -42,7 +42,7 @@ $get_the_content = get_the_content();
             // WP_Query pour le CPT 'event'
             $args = [
                 'post_type'      => 'event',
-                'posts_per_page' => 4,
+                'posts_per_page' => 12,
                 'paged'          => $paged,
             ];
             $query = new WP_Query($args);
@@ -59,7 +59,7 @@ $get_the_content = get_the_content();
             endif;
             ?>
         </div>
-        <?php include get_template_directory() . '/parts/components/post/post_pagination_event_articles.php'; ?>
+        <?php include get_template_directory() . '/parts/components/post/posts_pagination.php'; ?>
     </div>
 </main>
 

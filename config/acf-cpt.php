@@ -53,10 +53,10 @@ function cpt_event() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
+        'has_archive'        => false,
         'show_in_admin_bar'  => true,
         'rewrite'            => array(
-            'slug'       => 'evenements-1',
+            'slug'       => 'evenements',
             'with_front' => false,
             'pages'      => true,
         ),
@@ -98,8 +98,8 @@ function cpt_carriere() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
-        'rewrite'            => array('slug' => 'carriere-1'),
+        'has_archive'        => false,
+        'rewrite'            => array('slug' => 'carriere'),
         'show_in_rest'       => true,
         'supports'           => ['title', 'editor', 'thumbnail', 'excerpt'],
         'menu_icon'          => 'dashicons-businessman',
@@ -135,12 +135,12 @@ function cpt_article() {
         'label'             => 'Articles',
         'labels'            => $labels,
         'public'            => true,
-        'has_archive'       => true,
+        'has_archive'       => false,
         'menu_position'     => 5,
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'actualites-1'],
+        'rewrite'           => ['slug' => 'actualites'],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];
@@ -178,18 +178,29 @@ function cpt_promotions() {
         'label'             => 'Promotions',
         'labels'            => $labels,
         'public'            => true,
-        'has_archive'       => true,
         'menu_position'      => 5,
         'show_in_admin_bar' => true,
         'show_in_menu'      => true,
         'capability_type'   => 'post',
-        'rewrite'           => ['slug' => 'promotions-1'],
+        'has_archive'       => false,
+        'rewrite' => [
+            'slug'       => 'promotions',
+        ],
         'show_in_rest'      => true,
         'supports'          => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
     ];
     register_post_type('promotion', $args);
 }
 add_action('init', 'cpt_promotions');
+
+add_action('init', function () {
+    add_rewrite_rule(
+        '^promotions/page/([0-9]+)/?$',
+        'index.php?pagename=promotions&paged=$matches[1]',
+        'top'
+    );
+});
+
 
 
 

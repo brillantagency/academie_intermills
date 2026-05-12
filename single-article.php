@@ -20,6 +20,7 @@
                 <?php if(!empty($single_link_archive)):
                     $cta = $single_link_archive;
                     $cta_color = 'link';
+                    $page_single = true;
                     include get_template_directory() . '/parts/components/cta.php';
                 endif; ?>
             <?php endif; ?>

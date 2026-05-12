@@ -33,15 +33,13 @@ $get_the_content = get_the_content();
         <div class="archive_post_grid">
             <?php
             // Pagination
-            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $paged = max(1, get_query_var('paged'), get_query_var('page'));
 
-            // WP_Query pour le CPT 'promotion'
-            $args = [
+            $query = new WP_Query([
                 'post_type'      => 'promotion',
-                'posts_per_page' => 4,
+                'posts_per_page' => 12,
                 'paged'          => $paged,
-            ];
-            $query = new WP_Query($args);
+            ]);
 
             if( $query->have_posts() ):
                 while( $query->have_posts() ): $query->the_post();
@@ -53,6 +51,10 @@ $get_the_content = get_the_content();
             else:
                 echo '<p>' . __('Aucun évènement trouvé.', 'brillant') . '</p>';
             endif;
+        ?>
+        </div>
+        <?php 
+            include get_template_directory() . '/parts/components/post/posts_pagination.php';    
         ?>
     </div>
 </main>
