@@ -40,6 +40,7 @@
     &_burger {
         position: fixed;
         visibility: hidden;
+        opacity: 0;
         top: 0;
         right: 0;
         width: 100%;
@@ -59,6 +60,7 @@
             transform: translateX(0);
             overflow-y: auto;
             visibility: visible;
+            opacity: 1;
 
             @include tablet {
                 .menu_burger_nav_wp ul {
