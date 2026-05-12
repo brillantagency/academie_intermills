@@ -12,8 +12,37 @@
 
     .swiper {
         height: 100%;
+        overflow: hidden;
+        padding: 0 20px;
+
+        @include tablet {
+            padding: 0;
+        }
+
         &-pagination {
             display: none;
+        }
+    }
+
+    &_promotion {
+        &_wrapper {
+            &_content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                @include tablet {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    gap: 20px;
+                }
+            }
+
+            &_text {
+                max-width: 750px;
+            }
         }
     }
 
@@ -37,7 +66,24 @@
         &_post {
             grid-area: post;
             min-width: 0;
-            overflow: hidden;
+            
+            @include tablet {
+                overflow: hidden;
+            }
+
+            .last_post {
+                &_prev {
+                    @media screen and (max-width: 768px) {
+                        left: -22px!important;
+                    }
+                }
+
+                &_next {
+                    @media screen and (max-width: 768px) {
+                        right: -22px!important;
+                    }
+                }
+            }
 
             &_focus {
                 grid-area: focus;

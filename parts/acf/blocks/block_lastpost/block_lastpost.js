@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
             prevEl: '.lastpost_prev',
         },
         breakpoints: {
+            576: {
+                slidesPerView: 2,
+            },
             768: {
                 slidesPerView: 3,
             },
