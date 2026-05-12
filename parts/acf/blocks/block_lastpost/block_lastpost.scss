@@ -193,7 +193,7 @@
 
             .swiper {
                 @include tablet {
-                    padding: 0 200px 0 0;
+                    padding: 0 calc((100vw - 1400px)/ 2) 0 0;
                 }
             }
         }
