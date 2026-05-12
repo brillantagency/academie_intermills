@@ -69,6 +69,13 @@ function cpt_event() {
 }
 add_action('init', 'cpt_event');
 
+add_action('init', function () {
+    add_rewrite_rule(
+        '^evenements/page/([0-9]+)/?$',
+        'index.php?pagename=evenements&paged=$matches[1]',
+        'top'
+    );
+});
 
 
 
@@ -156,7 +163,13 @@ function remove_default_posts_menu() {
 add_action('admin_menu', 'remove_default_posts_menu');
 
 
-
+add_action('init', function () {
+    add_rewrite_rule(
+        '^actualites/page/([0-9]+)/?$',
+        'index.php?pagename=actualites&paged=$matches[1]',
+        'top'
+    );
+});
 
 
 
