@@ -39,6 +39,7 @@
 .menu {
     &_burger {
         position: fixed;
+        visibility: hidden;
         top: 0;
         right: 0;
         width: 100%;
@@ -46,7 +47,6 @@
         padding: 20px;
         background-color: rgba(255, 255, 255, 0.95);
         transform: translateX(100%);
-        visibility: hidden;
         transition: transform 0.3s ease, visibility 0.3s ease;
 
         @include tablet {
