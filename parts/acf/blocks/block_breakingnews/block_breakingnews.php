@@ -115,8 +115,16 @@ if ($breakingnews_active) :
                             $cta = $cta;
                             $page_single = false;
                             $cta_color = 'link';
-                            include get_template_directory() . '/parts/components/cta.php';
-                        endif; ?>
+                            //include get_template_directory() . '/parts/components/cta.php';
+                            ?>
+
+                            <a href="<?php echo esc_url($cta); ?>" class="cta cta_link">
+                                <?php echo __('Par ici', 'brillant'); ?> 
+                                <svg xmlns="http://www.w3.org/2000/svg" class="cta_arrow_up" width="21" height="13" viewBox="0 0 21 17" fill="none">
+                                <path d="M0.407872 14.5173C-0.042911 14.8376 -0.133838 15.4502 0.204781 15.8856C0.5434 16.321 1.18334 16.4143 1.63412 16.0941L1.021 15.3057L0.407872 14.5173ZM20.3285 2.45317C20.4078 1.91881 20.0196 1.41962 19.4614 1.33821L10.3652 0.011512C9.80696 -0.0699002 9.29016 0.297286 9.21085 0.831646C9.13154 1.36601 9.51974 1.86519 10.0779 1.9466L18.1635 3.12589L17.0146 10.8662C16.9353 11.4006 17.3235 11.8998 17.8817 11.9812C18.4399 12.0626 18.9567 11.6954 19.036 11.1611L20.3285 2.45317ZM1.021 15.3057L1.63412 16.0941L19.9309 3.09415L19.3178 2.30576L18.7047 1.51736L0.407872 14.5173L1.021 15.3057Z" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <?php endforeach; wp_reset_postdata(); ?>

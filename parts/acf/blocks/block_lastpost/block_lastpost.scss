@@ -58,7 +58,7 @@
                 align-items: flex-end;
             }
 
-            @include desktop {
+            @include desktop-xl {
                 margin-right: calc((100vw - 1400px) / 2 );
             }
         }
@@ -136,7 +136,7 @@
         display: grid;
         gap: 20px;
 
-        @include desktop {
+        @include desktop-xl {
             margin-left: calc((100vw - 1400px) / 2 );
         }
 

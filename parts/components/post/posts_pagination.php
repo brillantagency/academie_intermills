@@ -1,7 +1,6 @@
 <div class="pagination">
     <div class="nav-links">
         <?php
-
         $big = 999999999;
 
         echo paginate_links([
