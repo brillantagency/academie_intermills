@@ -75,7 +75,7 @@
                 grid-area: post5;
             }
 
-            &:not(:nth-child(5)) {
+            /*&:not(:nth-child(5)) {
                 &,
                 & a {
                     color: variables.$white;
@@ -84,7 +84,7 @@
                 .post_card_content_wrapper {
                     justify-content: flex-end;
                 }
-            }  
+            }*/
             
             &_readmore {
                 text-decoration: none;

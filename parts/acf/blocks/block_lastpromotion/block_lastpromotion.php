@@ -80,12 +80,7 @@ if ($post_query->have_posts() && $lastpost_promotion_active) :
     <div class="lastpost_promotion_wrapper_post">
         <?php
         foreach ($posts as $index => $post) {
-            if(($index === 4)) {
-                $is_last = true;
-            } else {
-                $is_last = false;
-            }
-
+            $is_last = false;
             include get_template_directory() . '/parts/components/post/post_promotion.php';
         }
         wp_reset_postdata();
