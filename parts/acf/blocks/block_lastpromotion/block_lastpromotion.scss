@@ -25,7 +25,8 @@
             overflow: hidden;
             position: relative;
             padding: 0;
-            
+            color: variables.$white;
+
             & a {
                 color: variables.$white;
             }
