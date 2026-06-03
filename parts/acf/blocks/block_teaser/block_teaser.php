@@ -27,6 +27,7 @@
         $video_cover = $teaser_gallery[0];
     } else {
         $video_cover = '';
+        $count = 0;
     }
 
     if($teaser_active) :
@@ -52,11 +53,11 @@
                     <?php include get_template_directory() . '/parts/components/swiper-nav.php'; ?>
                 </div>
             <?php else : ?>
-                <?php foreach($teaser_gallery as $index => $gallery) : ?>
+                <?php if(!empty($teaser_gallery)) : foreach($teaser_gallery as $index => $gallery) : ?>
                     <?php if(!empty($index === 0) or !empty($index === 1)) : ?>
                         <img loading="lazy" class="teaser_img <?php echo $index === 1? 'teaser_img_small': ''; ?>" src="<?php echo $gallery['url']; ?>" alt="<?php echo $gallery['alt']; ?>" >
                     <?php endif; ?>
-                <?php endforeach; ?>
+                <?php endforeach; endif ?>
             <?php endif; ?>
         <?php else :
             $block_video = 'teaser_';

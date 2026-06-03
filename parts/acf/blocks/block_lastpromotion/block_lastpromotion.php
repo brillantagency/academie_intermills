@@ -39,7 +39,7 @@ if ($lastpost_promotion_select) {
         'post_type'      => 'promotion',
         'posts_per_page' => 5,
         'orderby'        => 'date',
-        'order'          => 'ASC',
+        'order'          => 'DESC',
         'post_status'    => 'publish',
     ];
 }
