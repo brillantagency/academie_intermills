@@ -103,7 +103,9 @@ $get_the_content = get_the_content();
 
                 <?php wp_reset_postdata(); ?>
 
-                <?php include locate_template('parts/components/post/post_pagination_event_articles.php'); ?>
+                <?php 
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    include locate_template('parts/components/post/post_pagination_event_articles.php'); ?>
 
             <?php else : ?>
                 <p><?php echo __('Aucun résultat trouvé.', 'brillant'); ?></p>
