@@ -1,0 +1,1 @@
+{"version":3,"sources":["block_form/block_form.scss"],"names":[],"mappings":"AAII,iBACI,UAAA,MACA,OAAA","file":"block_form.min.css","sourcesContent":["@use \"../../../../src/scss/base/variables\" as variables;\n@use \"../../../../src/scss/base/mixins\" as *;\n\n.block_form {\n    form {\n        max-width: 750px;\n        margin: auto;\n    }\n}"]}

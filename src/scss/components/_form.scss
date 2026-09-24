@@ -1,5 +1,6 @@
 @use "../base/variables" as variables;
 @use "../base/mixins" as *;
+@use "sass:color";
 
 .gform {
     &_heading {
@@ -35,7 +36,7 @@ form:not(#adminbarsearch) {
         }
     }
 
-    input:not([type=radio]),
+    input:not([type=radio]):not([type=file]),
     textarea,
     select {
         padding: 20px!important;
@@ -197,5 +198,49 @@ footer + form:not(#adminbarsearch).search-form {
         padding: 15px 50px 15px 20px!important;
         color: variables.$white!important;
         transition: opacity 0.3s ease;
+    }
+}
+
+#form_post_carriere form {
+    input {
+        &[type=checkbox] {
+            opacity: 0;
+            position: absolute;
+
+            & + label {
+                border: 1px solid lightgrey;
+                padding: 5px;
+                border-radius: 5px;
+                transition: color 0.3s ease, background-color 0.3s ease;
+                margin-left: 0;
+            }
+
+            &:hover + label {
+                background: color.adjust(variables.$darkred, $lightness: 10%);
+                color: variables.$white;
+                border-color: color.adjust(variables.$darkred, $lightness: 10%);
+            }
+
+            &:checked + label {
+                background: variables.$darkred;
+                color: variables.$white;
+                border-color: variables.$darkred;
+            }
+        }
+
+        &[type=submit].gform_button {
+            border-radius: 50rem!important;
+            color: variables.$white!important;
+        }
+    }
+
+    select {
+        padding : 0 20px!important;
+    }
+
+    .gfield_checkbox {
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 }

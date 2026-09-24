@@ -8,8 +8,7 @@ if($block_video === 'carriere') {
         $video_autoplay = $video['video_autoplay'];
         $video_loop     = $video['video_loop'];
         $video_control  = $video['video_control'];
-
-        $media        = true;
+        $media          = true;
     } else {
         $media = false;
     }

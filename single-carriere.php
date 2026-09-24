@@ -127,6 +127,7 @@
 
                 $media       = get_field('carriere_video');
                 $block_video = 'carriere'; 
+
                 include_once(locate_template('parts/components/video_modal.php'));
             ?>
 
