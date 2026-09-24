@@ -8,32 +8,6 @@
     }
 }
 
-form:not(#adminbarsearch):not([role="search"]) {
-    input,
-    button {
-        &[type=submit] {
-            background-color: variables.$red!important;
-            border-radius: 5px!important;
-            text-transform: uppercase!important;
-            border: 0!important;
-            letter-spacing: 1.5px!important;
-            padding: 15px 40px!important;
-            color: variables.$white!important;
-
-            &:hover {
-                background-color: variables.$dark!important;
-                transition: background-color .3s ease!important;
-                cursor: pointer!important
-            }   
-        }
-
-        &[type=submit] {
-            border-radius: 50rem!important;
-            display: inline-block!important;
-            width: 100%!important;
-        }
-    }
-}
 
 form:not(#adminbarsearch) {
     .gform {
@@ -63,7 +37,7 @@ form:not(#adminbarsearch) {
         }
     }
 
-    input:not([type=radio]):not([type=file]),
+    input:not([type=radio]):not([type=file]):not([type=search]),
     textarea,
     select {
         padding: 20px!important;
@@ -135,6 +109,33 @@ form:not(#adminbarsearch) {
 
             &::placeholder {
                 color: variables.$white;
+            }
+        }
+    }
+
+    &:not([role="search"]) {
+        input,
+        button {
+            &[type=submit] {
+                background-color: variables.$red!important;
+                border-radius: 5px!important;
+                text-transform: uppercase!important;
+                border: 0!important;
+                letter-spacing: 1.5px!important;
+                padding: 15px 40px!important;
+                color: variables.$white!important;
+
+                &:hover {
+                    background-color: variables.$dark!important;
+                    transition: background-color .3s ease!important;
+                    cursor: pointer!important
+                }   
+            }
+
+            &[type=submit] {
+                border-radius: 50rem!important;
+                display: inline-block!important;
+                width: 100%!important;
             }
         }
     }
