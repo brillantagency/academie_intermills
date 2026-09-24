@@ -146,7 +146,7 @@ form:not(#adminbarsearch) {
     }
 }
 
-form:not[role=search] {
+form:not([role="search"]) {
     input,
     button {
         &[type=submit] {
