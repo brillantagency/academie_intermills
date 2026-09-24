@@ -2,18 +2,17 @@
 @use "../../../../src/scss/base/mixins" as *;
 
 .block_form {
+    .form_wrapper {
+        background-color: variables.$lightgrey;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 750px;
+        margin: auto;
+    }
 
     form {
         background-color: variables.$white;
         padding: 20px;
         border-radius: 20px;
-
-        &_wrapper {
-            background-color: variables.$lightgrey;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 750px;
-            margin: auto;
-        }
     }
 }
