@@ -52,8 +52,17 @@ form:not(#adminbarsearch) {
     }
 
     input {
-        &[type=submit],
-        &[type=button] {
+        &[type=checkbox] {
+            width: 20px!important;
+            height: 20px!important;
+            padding: 0!important;
+            border-radius: 5px!important;
+        }
+    }
+
+    input,
+    button {
+        &[type=submit] {
             background-color: variables.$red!important;
             border-radius: 5px!important;
             text-transform: uppercase!important;
@@ -73,13 +82,6 @@ form:not(#adminbarsearch) {
             border-radius: 50rem!important;
             display: inline-block!important;
             width: 100%!important;
-        }
-
-        &[type=checkbox] {
-            width: 20px!important;
-            height: 20px!important;
-            padding: 0!important;
-            border-radius: 5px!important;
         }
     }
 
@@ -227,7 +229,10 @@ footer + form:not(#adminbarsearch).search-form {
                 border-color: variables.$darkred;
             }
         }
+    }
 
+    input,
+    button {
         &[type=submit].gform_button {
             border-radius: 50rem!important;
             color: variables.$white!important;
