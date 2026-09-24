@@ -12,6 +12,8 @@ $form_id         = get_sub_field('form_id');
 if ($form_active) :
 ?>
 <section class="block_form container p-<?php echo $form_padding; ?>" <?php echo !empty($form_id)? 'id="' . $form_id . '"' : ''; ?>>
-    <?php echo do_shortcode($form_shortcode); ?>
+    <div class="form_wrapper">
+        <?php echo do_shortcode($form_shortcode); ?>
+    </div>
 </section>
 <?php endif; ?>
