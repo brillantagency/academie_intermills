@@ -280,7 +280,7 @@
             },
             "layout": "table",
             "pagination": 0,
-            "min": 3,
+            "min": 10,
             "max": 0,
             "collapsed": "field_6938431374f69",
             "button_label": "Ajouter un élément",
@@ -354,5 +354,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790252817
+    "modified": 1790687427
 }
