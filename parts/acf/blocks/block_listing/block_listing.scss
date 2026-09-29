@@ -50,7 +50,6 @@
 
             th, 
             td {
-                border-bottom: 1px solid #ccc;
                 text-align: left;
                 padding: 15px 10px;
 
@@ -65,6 +64,7 @@
 
         &_company_row {
             display: none;
+            border-bottom: 1px solid #ccc;
 
             &.active {
                 display: table-row;

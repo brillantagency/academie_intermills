@@ -68,6 +68,9 @@
                 $contact_phone = get_field('entreprise_contact_phone');    
                 $thumbnail     = get_field('entreprise_contact_thumbnail');    
                 $contact_name  = get_field('entreprise_contact_name');    
+                $school_bool   = get_field('entreprise_school');
+                
+                if(!$school_bool) :
             ?>
                 <tr data-value="<?php echo $slug; ?>" class="listing_company_row">
                     <?php if(!empty($title) or !empty($thumbnail)) : ?>
@@ -94,7 +97,7 @@
                     <td class="listing_company_row_mail"><a href="mailto:<?php echo $contact_mail; ?>"><?php echo $contact_mail; ?></a></td>
                     <?php endif; ?>
                 </tr>
-            <?php endforeach; wp_reset_postdata(); ?>
+            <?php endif; endforeach; wp_reset_postdata(); ?>
         </tbody>
     </table>
 

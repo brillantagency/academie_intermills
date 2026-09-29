@@ -89,6 +89,27 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6abbb1045d5b1",
+            "label": "School ?",
+            "name": "entreprise_school",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         }
     ],
     "location": [
@@ -112,5 +133,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765542835
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790685823
 }

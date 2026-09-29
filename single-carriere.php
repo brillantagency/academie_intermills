@@ -8,8 +8,8 @@
     $file                     = get_field('carriere_file_download');
     $lang                     = get_field('carriere_language');
     $company_contact_specific = get_field('company_contact');
-
     $company                  = get_field('carriere_select_company');
+
     if (!empty($company)) {
         $entreprise_id      = $company->ID;
         //$name               = get_the_title($entreprise_id);
