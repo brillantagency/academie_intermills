@@ -19,11 +19,11 @@
             <button role="button" class="cta cta_primary burger_button burger_button-js" aria-label="Menu">Menu</button>
             <div class="menu_burger">
                 <?php $theme_location = 'topbar'; include(locate_template('parts/components/menu.php')); ?>
-                <?php $theme_location = 'primary_menu'; include(locate_template('parts/components/menu.php')); ?>
+                <?php $theme_location = 'footer_menu'; include(locate_template('parts/components/menu.php')); ?>
                 <?php include(locate_template('parts/components/social.php')); ?>
             </div>
 
-            <?php $theme_location = 'primary_menu'; include(locate_template('parts/components/menu.php')); ?>
+            <?php $theme_location = 'footer_menu'; include(locate_template('parts/components/menu.php')); ?>
 
             <?php if(!empty($footer_link['url'])) : ?>
             <a href="<?php echo $footer_link['url']; ?>" target="<?php echo $footer_link['target']? '_blank' : '_self'; ?>" class="cta cta_primary"><?php echo $footer_link['title']; ?></a>

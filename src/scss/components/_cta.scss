@@ -131,6 +131,21 @@
             fill: variables.$grey;
         }
     }
+
+    &_border {
+
+        &,
+        a {
+            color: variables.$dark;
+            border: 1px solid variables.$dark;
+    
+            &:hover {
+                color: variables.$white;
+                background-color: variables.$red;
+                border: 1px solid variables.$red;
+            }
+        }
+    }
 }
 
 li.cta {

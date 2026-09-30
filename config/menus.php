@@ -7,6 +7,7 @@ function register_my_menu() {
 			'topbar'         => 'Top bar Menu',
 			'copyright_menu' => 'Copyright Menu',
 			'primary_menu'   => 'Primary Menu',
+			'footer_menu'    => 'Footer Menu',
 		)
 	);
 }
